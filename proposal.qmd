@@ -10,6 +10,7 @@ editor: visual
 #| message: false
 #install.packages("tidytuesdayR")
 library(tidyverse)
+library(kableExtra)
 ```
 
 ## Dataset
@@ -23,7 +24,16 @@ population <- tuesdata$population
 
 population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv', show_col_types = FALSE)
 
-print(population)
+
+data_subset <- population[1:10, ]
+
+table <- kable(data_subset)
+
+styled_table <- table %>%
+  kable_styling(full_width = FALSE) %>%
+  row_spec(0, bold = TRUE) # Make header row bold
+
+styled_table
 ```
 
 **Dataset Description:**
