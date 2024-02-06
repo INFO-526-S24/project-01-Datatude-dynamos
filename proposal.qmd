@@ -1,5 +1,5 @@
 ---
-title: "Examining Global Refugee and Internally Displaced Population Trends and Correlations (2010-2022)"
+title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "Proposal"
 format: html
 editor: visual
@@ -8,6 +8,7 @@ editor: visual
 ```{r}
 #| label: load-pkgs
 #| message: false
+#install.packages("tidytuesdayR")
 library(tidyverse)
 ```
 
@@ -15,22 +16,60 @@ library(tidyverse)
 
 ```{r}
 #| label: load-dataset
-#| message: false
+
+tuesdata <- tidytuesdayR::tt_load('2023-08-22')
+
+population <- tuesdata$population
+
+population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv', show_col_types = FALSE)
+
+print(population)
 ```
 
-**Data-set Description:**\
-The data-set comes from the {refugees} R package, which compiles information from important sources, including UNHCR, UNRWA, and IDMC, covering more than 70 years and a wide range of displacement circumstances. Data from 2010 to 2022 are included in this particular subgroup, which covers a wide range of characteristics including the country of origin, asylum names and codes, and the numbers of refugees, asylum seekers, returned refugees, internally displaced people, stateless people, and other individuals of concern.
+**Dataset Description:**
 
-**Reasons for Choosing this Data-set:**\
-The significance of this data-set to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection. This data-set was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytical and graphical techniques. Lastly, we're interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.
+\
+Our target dataset comes from the {refugees} R package, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.
 
-Make sure to load the data and use inline code for some of this information.
+**Reasons for Choosing this Dataset:**
+
+-   \
+    The significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.
+
+-   This dataset was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we're interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.
+
+-   This dataset, which provides a comprehensive overview of the size, dynamics, and geographic distribution of populations that have been strongly relocated. Because of its extensive duration—more than ten years—it is feasible to conduct a thorough examination of trends and patterns, enabling the correlation of these movements with worldwide shifts in the political, social, and environmental spheres.
+
+-   The dataset's versatility in capturing displacement categories allows for a more in-depth examination of different aspects of displacement worldwide, ranging from IDPs and stateless people to refugees and asylum seekers, offering a comprehensive viewpoint on the problem.
 
 ## Questions
 
-Question 01:\
-How have the trends in refugee populations changed over the years ? How the political parties view of USA effected this change? This question will utilize the 'year', 'coo_name', and 'refugees' variables.
+**Question 01:**\
+How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.
+
+**Question 02:**
+
+How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
 ## Analysis plan
 
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+For Question 01:
+
+**The variables are involved:** *'year'* and *'refugees'* (the total number of refugees)
+
+**Data Preparation:** To spot trends, total the number of refugees by year and nation of origin.
+
+**Analysis:** To monitor changes in refugee populations over time, use time series analysis. External data on US foreign policy changes, political party statements, or major political events will be incorporated, and their temporal alignment with changes in refugee trends will be examined, in order to evaluate the influence of US political parties' positions.
+
+**External Data:** US political timelines, shifts in foreign policy, and noteworthy political pronouncements or occurrences pertaining to refugee policies.
+
+For Question 02:
+
+**\
+The variables are involved:** The following are the primary variables: *'year'*, *'coo_name'* (destination country name), *'coa_name'* (asylum country name), and *'refugees'* (the total number of refugees).
+
+**Data Preparation:** Gathering Refugee Data: To track trends over time and across various regions, compile the "refugees" data annually and by nation. To have a better understanding of the relative impacts, consider creating refugee estimates by the populations of the countries of origin and asylum. Evaluate and correct any incomplete or missing data; depending on the requirements of the study, this may include imputation or the exclusion of some records.
+
+**Analysis:** Trend analysis can be helped by using time-series analysis to look at the trends in the refugee population over time in each nation and worldwide. Find links between changes in the number of refugees and outside happenings. If the effect of an incident on refugee populations is not instantaneous, this could include lagged correlations. Assess the impact of major external events by comparing refugee trends before, during, and after them. To estimate the effect of the COVID-19 pandemic, for example, comparing the number of refugees before and after 2020 may be helpful.
+
+**External Data:** Information on wars, conflicts, and lengths of time spent in them, gathered from reliable sources such as the Heidelberg Institute for International Conflict Research and the Uppsala Conflict Data Programme (UCDP). Details about noteworthy climate events from agencies such as the IPCC (Intergovernmental Panel on Climate Change) and NOAA (National Oceanic and Atmospheric Administration). To evaluate the effects of financial stability, use both national and global economic indicators from the World Bank or the International Monetary Fund (IMF). Details about the COVID-19 pandemic from sources such as the World Health Organisation ( WHO ) and Johns Hopkins University, including a timeline of outbreaks and significant policy interventions.
