@@ -1,6 +1,6 @@
 ---
 title: "Examining Global Refugee Trends and Correlations Over the Years"
-subtitle: "Proposal"
+subtitle: "Analyzing the Effects of External Circumstances on Refugee Movements Between 2010 and 2022"
 format: html
 editor: visual
 ---
