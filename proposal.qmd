@@ -20,6 +20,7 @@ library(kableExtra)
 #| warning: false
 #| message: false
 
+
 tuesdata <- tidytuesdayR::tt_load('2023-08-22')
 
 population <- tuesdata$population
