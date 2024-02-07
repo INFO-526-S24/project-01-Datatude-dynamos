@@ -38,7 +38,7 @@ styled_table <- table %>%
 
 styled_table
 ```
-## Full Preview of Dataset
+**Full Preview of Dataset**
   
 |variable          |class     |description       |
 |:-----------------|:---------|:-----------------|
@@ -118,7 +118,7 @@ We are examining the impact of US politics on patterns of worldwide migration. T
 **Conclusion:**\
 This analysis of the {refugees} dataset highlights the significant influence of outside factors on patterns of worldwide displacement throughout the last ten years. We have learned how major changes in refugee and displacement patterns have been fueled by geopolitical conflicts, natural disasters, and global crises through thorough investigation. The results emphasize not only how urgent it is to deal with the underlying causes of displacement but also how important it is to have strong, well-informed responses to the intricate problems associated with forced migration. These kinds of data-driven analysis are essential for developing humanitarian actions and policies that effectively address the world's growing displacement crisis.
 
-## References:
+## References
 
 1.  Title: Refugees
 
