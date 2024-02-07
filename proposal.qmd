@@ -38,26 +38,27 @@ styled_table <- table %>%
 
 styled_table
 ```
+
 **Full Preview of Dataset**
-  
-|variable          |class     |description       |
-|:-----------------|:---------|:-----------------|
-|year              |double    |The year.              |
-|coo_name          |character |Country of origin name.        |
-|coo               |character |Country of origin UNHCR code.   |
-|coo_iso           |character |Country of origin ISO code.  |
-|coa_name          |character |Country of asylum name.    |
-|coa               |character |Country of asylum UNHCR code.  |
-|coa_iso           |character |Country of asylum ISO code.    |
-|refugees          |double    |The number of refugees.   |
-|asylum_seekers    |double    |The number of asylum-seekers.  |
-|returned_refugees |double    |The number of returned refugees. |
-|idps              |double    |The number of internally displaced persons.     |
-|returned_idps     |double    |The number of returned internally displaced persons.  |
-|stateless         |double    |The number of stateless persons.  |
-|ooc               |double    |The number of others of concern to UNHCR.   |
-|oip               |double    |The number of other people in need of international protection.     |
-|hst               |double    |The number of host community members.     |
+
+| variable          | class     | description                                                     |
+|:--------------------------|:-----------------|:--------------------------|
+| year              | double    | The year.                                                       |
+| coo_name          | character | Country of origin name.                                         |
+| coo               | character | Country of origin UNHCR code.                                   |
+| coo_iso           | character | Country of origin ISO code.                                     |
+| coa_name          | character | Country of asylum name.                                         |
+| coa               | character | Country of asylum UNHCR code.                                   |
+| coa_iso           | character | Country of asylum ISO code.                                     |
+| refugees          | double    | The number of refugees.                                         |
+| asylum_seekers    | double    | The number of asylum-seekers.                                   |
+| returned_refugees | double    | The number of returned refugees.                                |
+| idps              | double    | The number of internally displaced persons.                     |
+| returned_idps     | double    | The number of returned internally displaced persons.            |
+| stateless         | double    | The number of stateless persons.                                |
+| ooc               | double    | The number of others of concern to UNHCR.                       |
+| oip               | double    | The number of other people in need of international protection. |
+| hst               | double    | The number of host community members.                           |
 
 ## Introduction
 
@@ -85,7 +86,7 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 
 ## Analysis plan
 
-`For Question 01:`
+### For Question 01:
 
 **Introduction:**\
 We are examining the impact of US politics on patterns of worldwide migration. This study investigates the long-term effects of shifting political party ideologies in the United States on the number of refugees. We are interested in knowing how political statements and actions in the US affect asylum seekers.
@@ -100,7 +101,7 @@ We are examining the impact of US politics on patterns of worldwide migration. T
 
 **Discussion:** With an emphasis on the 'year' and'refugees' statistics, we will examine in detail how the number of refugees has fluctuated annually for our first question. For the purpose of identifying trends, we will classify refugees according to their year of origin. Using time series techniques, our primary study will track refugee journeys and relate them to significant shifts in US politics and party ideologies. To put our findings in context, we will include outside data on US politics and foreign policy. The objective of this plan is to quantify the impact of US politics on refugee patterns and contribute to the global discourse on refugee issues.
 
-`For Question 02:`
+### For Question 02:
 
 **Introduction:**We're investigating the patterns of change in refugee populations among nations as well as the effects of outside variables including economic conditions, conflict, and climate change. The purpose of this inquiry is to better comprehend the intricacies of worldwide migration and the ways in which significant world occurrences, like as the COVID-19 epidemic, influence refugee flows. The purpose of this research is to draw attention to how linked world events are and how they directly affect the lives of those who are displaced.
 
