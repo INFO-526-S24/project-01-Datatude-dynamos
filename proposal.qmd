@@ -6,11 +6,17 @@ editor: visual
 ---
 
 ```{r, echo=FALSE}
+
 #| label: load-pkgs
-#| message: false
-#install.packages("tidytuesdayR")
-library(tidyverse)
-library(kableExtra)
+#| message: FALSE
+#| warning: false
+
+if(!require(pacman))
+  install.packages("pacman")
+
+pacman::p_load(tidyverse,
+               kableExtra,
+               devtools)
 ```
 
 ## Dataset
