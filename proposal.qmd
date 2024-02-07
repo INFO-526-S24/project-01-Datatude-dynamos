@@ -70,7 +70,7 @@ For Question 01:
 
 **The variables are involved:** *'year'* and *'refugees'* (the total number of refugees)
 
-**Data Preparation:** To spot trends, total the number of refugees by year and nation of origin.
+**Data Preparation:** To spot trends, total the number of refugees by year and country of origin.
 
 **Analysis:** To monitor changes in refugee populations over time, use time series analysis. External data on US foreign policy changes, political party statements, or major political events will be incorporated, and their temporal alignment with changes in refugee trends will be examined, in order to evaluate the influence of US political parties' positions.
 
