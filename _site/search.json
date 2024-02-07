@@ -31,22 +31,22 @@
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
     "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
     "title": "Project title",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "",
+    "text": "You can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
     "title": "Project title",
-    "section": "Code",
-    "text": "Code\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "section": "",
+    "text": "# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
   },
   {
     "objectID": "presentation.html#plots",
@@ -59,8 +59,8 @@
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
     "title": "Project title",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+    "section": "",
+    "text": "Some text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
@@ -74,7 +74,7 @@
     "href": "presentation.html#images",
     "title": "Project title",
     "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+    "text": "Images\n\n\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
@@ -107,29 +107,43 @@
   {
     "objectID": "proposal.html",
     "href": "proposal.html",
-    "title": "Proposal title",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "",
-    "text": "library(tidyverse)"
+    "text": "Downloading file 1 of 1: `population.csv`\n\n\n\n\n\nyear\ncoo_name\ncoo\ncoo_iso\ncoa_name\ncoa\ncoa_iso\nrefugees\nasylum_seekers\nreturned_refugees\nidps\nreturned_idps\nstateless\nooc\noip\nhst\n\n\n\n\n2010\nAfghanistan\nAFG\nAFG\nAfghanistan\nAFG\nAFG\n0\n0\n0\n351907\n3366\n0\n838250\nNA\nNA\n\n\n2010\nIran (Islamic Rep. of)\nIRN\nIRN\nAfghanistan\nAFG\nAFG\n30\n21\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nIraq\nIRQ\nIRQ\nAfghanistan\nAFG\nAFG\n6\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nPakistan\nPAK\nPAK\nAfghanistan\nAFG\nAFG\n6398\n9\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nEgypt\nARE\nEGY\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nChina\nCHI\nCHN\nAlbania\nALB\nALB\n6\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nPalestinian\nGAZ\nPSE\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nIraq\nIRQ\nIRQ\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nSerbia and Kosovo: S/RES/1244 (1999)\nSRB\nSRB\nAlbania\nALB\nALB\n49\n20\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nTürkiye\nTUR\nTUR\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n\n\n\n\n\nDataset Description:\n\nOur target dataset comes from the {refugees} R package, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.\nReasons for Choosing this Dataset:\n\n\nThe significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.\nThis dataset was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we’re interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.\nThis dataset, which provides a comprehensive overview of the size, dynamics, and geographic distribution of populations that have been strongly relocated. Because of its extensive duration—more than ten years—it is feasible to conduct a thorough examination of trends and patterns, enabling the correlation of these movements with worldwide shifts in the political, social, and environmental spheres.\nThe dataset’s versatility in capturing displacement categories allows for a more in-depth examination of different aspects of displacement worldwide, ranging from IDPs and stateless people to refugees and asylum seekers, offering a comprehensive viewpoint on the problem."
   },
   {
     "objectID": "proposal.html#dataset",
     "href": "proposal.html#dataset",
-    "title": "Proposal title",
-    "section": "Dataset",
-    "text": "Dataset\nA brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.\nMake sure to load the data and use inline code for some of this information."
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "",
+    "text": "Downloading file 1 of 1: `population.csv`\n\n\n\n\n\nyear\ncoo_name\ncoo\ncoo_iso\ncoa_name\ncoa\ncoa_iso\nrefugees\nasylum_seekers\nreturned_refugees\nidps\nreturned_idps\nstateless\nooc\noip\nhst\n\n\n\n\n2010\nAfghanistan\nAFG\nAFG\nAfghanistan\nAFG\nAFG\n0\n0\n0\n351907\n3366\n0\n838250\nNA\nNA\n\n\n2010\nIran (Islamic Rep. of)\nIRN\nIRN\nAfghanistan\nAFG\nAFG\n30\n21\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nIraq\nIRQ\nIRQ\nAfghanistan\nAFG\nAFG\n6\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nPakistan\nPAK\nPAK\nAfghanistan\nAFG\nAFG\n6398\n9\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nEgypt\nARE\nEGY\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nChina\nCHI\nCHN\nAlbania\nALB\nALB\n6\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nPalestinian\nGAZ\nPSE\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nIraq\nIRQ\nIRQ\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nSerbia and Kosovo: S/RES/1244 (1999)\nSRB\nSRB\nAlbania\nALB\nALB\n49\n20\n0\n0\n0\n0\n0\nNA\nNA\n\n\n2010\nTürkiye\nTUR\nTUR\nAlbania\nALB\nALB\n5\n0\n0\n0\n0\n0\n0\nNA\nNA\n\n\n\n\n\n\n\nDataset Description:\n\nOur target dataset comes from the {refugees} R package, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.\nReasons for Choosing this Dataset:\n\n\nThe significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.\nThis dataset was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we’re interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.\nThis dataset, which provides a comprehensive overview of the size, dynamics, and geographic distribution of populations that have been strongly relocated. Because of its extensive duration—more than ten years—it is feasible to conduct a thorough examination of trends and patterns, enabling the correlation of these movements with worldwide shifts in the political, social, and environmental spheres.\nThe dataset’s versatility in capturing displacement categories allows for a more in-depth examination of different aspects of displacement worldwide, ranging from IDPs and stateless people to refugees and asylum seekers, offering a comprehensive viewpoint on the problem."
   },
   {
     "objectID": "proposal.html#questions",
     "href": "proposal.html#questions",
-    "title": "Proposal title",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Questions",
-    "text": "Questions\nThe two questions you want to answer."
+    "text": "Questions\nQuestion 01:\nHow have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.\nQuestion 02:\nHow the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?"
   },
   {
     "objectID": "proposal.html#analysis-plan",
     "href": "proposal.html#analysis-plan",
-    "title": "Proposal title",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis plan",
-    "text": "Analysis plan\n\nA plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any)."
+    "text": "Analysis plan\nFor Question 01:\nThe variables are involved: ‘year’ and ‘refugees’ (the total number of refugees)\nData Preparation: To spot trends, total the number of refugees by year and nation of origin.\nAnalysis: To monitor changes in refugee populations over time, use time series analysis. External data on US foreign policy changes, political party statements, or major political events will be incorporated, and their temporal alignment with changes in refugee trends will be examined, in order to evaluate the influence of US political parties’ positions.\nExternal Data: US political timelines, shifts in foreign policy, and noteworthy political pronouncements or occurrences pertaining to refugee policies.\nFor Question 02:\n\nThe variables are involved: The following are the primary variables: ‘year’, ‘coo_name’ (destination country name), ‘coa_name’ (asylum country name), and ‘refugees’ (the total number of refugees).\nData Preparation: Gathering Refugee Data: To track trends over time and across various regions, compile the “refugees” data annually and by nation. To have a better understanding of the relative impacts, consider creating refugee estimates by the populations of the countries of origin and asylum. Evaluate and correct any incomplete or missing data; depending on the requirements of the study, this may include imputation or the exclusion of some records.\nAnalysis: Trend analysis can be helped by using time-series analysis to look at the trends in the refugee population over time in each nation and worldwide. Find links between changes in the number of refugees and outside happenings. If the effect of an incident on refugee populations is not instantaneous, this could include lagged correlations. Assess the impact of major external events by comparing refugee trends before, during, and after them. To estimate the effect of the COVID-19 pandemic, for example, comparing the number of refugees before and after 2020 may be helpful.\nExternal Data: Information on wars, conflicts, and lengths of time spent in them, gathered from reliable sources such as the Heidelberg Institute for International Conflict Research and the Uppsala Conflict Data Programme (UCDP). Details about noteworthy climate events from agencies such as the IPCC (Intergovernmental Panel on Climate Change) and NOAA (National Oceanic and Atmospheric Administration). To evaluate the effects of financial stability, use both national and global economic indicators from the World Bank or the International Monetary Fund (IMF). Details about the COVID-19 pandemic from sources such as the World Health Organisation ( WHO ) and Johns Hopkins University, including a timeline of outbreaks and significant policy interventions."
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "Project title",
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide\n\n\n\n\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\n\n\n\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSome text\ngoes here"
+  },
+  {
+    "objectID": "presentation.html#footnotes",
+    "href": "presentation.html#footnotes",
+    "title": "Project title",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAnd add footnotes↩︎"
   }
 ]

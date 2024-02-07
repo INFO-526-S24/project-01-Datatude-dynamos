@@ -5,20 +5,12 @@ format: html
 editor: visual
 ---
 
-
-```{r ,echo=FALSE}
+```{r, echo=FALSE}
 #| label: load-pkgs
 #| message: false
-if (!require("pacman")) 
-  install.packages("pacman")
-
-# use this line for installing/loading
-pacman::p_load("tidyverse",
-               "kableExtra") 
-
-devtools::install_github("tidyverse/dsbox")
-```
-
+#install.packages("tidytuesdayR")
+library(tidyverse)
+library(kableExtra)
 ```
 
 ## Dataset
