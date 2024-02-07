@@ -39,15 +39,13 @@ styled_table <- table %>%
 styled_table
 ```
 
-**Dataset Description:**
+**Dataset Description:**\
 
-\
-Our target dataset comes from the {refugees} R package, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.
+Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.
 
 **Reasons for Choosing this Dataset:**
 
--   \
-    The significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.
+-   The significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.
 
 -   This dataset was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we're interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.
 
@@ -57,18 +55,15 @@ Our target dataset comes from the {refugees} R package, which compiles extensive
 
 ## Questions
 
-**Question 01:**\
-How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.
+**Question 01:** How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.
 
-**Question 02:**
-
-How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
+**Question 02:** How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
 ## Analysis plan
 
-For Question 01:
+`For Question 01:`
 
-**The variables are involved:** *'year'* and *'refugees'* (the total number of refugees)
+**The variables are involved:** *`'year'`* and *`'refugees'`* `(the total number of refugees)`
 
 **Data Preparation:** To spot trends, total the number of refugees by year and country of origin.
 
@@ -76,13 +71,12 @@ For Question 01:
 
 **External Data:** US political timelines, shifts in foreign policy, and noteworthy political pronouncements or occurrences pertaining to refugee policies.
 
-For Question 02:
+`For Question 02:`
 
-**\
-The variables are involved:** The following are the primary variables: *'year'*, *'coo_name'* (destination country name), *'coa_name'* (asylum country name), and *'refugees'* (the total number of refugees).
+**The variables are involved:** The following are the primary variables: *`'year'`*, *`'coo_name'`*, `(destination country name)`, *`'coa_name'`*, `(asylum country name)`, and *`'refugees'`* ,`(the total number of refugees)`.
 
 **Data Preparation:** Gathering Refugee Data: To track trends over time and across various regions, compile the "refugees" data annually and by nation. To have a better understanding of the relative impacts, consider creating refugee estimates by the populations of the countries of origin and asylum. Evaluate and correct any incomplete or missing data; depending on the requirements of the study, this may include imputation or the exclusion of some records.
 
 **Analysis:** Trend analysis can be helped by using time-series analysis to look at the trends in the refugee population over time in each nation and worldwide. Find links between changes in the number of refugees and outside happenings. If the effect of an incident on refugee populations is not instantaneous, this could include lagged correlations. Assess the impact of major external events by comparing refugee trends before, during, and after them. To estimate the effect of the COVID-19 pandemic, for example, comparing the number of refugees before and after 2020 may be helpful.
 
-**External Data:** Information on wars, conflicts, and lengths of time spent in them, gathered from reliable sources such as the Heidelberg Institute for International Conflict Research and the Uppsala Conflict Data Programme (UCDP). Details about noteworthy climate events from agencies such as the IPCC (Intergovernmental Panel on Climate Change) and NOAA (National Oceanic and Atmospheric Administration). To evaluate the effects of financial stability, use both national and global economic indicators from the World Bank or the International Monetary Fund (IMF). Details about the COVID-19 pandemic from sources such as the World Health Organisation ( WHO ) and Johns Hopkins University, including a timeline of outbreaks and significant policy interventions.
+**External Data:** Data on wars, conflicts, and durations of involvement collected from reputable sources, including the Uppsala Conflict Data Programme (UCDP) and the Heidelberg Institute for International Conflict Research.Information about significant climate events from organizations like the National Oceanic and Atmospheric Administration (NOAA) and the IPCC (Intergovernmental Panel on Climate Change).Use both national and global economic statistics from the World Bank or the International Monetary Fund (IMF) to assess the consequences of financial stability.information about the COVID-19 pandemic, including a chronology of outbreaks and key policy interventions, from sources including the World Health Organization (WHO) and Johns Hopkins University.
