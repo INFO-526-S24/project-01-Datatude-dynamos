@@ -38,6 +38,26 @@ styled_table <- table %>%
 
 styled_table
 ```
+## Full Preview of Dataset
+  
+|variable          |class     |description       |
+|:-----------------|:---------|:-----------------|
+|year              |double    |The year.              |
+|coo_name          |character |Country of origin name.        |
+|coo               |character |Country of origin UNHCR code.   |
+|coo_iso           |character |Country of origin ISO code.  |
+|coa_name          |character |Country of asylum name.    |
+|coa               |character |Country of asylum UNHCR code.  |
+|coa_iso           |character |Country of asylum ISO code.    |
+|refugees          |double    |The number of refugees.   |
+|asylum_seekers    |double    |The number of asylum-seekers.  |
+|returned_refugees |double    |The number of returned refugees. |
+|idps              |double    |The number of internally displaced persons.     |
+|returned_idps     |double    |The number of returned internally displaced persons.  |
+|stateless         |double    |The number of stateless persons.  |
+|ooc               |double    |The number of others of concern to UNHCR.   |
+|oip               |double    |The number of other people in need of international protection.     |
+|hst               |double    |The number of host community members.     |
 
 ## Introduction
 
@@ -97,3 +117,11 @@ We are examining the impact of US politics on patterns of worldwide migration. T
 \
 **Conclusion:**\
 This analysis of the {refugees} dataset highlights the significant influence of outside factors on patterns of worldwide displacement throughout the last ten years. We have learned how major changes in refugee and displacement patterns have been fueled by geopolitical conflicts, natural disasters, and global crises through thorough investigation. The results emphasize not only how urgent it is to deal with the underlying causes of displacement but also how important it is to have strong, well-informed responses to the intricate problems associated with forced migration. These kinds of data-driven analysis are essential for developing humanitarian actions and policies that effectively address the world's growing displacement crisis.
+
+## References:
+
+1.  Title: Refugees
+
+    Source: tidytuesday
+
+    Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
