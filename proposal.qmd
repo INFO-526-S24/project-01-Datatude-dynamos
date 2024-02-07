@@ -41,13 +41,13 @@ styled_table
 
 **Dataset Description:**\
 
-Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is large and provides a detailed look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.
+Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC. Including refugees, asylum seekers, internally displaced people (IDPs), stateless people, and other groups of concern, this dataset covers a wide range of displacement categories from 2010 to 2022. The dataset has thorough information on each record categorized by the year of data collection, as well as quantitative metrics on various displaced population groups and the countries of origin and asylum (with the corresponding UNHCR and ISO codes). At 64,809 rows, this dataset is huge and provides a in detail look at changes in displacement over a period of more than ten years. It is an invaluable tool for studying worldwide migration patterns.
 
-**Reasons for Choosing this Dataset:**
+**Justifications for Choosing this Dataset:**
 
 -   The significance of this dataset to current worldwide problems and displacement patterns—such as the effects of war, climate change, and political unrest on populations—was taken into consideration throughout its selection.
 
--   This dataset was selected for another reason: its combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we're interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.
+-   There is another reason this dataset was chosen: It is a combination of categorical (such as country names, codes) and numerical (such as refugee and IDP counts) characteristics make it ideal for a wide variety of analytically and graphical techniques. Lastly, we're interested in learning the underlying motivations behind this, such as the effects of COVID, war, climate change, etc.
 
 -   This dataset, which provides a comprehensive overview of the size, dynamics, and geographic distribution of populations that have been strongly relocated. Because of its extensive duration—more than ten years—it is feasible to conduct a thorough examination of trends and patterns, enabling the correlation of these movements with worldwide shifts in the political, social, and environmental spheres.
 
