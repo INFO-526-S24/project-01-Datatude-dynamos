@@ -127,6 +127,8 @@ We are examining the impact of US politics on patterns of worldwide migration. T
 
 **External Data:** US political timelines, shifts in foreign policy, and noteworthy political pronouncements or occurrences pertaining to refugee policies.
 
+**Data Visualization Technique:** Histogram or Line Graph
+
 **Discussion:** With an emphasis on the `'year'` and `'refugees'` statistics, we will examine in detail how the number of refugees has fluctuated annually for our first question. For the purpose of identifying trends, we will classify refugees according to their year of origin. Using time series techniques, our primary study will track refugee journeys and relate them to significant shifts in US politics and party ideologies. To put our findings in context, we will include outside data on US politics and foreign policy. The objective of this plan is to quantify the impact of US politics on refugee patterns and contribute to the global discourse on refugee issues.
 
 ### For Question 02:
@@ -140,6 +142,8 @@ We are examining the impact of US politics on patterns of worldwide migration. T
 **Analysis:** Trend analysis can be helped by using time-series analysis to look at the trends in the refugee population over time in each nation and worldwide. Find links between changes in the number of refugees and outside happenings. If the effect of an incident on refugee populations is not instantaneous, this could include lagged correlations. Assess the impact of major external events by comparing refugee trends before, during, and after them. To estimate the effect of the COVID-19 pandemic, for example, comparing the number of refugees before and after 2020 may be helpful.
 
 **External Data:** Data on wars, conflicts, and duration of involvement collected from reputable sources, including the Uppsala Conflict Data Programmer (UCDP) and the Heidelberg Institute for International Conflict Research.Information about significant climate events from organizations like the National Oceanic and Atmospheric Administration (NOAA) and the IPCC (Intergovernmental Panel on Climate Change). Use both national and global economic statistics from the World Bank or the International Monetary Fund (IMF) to assess the consequences of financial stability information about the COVID-19 pandemic, including a chronology of outbreaks and key policy interventions, from sources including the World Health Organization (WHO) and Johns Hopkins University.
+
+**Data Visualization Technique:** We will try to show this using Maps.
 
 **Discussion:** We analyse refugee patterns over time across nations by analyzing `'year'`, `'coo_name'`, `'coa_name'`, and `'refugees'` data. To acquire a clearer understanding of the repercussions, we will gather annual refugee data by nation and normalize it against population statistics. Time-series techniques will be used in the study to find trends and link them to important world events including wars, climate disasters, and changes in the economy. Our goal is to quantify the influence of these events on displacement by examining refugee trends around them. The context provided by external data, such as conflict histories, records of climate events, economic indicators, and epidemic timelines, will help to create a complete picture of the variables influencing global refugee movements.\
 \
