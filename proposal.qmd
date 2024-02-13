@@ -28,7 +28,7 @@ pacman::p_load(tidyverse,
 
 ## Dataset
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 #| label: load-dataset
 #| warning: false
 #| message: false
