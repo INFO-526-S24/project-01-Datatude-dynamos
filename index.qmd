@@ -143,31 +143,7 @@ print(plot2)
 
 
 ```
-## Returned Refugee populations over time.
 
-```{r, message=FALSE, warning=FALSE}
-
-# Animated Plot: Total Refugee populations over time with bar plot, y-axis in 'K'
-# Ensure 'year' is a numeric column for the x-axis
-total_refugee_trends$year <- as.numeric(as.character(total_refugee_trends$year))
-
-# Define the range of years for the x-axis
-year_range <- range(total_refugee_trends$year)
-
-# Animated Plot: Total Refugee populations over time with bar plot, y-axis in 'K'
-animated_plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees, group = 1)) +
-  geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
-  labs(title = "Year: {frame_time}", x = "Year", y = "Number of Refugees (in K)") +
-  theme_minimal() +
-  scale_x_continuous(breaks = seq(year_range[1], year_range[2], by = 1)) +  # Show every year on the x-axis
-  transition_time(year) +  # Animate over the 'year'
-  ease_aes('linear')
-
-# Render and save the animation as a GIF file
-anim <- animate(animated_plot_total_refugees, width = 800, height = 600, fps = 10, duration = 10, end_pause = 50, renderer = gifski_renderer())
-anim_save("total_refugee_populations_over_time.gif", animation = anim)
-anim
-```
 
 ## Refugees by year and country of origin.
 
