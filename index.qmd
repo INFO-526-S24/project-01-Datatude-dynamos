@@ -269,11 +269,7 @@ ggplot(refugee_trends, aes(x = year, y = total_refugees, color = party)) +
 
 ### Discussion
 
-The visualizations offer a vivid depiction of the evolving global forest conversion patterns between `1990 and 2015`. Through color-coded maps, complex net forest conversion rates are presented in an easily understandable manner, facilitating the immediate recognition of trends. Darker shades representing significant deforestation or expansion immediately draw attention, guiding viewers to focus on countries undergoing substantial environmental changes. The animated visualizations highlight the dynamic nature of global forest conversion over the years across different countries.
 
-The plot reveals significant changes in forest cover over recent decades, with unexpected rises observed in specific countries. Notable positive shifts occurred in the `2000s` and `2010s`, particularly in countries like the `USA`, `Russia`, `Australia`, `China`, and `India`. These improvements might be attributed to global deforestation awareness campaigns, leading to increased forest coverage in these nations. However, a significant portion of *South America* and *Africa* continues to bear the brunt of deforestation, with no signs of slowing down, particularly in countries like `Brazil` and `Tanzania`. Economically developed continents seem to prioritize reforestation initiatives, contrasting with less economically advantaged regions where such efforts receive comparatively less focus.
-
-In conclusion, this visualization offers a compelling narrative of global environmental change, highlighting both challenges and successes in forest conservation efforts. It serves as a valuable tool for policymakers and environmentalists providing actionable insights into regional and global trends. Such visualizations can aid in targeted policy formulation, focusing resources where they are most needed, and fostering international collaborations to combat deforestation.
 
 ## References
 
