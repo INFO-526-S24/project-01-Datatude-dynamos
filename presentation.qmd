@@ -3,7 +3,7 @@ title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav"
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/r01.jpg
   data-background-size: stretch
   data-background-opacity: "0.7"
   data-slide-number: none
@@ -92,7 +92,7 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 ## Data Preparation and Pre-processing
 -   Using the R dplyr package
 -   First aggregate our data by year before summarizing the overall number of refugees
--   Making sure to divide these totals into thousands for easier comprehension.
+-   Divide these totals into thousands for easier comprehension
 
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 total_refugee_trends <- population_data %>%
@@ -103,7 +103,6 @@ total_refugee_trends <- population_data %>%
 ## Analysis 01: Refugee populations over time  {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
--   A small number of refugees have returned over a period of time
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
@@ -118,6 +117,12 @@ plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refu
 print(plot_total_refugees)
 
 
+```
+## Analysis 02: Refugee populations over time  {.smaller auto-animate="true"}
+
+-   A small number of refugees have returned over a period of time
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
 returned_refugee_trends <- population_data %>%
   group_by(year) %>%

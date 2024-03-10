@@ -133,13 +133,6 @@
     "text": "Data Types:\n\nColumn: data type"
   },
   {
-    "objectID": "presentation.html",
-    "href": "presentation.html",
-    "title": "Question 02",
-    "section": "",
-    "text": "title: “Examining Global Refugee Trends and Correlations Over the Years” subtitle: “INFO 526 - Fall 2023 - Project 1” author: “Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav” title-slide-attributes: data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg data-background-size: stretch data-background-opacity: “0.7” data-slide-number: none format: revealjs: theme: [‘data/customtheming.scss’]\neditor: visual execute: echo: false"
-  },
-  {
     "objectID": "presentation.html#our-dataset",
     "href": "presentation.html#our-dataset",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
@@ -158,14 +151,14 @@
     "href": "presentation.html#data-preparation-and-pre-processing",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Data Preparation and Pre-processing",
-    "text": "Data Preparation and Pre-processing\n\nUsing the R dplyr package\nFirst aggregate our data by year before summarizing the overall number of refugees\nMaking sure to divide these totals into thousands for easier comprehension.\n\n\ntotal_refugee_trends &lt;- population_data %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)"
+    "text": "Data Preparation and Pre-processing\n\nUsing the R dplyr package\nFirst aggregate our data by year before summarizing the overall number of refugees\nDivide these totals into thousands for easier comprehension\n\n\ntotal_refugee_trends &lt;- population_data %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)"
   },
   {
     "objectID": "presentation.html#analysis-01-refugee-populations-over-time",
     "href": "presentation.html#analysis-01-refugee-populations-over-time",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis 01: Refugee populations over time",
-    "text": "Analysis 01: Refugee populations over time\n\nExpeditious growth of the refugee population over time\nA small number of refugees have returned over a period of time"
+    "text": "Analysis 01: Refugee populations over time\n\nExpeditious growth of the refugee population over time"
   },
   {
     "objectID": "presentation.html#how-the-global-refugee-population-fluctuate-across-the-countries-is-their-any-external-factors-impact-on-refugee-population-like-covid-19-or-war-or-climate-change-or-financial-stability",
@@ -231,10 +224,10 @@
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
-    "objectID": "presentation.html#footnotes",
-    "href": "presentation.html#footnotes",
-    "title": "Question 02",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAnd add footnotes↩︎"
+    "objectID": "presentation.html#analysis-02-refugee-populations-over-time",
+    "href": "presentation.html#analysis-02-refugee-populations-over-time",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis 02: Refugee populations over time",
+    "text": "Analysis 02: Refugee populations over time\n\nA small number of refugees have returned over a period of time"
   }
 ]
