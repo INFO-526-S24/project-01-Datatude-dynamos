@@ -1,3 +1,4 @@
+---
 title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav"
