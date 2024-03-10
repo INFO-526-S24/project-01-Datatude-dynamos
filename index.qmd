@@ -298,4 +298,3 @@ Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/
 Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
 
 ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
-
