@@ -197,6 +197,24 @@ print(plot_top_countries)
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
+#######################
+# Aggregate total number of asylum seekers by year and country of asylum
+asylum_country_trends <- population_data %>%
+  group_by(year, coa_name) %>%
+  summarise(total_asylum_seekers = sum(asylum_seekers, na.rm = TRUE)) %>%
+  ungroup()
+
+# Identify the top 20 countries with the highest total number of asylum seekers
+top_asylum_countries <- asylum_country_trends %>%
+  group_by(coa_name) %>%
+  summarise(total_asylum_seekers = sum(total_asylum_seekers, na.rm = TRUE)) %>%
+  top_n(20, total_asylum_seekers) %>%
+  pull(coa_name)
+
+# Filter the data to include only top 20 countries of asylum
+top_asylum_country_data <- asylum_country_trends %>%
+  filter(coa_name %in% top_asylum_countries)
+
 # Aggregate the total number of asylum seekers for each of the top 20 countries across all years
 top_country_total_asylum_seekers <- top_asylum_country_data %>%
   group_by(coa_name) %>%
@@ -211,7 +229,7 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = re
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 4 / 8) # Format y-axis labels with commas for readability
+  theme(aspect.ratio = 6 / 10) # Format y-axis labels with commas for readability
 
 print(plot_top_asylum_countries) 
 #print(plot_top_countries)
