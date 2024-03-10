@@ -73,6 +73,7 @@ knitr::opts_chunk$set(
 population_data <- read_csv('data/population.csv') 
 ```
 
+
 ## Our Dataset {auto-animate="true"}
 
 Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
@@ -94,15 +95,18 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 -   First aggregate our data by year before summarizing the overall number of refugees
 -   Divide these totals into thousands for easier comprehension
 
+
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 total_refugee_trends <- population_data %>%
   group_by(year) %>%
   summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)  
 ```
 
+
 ## Analysis 01: Refugee populations over time  {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
@@ -119,9 +123,11 @@ print(plot_total_refugees)
 
 
 ```
+
 ## Analysis 02: Refugee populations over time  {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
@@ -142,10 +148,12 @@ plot2 <- ggplot(returned_refugee_trends, aes(x = year, y = returned_refugees)) +
 print(plot2)
 
 ```
+
 ## Analysis 03: Refugees by year and country of origin  {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of refugees
 -   The heigest number of refugee came has come from "Syrian", "Afghanistan" and "South Sudan"
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -190,9 +198,11 @@ print(plot_top_countries)
 # Adding US political context
 ```
 
+
 ## Analysis 04: Refugees by year and country of origin  {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of asylum seekers
+
 
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
@@ -218,9 +228,11 @@ print(plot_top_asylum_countries)
 # Adding US political context
 ```
 
+
 ## Analysis 05: Refugee populations over time with US political context.  {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #install.packages("OpenImageR")
@@ -278,6 +290,7 @@ plot
 
 ```
 
+
 # Question 02
 
 ## How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
@@ -304,16 +317,20 @@ or in two columns
 
 ## Code
 
+
 ```{r, echo=FALSE}
 
 
 ```
 
+
 ## Plots
+
 
 ```{r}
 
 ```
+
 
 ## Plot and text
 
@@ -325,9 +342,11 @@ or in two columns
 :::
 
 ::: {.column width="50%"}
+
 ```{r, warning=FALSE, fig.width=5.5}
 
 ```
+
 :::
 :::
 
@@ -337,9 +356,11 @@ or in two columns
 
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
+
 ```{r}
 
 ```
+
 
 ## Images
 
@@ -370,3 +391,4 @@ Limitations:
 -   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
 
 -   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
+
