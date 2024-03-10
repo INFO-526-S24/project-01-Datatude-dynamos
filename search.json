@@ -151,14 +151,42 @@
     "href": "presentation.html#data-preparation-and-pre-processing",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Data Preparation and Pre-processing",
-    "text": "Data Preparation and Pre-processing\n\nUsing the R dplyr package\nFirst aggregate our data by year before summarizing the overall number of refugees\nMaking sure to divide these totals into thousands for easier comprehension.\n\n\ntotal_refugee_trends &lt;- population_data %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)"
+    "text": "Data Preparation and Pre-processing\n\nUsing the R dplyr package\nFirst aggregate our data by year before summarizing the overall number of refugees\nDivide these totals into thousands for easier comprehension\n\n\ntotal_refugee_trends &lt;- population_data %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)"
   },
   {
     "objectID": "presentation.html#analysis-01-refugee-populations-over-time",
     "href": "presentation.html#analysis-01-refugee-populations-over-time",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis 01: Refugee populations over time",
-    "text": "Analysis 01: Refugee populations over time\n\nExpeditious growth of the refugee population over time\nA small number of refugees have returned over a period of time"
+    "text": "Analysis 01: Refugee populations over time\n\nExpeditious growth of the refugee population over time"
+  },
+  {
+    "objectID": "presentation.html#analysis-02-refugee-populations-over-time",
+    "href": "presentation.html#analysis-02-refugee-populations-over-time",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis 02: Refugee populations over time",
+    "text": "Analysis 02: Refugee populations over time\n\nA small number of refugees have returned over a period of time"
+  },
+  {
+    "objectID": "presentation.html#analysis-03-refugees-by-year-and-country-of-origin",
+    "href": "presentation.html#analysis-03-refugees-by-year-and-country-of-origin",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis 03: Refugees by year and country of origin",
+    "text": "Analysis 03: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of refugees\nThe heigest number of refugee came has come from “Syrian”, “Afghanistan” and “South Sudan”"
+  },
+  {
+    "objectID": "presentation.html#analysis-04-refugees-by-year-and-country-of-origin",
+    "href": "presentation.html#analysis-04-refugees-by-year-and-country-of-origin",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis 04: Refugees by year and country of origin",
+    "text": "Analysis 04: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of asylum seekers"
+  },
+  {
+    "objectID": "presentation.html#analysis-05-refugee-populations-over-time-with-us-political-context.",
+    "href": "presentation.html#analysis-05-refugee-populations-over-time-with-us-political-context.",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis 05: Refugee populations over time with US political context.",
+    "text": "Analysis 05: Refugee populations over time with US political context.\n\nA small number of refugees have returned over a period of time"
   },
   {
     "objectID": "presentation.html#how-the-global-refugee-population-fluctuate-across-the-countries-is-their-any-external-factors-impact-on-refugee-population-like-covid-19-or-war-or-climate-change-or-financial-stability",
