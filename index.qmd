@@ -2,7 +2,7 @@
 title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Project 1"
 author: 
-  - name: "Datatude Dynamos - Ayesha Khatun"
+  - name: "Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Analyzing the Effects of External Circumstances on Refugee Movements Between 2010 and 2022"
@@ -17,7 +17,7 @@ execute:
   echo: false
 ---
 
-```{r load_packages, message=FALSE, include=FALSE}
+```{r load_packages, message=FALSE, include=FALSE, echo=FALSE}
 # GETTING THE LIBRARIES
 if (!require(pacman))
   install.packages(pacman)
@@ -63,29 +63,19 @@ knitr::opts_chunk$set(
 
 # Getting all the underlying data in the dataset
 population_data <- read_csv('data/population.csv') 
-forest        <- read.csv(here("data", "forest.csv"))
-forest_area   <- read.csv(here("data", "forest_area.csv"))
-brazil_loss   <- read.csv(here("data", "brazil_loss.csv"))
-soybean_use   <- read.csv(here("data", "soybean_use.csv"))
-vegetable_oil <- read.csv(here("data", "vegetable_oil.csv"))
-total_forest  <- read.csv(here("data", "forest-area-km.csv"))
-deforestation_by_source <- read.csv(here("data", "deforestation_by_source.csv"))
 ```
 
 ## Abstract
 
-Using the rich dataset offered by the {refugees} R package, this project sets out on an adventurous trip across the complicated landscape of worldwide migration from 2010 to 2022. It offers a comprehensive picture of the numerous factors influencing the lives of refugees, internally displaced people (IDPs), asylum seekers, stateless people, and more, spanning over 64,000 entries from sources like UNHCR, UNRWA, and IDMC. This research tries to unravel the complex web of variables driving forced migration, from socioeconomic turbulence to environmental calamities and geopolitical upheavals, via thorough investigation.
+Using the rich dataset offered by the `{refugees}` R package, this project sets out on an adventurous trip across the complicated landscape of worldwide migration from 2010 to 2022. It offers a comprehensive picture of the numerous factors influencing the lives of refugees, internally displaced people (IDPs), asylum seekers, stateless people, and more, spanning over 64,000 entries from sources like UNHCR, UNRWA, and IDMC. This research tries to unravel the complex web of variables driving forced migration, from socioeconomic turbulence to environmental calamities and geopolitical upheavals, via thorough investigation.
 
-Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships.
-In addition to tracking the rise and fall of international migration, this project aims to position these movements in the broader context of international politics, environmental issues, and global health concerns. Our objective is to present a comprehensive picture of the factors influencing worldwide migration patterns by integrating data on refugee movements with external socio-political and environmental events.
-This study is essentially a deep dive into the dynamics of displacement, providing insights into how international events and policies affect vulnerable populations' movements. It serves as evidence of the interdependence of worldwide phenomena and their significant influence on human lives, highlighting the necessity of thoughtful, caring answers to the difficulties associated with forced migration.
+Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships. In addition to tracking the rise and fall of international migration, this project aims to position these movements in the broader context of international politics, environmental issues, and global health concerns. Our objective is to present a comprehensive picture of the factors influencing worldwide migration patterns by integrating data on refugee movements with external socio-political and environmental events. This study is essentially a deep dive into the dynamics of displacement, providing insights into how international events and policies affect vulnerable populations' movements. It serves as evidence of the interdependence of worldwide phenomena and their significant influence on human lives, highlighting the necessity of thoughtful, caring answers to the difficulties associated with forced migration.
 
 ## Introduction
 
 This project analyses more than 64,000 data from the {refugees} R package, covering the period from 2010 to 2022, in order to investigate the intricate dynamics of worldwide displacement. The dataset provides a detailed look at the lives of refugees, internally displaced people (IDPs), asylum seekers, and stateless people, among others. It is derived from UNHCR, UNRWA, and IDMC and sheds light on the complex dynamics of forced migration. The goal is to identify the complex interactions that exist between outside variables and their impacts on patterns of global displacement, including geopolitical conflicts, natural disasters, and sociopolitical upheavals.
 
 The impact of US political positions on refugee trends and the general changes in worldwide refugee populations as a result of external factors like wars, climatic shifts, and health crises like the COVID-19 pandemic are central to our research. We want to analyse the complex relationship between major world events and displacement trends using time-series analysis and statistical evaluations. This study aims to map out the ebb and flow of worldwide displacement while also placing these movements within the broader context of world events. This will help to better understand the forces driving migration, the interconnections of world events, and the effects these events have on displaced populations.
-
 
 ## Question 1: How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.
 
@@ -95,14 +85,11 @@ Our project's first inquiry explores the complex interplay between international
 
 ### Approach
 
-We have adopted a multimodal analytical approach to this subject, combining a comparative assessment of political epochs in the United States with time-series analysis. For clarity and scalability in our visual representations, we first aggregate the overall number of refugees by year, normalising the data to thousands. We can create a chronological narrative of refugee migrations by layering important political events and changes in the United States over these trends thanks to this basic data. We produce visual aids, such as bar plots and trend lines, using ggplot2 to clarify the relationship between refugee populations and changes in U.S. politics. Our research is further enhanced by the addition of data from returning refugees, which provides insights into the cyclical nature of displacement and resettlement.
+We have adopted a multimodal analytical approach to this subject, combining a comparative assessment of political epochs in the United States with time-series analysis. For clarity and scalability in our visual representations, we first aggregate the overall number of refugees by year, normalizing the data to thousands. We can create a chronological narrative of refugee migrations by layering important political events and changes in the United States over these trends thanks to this basic data. We produce visual aids, such as bar plots and trend lines, using ggplot2 to clarify the relationship between refugee populations and changes in U.S. politics. Our research is further enhanced by the addition of data from returning refugees, which provides insights into the cyclical nature of displacement and resettlement.
 
-**Data Preparation and Pre-processing**
-The preparation stage of the data is essential to transforming our dataset into a format that allows for effective analysis. Using the R dplyr package, we first aggregate our data by year before summarising the overall number of refugees—making sure to divide these totals into thousands for easier comprehension. This procedure is also applied to data pertaining to refugees who have returned, yielding a parallel dataset that illustrates the flow of return movements in addition to original displacements. We also prepare by making the 'year' a numeric variable so that we can use it as an axis in both our static and animated visualisations. The careful processing of the data paves the way for an in-depth investigation of the relationship between U.S. political positions and international refugee trends.
+**Data Preparation and Pre-processing** The preparation stage of the data is essential to transforming our data-set into a format that allows for effective analysis. Using the R dplyr package, we first aggregate our data by year before summarizing the overall number of refugees—making sure to divide these totals into thousands for easier comprehension. This procedure is also applied to data pertaining to refugees who have returned, yielding a parallel dataset that illustrates the flow of return movements in addition to original displacements. We also prepare by making the 'year' a numeric variable so that we can use it as an axis in both our static and animated visualization. The careful processing of the data paves the way for an in-depth investigation of the relationship between U.S. political positions and international refugee trends.
 
-
-
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
 
 # Data Preparation - Aggregate total number of refugees by year and convert to thousands (K)
 total_refugee_trends <- population_data %>%
@@ -110,9 +97,10 @@ total_refugee_trends <- population_data %>%
   summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)  # Convert to thousands
 
 ```
+
 ## Refugee populations over time.
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees)) +
   geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
@@ -144,6 +132,15 @@ print(plot2)
 
 ```
 
+The graphic illustrates the changes in overall refugee populations over time using a bar graph that shows annual fluctuations. It also includes a trend line that indicates a quadratic growth pattern.
+
+**A. Expeditious growth of the refugee population over time**
+
+Plot 01 clearly demonstrates the rapid expansion of the refugee population over time. The utilization of sky-blue bars in conjunction with an orange trend line aptly accentuates the fluctuations in refugee figures from the early 2010s to 2022. The y-axis, which represents the number of refugees in thousands, is displayed with comma separators for enhanced Expeditious growth of the refugee population over time clarity.
+
+**B. A small number of refugees have returned over a period of time**
+
+Conversely, Plot 02 demonstrates that a limited number of refugees have repatriated throughout a specific duration. This graph is an effective tool for illustrating the dynamic nature of refugee populations, highlighting the rising trend and the urgent requirement for global attention and action in response to refugee crises.
 
 ## Refugees by year and country of origin.
 
@@ -226,63 +223,79 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = re
 print(plot_top_asylum_countries)
 ```
 
+This figure displays the aggregate number of refugees originating from the top 20 nations. The bar chart depicts various countries, with each bar uniformly shaded in purple. The y-axis represents the arrangement of countries, while the x-axis represents the overall number of refugees. The bars are arranged in a manner that emphasizes the nations with the greatest number of refugees, facilitating the identification of the countries with the highest refugee populations. This type of representation facilitates a rapid comprehension of the worldwide refugee issue by illustrating the nations that are most impacted.
 
 ## Refugee populations over time with US political context.
 
-```{r, message=FALSE, warning=FALSE}
-
-library(ggplot2)
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+#install.packages("OpenImageR")
+library(tidyverse)
 library(dplyr)
-library(readr)
+library(gganimate)
+library(gifski)
+#install.packages("OpenImageR")
+library(OpenImageR)
+#install.packages("magick")
+library(magick)
+population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv', 
+                              show_col_types = FALSE)
 
-# Load the dataset
-population_data <- read_csv('data/population.csv')  
+party <- function(year){
+  if (year >= 2008 && year <= 2012){
+    return("Democratic Party")
+  }else if (year > 2012 && year < 2016){
+    return("Democratic Party")
+  }else if (year >= 2016 && year < 2020){
+    return("Republican Party")
+  }else if (year >= 2020 && year <= 2022){
+    return("Democratic Party")
+  }else{
+    return(NA)
+  }
+}
 
-# Data Preparation - Aggregate total number of refugees by year
-refugee_trends <- population_data %>%
-  group_by(year) %>%
+population$Ruling_party <- sapply(population$year, party)
+
+data1 <- population |>
+  filter(coa_name == "United States of America") |>
+  group_by(year, Ruling_party) |>
   summarise(total_refugees = sum(refugees, na.rm = TRUE))
 
-# Adding US political context
-# Define the political party in power for the given years
-political_parties <- data.frame(
-  year = c(2000, 2004, 2008, 2012, 2016, 2020),
-  party = c("Republican", "Republican", "Democratic", "Democratic", "Republican", "Democratic"),
-  stance = c("Positive", "Mixed", "Positive", "Positive", "Negative", "Positive")
-)
+# Creating the line plot
 
-# Merge this information with refugee trends
-refugee_trends <- merge(refugee_trends, political_parties, by = "year", all.x = TRUE)
-
-# Plot 2: Refugee populations over time with US political context
-ggplot(refugee_trends, aes(x = year, y = total_refugees, color = party)) +
-  geom_line() +
-  geom_point(aes(shape = stance)) +
-  scale_color_manual(values = c("Republican" = "red", "Democratic" = "blue")) +
-  labs(title = "Refugee Populations and US Political Context", x = "Year", y = "Number of Refugees") +
-  theme_minimal() +
-  guides(color = guide_legend(title = "US Political Party"), shape = guide_legend(title = "US Policy Stance"))
+plot <- ggplot(data = data1, aes(x = year, y = total_refugees, color = Ruling_party)) +
+  
+  geom_line(aes(x = year, y = total_refugees, group = 2, colour = Ruling_party)) +
+  
+  scale_color_manual(name = "Party",
+                     values = c("Democratic Party" = "Blue", "Republican Party" = "Red"))+
+  
+  scale_x_continuous(breaks = seq(2010, 2022, by = 2)) +
+  
+  labs(
+    title = "Refugees population over time in United States",
+    x = "Year",
+    y = "Total Refugees"
+  ) +
+  
+  theme_minimal() 
+plot
 
 ```
+
+This graph displays the temporal evolution of the refugee population in the United States, with different colors representing the governing political party. The blue lines indicate the years when the Democratic Party held power, while the red lines show the periods of Republican Party leadership. The graph illustrates the refugee population from 2010 to 2022, with the x-axis representing the years and the y-axis indicating the cumulative number of refugees. The analysis examines the fluctuations in the refugee population during various administrations, emphasizing the potential influence of political leadership on refugee admissions. The unambiguous and simplistic style facilitates viewers' comprehension of patterns in U.S. refugee admissions throughout the selected years.
 
 ## Question 2: How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
 ### Discussion
 
-
+We analyse refugee patterns over time across nations by analyzing `'year'`, `'coo_name'`, `'coa_name'`, and `'refugees'` data. To acquire a clearer understanding of the repercussions, we will gather annual refugee data by nation and normalize it against population statistics. Time-series techniques will be used in the study to find trends and link them to important world events including wars, climate disasters, and changes in the economy. Our goal is to quantify the influence of these events on displacement by examining refugee trends around them. The context provided by external data, such as conflict histories, records of climate events, economic indicators, and epidemic timelines, will help to create a complete picture of the variables influencing global refugee movements. This analysis of the **`{refugees}`** dataset highlights the significant influence of outside factors on patterns of worldwide displacement throughout the last ten years. We have learned how major changes in refugee and displacement patterns have been fueled by geopolitical conflicts, natural disasters, and global crises through thorough investigation. The results emphasize not only how urgent it is to deal with the underlying causes of displacement but also how important it is to have strong, well-informed responses to the intricate problems associated with forced migration. These kinds of data-driven analysis are essential for developing humanitarian actions and policies that effectively address the world's growing displacement crisis.
 
 ## References
 
-Hannah Ritchie (2021) - "Forest area". Published online at OurWorldInData.org. Retrieved from: '[https://ourworldindata.org/forest-area'](https://ourworldindata.org/forest-area') \[Online Resource\]
-
-Valdez, C. (2022). Brazil's Momentum as a Global Agricultural Supplier Faces Headwinds. Published online at ers.usda.gov. Retrieved from: [Economic Research Service](https://www.ers.usda.gov/amber-waves/2022/september/brazil-s-momentum-as-a-global-agricultural-supplier-faces-headwinds/)
-
-Pagano, M. & Miransari, M. (2016). "The importance of soybean production worldwide." Retrieved from: [Science Direct](https://www.sciencedirect.com/science/article/pii/B9780128015360000013)
-
-Song et al., (2021). "Massive soybean expansion in South America since 2000 and implications for conservation." Retrieved from: [National Library of Medicine](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8350977/#:~:text=Direct%20soybean%2Ddriven%20deforestation%20reached,forest%20loss%20during%20this%20period.)
+Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
 
 Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
 
 ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
 
-Logo, The logo used in the webiste - [Online](https://pngtree.com/so/pandas)
