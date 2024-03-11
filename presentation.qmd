@@ -3,9 +3,8 @@ title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha "
 title-slide-attributes:
-  data-background-image: images/r02.jpg
+  data-background-image: images/r04.jpg
   data-background-size: stretch
-  data-background-opacity: "0.7"
   data-slide-number: none
 format:
   revealjs: 
@@ -87,9 +86,9 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 
 Our Project's aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. This study intends to delve into the patterns of refugee migration to the **`USA`**, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as **wars**, **environmental crises**, **Policy changes**, and **economic shifts.**
 
-## Question 01 {.smaller}
+# Question 01 
 
-**How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.**
+## How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.{.smaller}
 
 
 ## Data Preparation and Pre-processing
@@ -105,7 +104,7 @@ total_refugee_trends <- population_data %>%
 ```
 
 
-## Analysis 01: Refugee populations over time {.smaller auto-animate="true"}
+## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
 
@@ -118,14 +117,14 @@ plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refu
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 8)
+  theme(aspect.ratio = 6 / 10)
 
 print(plot_total_refugees)
 
 
 ```
 
-## Analysis 02: Refugee populations over time {.smaller auto-animate="true"}
+## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
 
@@ -143,13 +142,13 @@ plot2 <- ggplot(returned_refugee_trends, aes(x = year, y = returned_refugees)) +
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(returned_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 8)
+  theme(aspect.ratio = 6 / 10)
 
 print(plot2)
 
 ```
 
-## Analysis 03: Refugees by year and country of origin {.smaller auto-animate="true"}
+## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of refugees
 -   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
@@ -192,12 +191,12 @@ plot_top_countries <- ggplot(top_country_total_refugees, aes(x = reorder(coo_nam
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 9)
+  theme(aspect.ratio = 6 / 10)
 print(plot_top_countries)
 # Adding US political context
 ```
 
-## Analysis 04: Refugees by year and country of origin {.smaller auto-animate="true"}
+## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of asylum seekers
 
@@ -235,14 +234,14 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = re
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 10) # Format y-axis labels with commas for readability
+  theme(aspect.ratio = 6 / 12) # Format y-axis labels with commas for readability
 
 print(plot_top_asylum_countries) 
 #print(plot_top_countries)
 # Adding US political context
 ```
 
-## Analysis 05: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
 
@@ -267,16 +266,16 @@ print(plot_top_asylum_countries)
     knitr::include_graphics("images/anim_plot1_resized.gif")
     ```
 
-# Question 02  {.smaller}
+# Question 02 
 
-## How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA?
+## How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA? {.smaller}
 
 ## Data Preparation and Pre-processing
 
 -   The processRefugees function refines the dataset by selecting key columns, appending missing countries with NA for uniformity, standardizing country names for consistency, categorizing refugee numbers for analytically clarity, and converting these categories to factors for effective visualization in R.
 
 
-    ```{r}
+```{r}
 
     processRefugees <- function (dataset, unique_countries) {
   filtered_data <- dataset |>
@@ -308,7 +307,7 @@ print(plot_top_asylum_countries)
 
   return(filtered_data)
 }
-    ```
+```
 
 
 
@@ -654,18 +653,18 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 
 ```
 
-## Analysis 06: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
 
 -   External factors such as geopolitical conflicts, policy changes in the USA, economic instability, and global crises like the COVID-19 pandemic significantly influence refugee migration patterns. Among these, **geopolitical conflicts and policy changes** in the USA often have the most immediate and noticeable impact on the number of refugees seeking asylum.
 
-
+## Map 2020
 ```{r}
 
 knitr::include_graphics("images/refugee_map_2020.jpg")
 
 ```
 
-## Analysis 06: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
 
 -   Refugee populations from 2011 to 2022
 
@@ -676,7 +675,7 @@ knitr::include_graphics("images/worldmap_plot.gif")
 
 ```
 
-#Challenges faced
+## Challenges faced
 
 -   Data only available from 2010 not before that
 -   Animation and frame rate selection.
@@ -684,7 +683,7 @@ knitr::include_graphics("images/worldmap_plot.gif")
 
 ## Conclusion
 
-By analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses. Data-driven insights are crucial for shaping policies that effectively tackle the increasing challenges of displacement worldwide.
+By analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses. 
 
 ## References
 
