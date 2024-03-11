@@ -147,11 +147,11 @@
     "text": "Aim\nOur Project’s aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. This study intends to delve into the patterns of refugee migration to the USA, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as wars, environmental crises, Policy changes, and economic shifts."
   },
   {
-    "objectID": "presentation.html#question-01",
-    "href": "presentation.html#question-01",
+    "objectID": "presentation.html#how-have-the-patterns-in-refugee-populations-evolved-over-time-and-how-have-the-stances-of-american-political-parties-impacted-these-developments-analyse-the-dynamics-of-refugee-migrations-towards-us-political-environments.",
+    "href": "presentation.html#how-have-the-patterns-in-refugee-populations-evolved-over-time-and-how-have-the-stances-of-american-political-parties-impacted-these-developments-analyse-the-dynamics-of-refugee-migrations-towards-us-political-environments.",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Question 01",
-    "text": "Question 01\nHow have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments."
+    "section": "How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.",
+    "text": "How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments."
   },
   {
     "objectID": "presentation.html#data-preparation-and-pre-processing",
@@ -161,39 +161,39 @@
     "text": "Data Preparation and Pre-processing\n\nUsing the R dplyr package\nFirst aggregate our data by year before summarizing the overall number of refugees\nDivide these totals into thousands for easier comprehension\n\n\ntotal_refugee_trends &lt;- population_data %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)"
   },
   {
-    "objectID": "presentation.html#analysis-01-refugee-populations-over-time",
-    "href": "presentation.html#analysis-01-refugee-populations-over-time",
+    "objectID": "presentation.html#analysis-refugee-populations-over-time",
+    "href": "presentation.html#analysis-refugee-populations-over-time",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 01: Refugee populations over time",
-    "text": "Analysis 01: Refugee populations over time\n\nExpeditious growth of the refugee population over time"
+    "section": "Analysis: Refugee populations over time",
+    "text": "Analysis: Refugee populations over time\n\nExpeditious growth of the refugee population over time"
   },
   {
-    "objectID": "presentation.html#analysis-02-refugee-populations-over-time",
-    "href": "presentation.html#analysis-02-refugee-populations-over-time",
+    "objectID": "presentation.html#analysis-refugee-populations-over-time-1",
+    "href": "presentation.html#analysis-refugee-populations-over-time-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 02: Refugee populations over time",
-    "text": "Analysis 02: Refugee populations over time\n\nA small number of refugees have returned over a period of time"
+    "section": "Analysis: Refugee populations over time",
+    "text": "Analysis: Refugee populations over time\n\nA small number of refugees have returned over a period of time"
   },
   {
-    "objectID": "presentation.html#analysis-03-refugees-by-year-and-country-of-origin",
-    "href": "presentation.html#analysis-03-refugees-by-year-and-country-of-origin",
+    "objectID": "presentation.html#analysis-refugees-by-year-and-country-of-origin",
+    "href": "presentation.html#analysis-refugees-by-year-and-country-of-origin",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 03: Refugees by year and country of origin",
-    "text": "Analysis 03: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of refugees\nThe maximum number of refugee came has come from Syrian, Afghanistan and South Sudan"
+    "section": "Analysis: Refugees by year and country of origin",
+    "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of refugees\nThe maximum number of refugee came has come from Syrian, Afghanistan and South Sudan"
   },
   {
-    "objectID": "presentation.html#analysis-04-refugees-by-year-and-country-of-origin",
-    "href": "presentation.html#analysis-04-refugees-by-year-and-country-of-origin",
+    "objectID": "presentation.html#analysis-refugees-by-year-and-country-of-origin-1",
+    "href": "presentation.html#analysis-refugees-by-year-and-country-of-origin-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 04: Refugees by year and country of origin",
-    "text": "Analysis 04: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of asylum seekers"
+    "section": "Analysis: Refugees by year and country of origin",
+    "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of asylum seekers"
   },
   {
-    "objectID": "presentation.html#analysis-05-refugee-populations-over-time-with-us-political-context.",
-    "href": "presentation.html#analysis-05-refugee-populations-over-time-with-us-political-context.",
+    "objectID": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.",
+    "href": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 05: Refugee populations over time with US political context.",
-    "text": "Analysis 05: Refugee populations over time with US political context.\n\nA small number of refugees have returned over a period of time"
+    "section": "Analysis: Refugee populations over time with US political context.",
+    "text": "Analysis: Refugee populations over time with US political context.\n\nA small number of refugees have returned over a period of time"
   },
   {
     "objectID": "presentation.html#how-does-the-global-refugee-populations-migration-to-the-usa-vary-across-different-countries-and-years-are-there-external-factors-such-as-covid-19-war-climate-change-financial-stability-or-policy-changes-that-influence-the-number-of-refugees-seeking-asylum-in-the-usa",
@@ -210,25 +210,39 @@
     "text": "Data Preparation and Pre-processing\n\nThe processRefugees function refines the dataset by selecting key columns, appending missing countries with NA for uniformity, standardizing country names for consistency, categorizing refugee numbers for analytically clarity, and converting these categories to factors for effective visualization in R."
   },
   {
-    "objectID": "presentation.html#analysis-06-refugee-populations-over-time-with-us-political-context.",
-    "href": "presentation.html#analysis-06-refugee-populations-over-time-with-us-political-context.",
+    "objectID": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.-1",
+    "href": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 06: Refugee populations over time with US political context.",
-    "text": "Analysis 06: Refugee populations over time with US political context.\n\nExternal factors such as geopolitical conflicts, policy changes in the USA, economic instability, and global crises like the COVID-19 pandemic significantly influence refugee migration patterns. Among these, geopolitical conflicts and policy changes in the USA often have the most immediate and noticeable impact on the number of refugees seeking asylum."
+    "section": "Analysis: Refugee populations over time with US political context.",
+    "text": "Analysis: Refugee populations over time with US political context.\n\nExternal factors such as geopolitical conflicts, policy changes in the USA, economic instability, and global crises like the COVID-19 pandemic significantly influence refugee migration patterns. Among these, geopolitical conflicts and policy changes in the USA often have the most immediate and noticeable impact on the number of refugees seeking asylum."
   },
   {
-    "objectID": "presentation.html#analysis-06-refugee-populations-over-time-with-us-political-context.-1",
-    "href": "presentation.html#analysis-06-refugee-populations-over-time-with-us-political-context.-1",
+    "objectID": "presentation.html#map-2020",
+    "href": "presentation.html#map-2020",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
-    "section": "Analysis 06: Refugee populations over time with US political context.",
-    "text": "Analysis 06: Refugee populations over time with US political context.\n\nRefugee populations from 2011 to 2022\n\n\n#Challenges faced\n\nData only available from 2010 not before that\nAnimation and frame rate selection.\nError in data type and rendering method selection of gif during animation."
+    "section": "Map 2020",
+    "text": "Map 2020"
+  },
+  {
+    "objectID": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.-2",
+    "href": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.-2",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Analysis: Refugee populations over time with US political context.",
+    "text": "Analysis: Refugee populations over time with US political context.\n\nRefugee populations from 2011 to 2022"
+  },
+  {
+    "objectID": "presentation.html#challenges-faced",
+    "href": "presentation.html#challenges-faced",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Challenges faced",
+    "text": "Challenges faced\n\nData only available from 2010 not before that\nAnimation and frame rate selection.\nError in data type and rendering method selection of gif during animation."
   },
   {
     "objectID": "presentation.html#conclusion",
     "href": "presentation.html#conclusion",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Conclusion",
-    "text": "Conclusion\nBy analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses. Data-driven insights are crucial for shaping policies that effectively tackle the increasing challenges of displacement worldwide."
+    "text": "Conclusion\nBy analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses."
   },
   {
     "objectID": "presentation.html#references",
