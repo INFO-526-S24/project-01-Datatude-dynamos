@@ -1,7 +1,7 @@
 ---
 title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
-author: "Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav"
+author: "Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha "
 title-slide-attributes:
   data-background-image: images/pic2.jpg
   data-background-size: stretch
@@ -10,7 +10,7 @@ title-slide-attributes:
 format:
   revealjs: 
     theme:  ['data/customtheming.scss']
-    transition: slide
+    transition: concave
     background-transition: fade
   
 editor: visual
@@ -63,7 +63,7 @@ knitr::opts_chunk$set(
   fig.asp = 0.618,      # the golden ratio
   fig.retina = 1,       # dpi multiplier for displaying HTML output on retina
   fig.align = "center", # center align figures
-  dpi = 140             # higher dpi, sharper image
+  dpi = 190             # higher dpi, sharper image
 )
 ```
 
@@ -113,6 +113,21 @@ total_refugee_trends <- population_data %>%
 ## Analysis 01: Refugee populations over time {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
+
+::: panel-tabset
+```         
+::: tab Plot
+###Plot- Alpha
+
+![Expeditious growth of the refugee population over time](images/Analysis-1.png){fig-align="center" width="660"}
+
+###Plot- Beta
+![A small number of refugees have returned over a period of time](images/Analysis-2.png){fig-align="center" width="660"}
+
+::: tab Insights
+These are the insights obtained from the plot.
+```
+:::
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
@@ -314,35 +329,27 @@ plot
 
 ## Our Dataset {auto-animate="true"}
 
-Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
+Our target dataset comes from the `Populations Dataset from {refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
 
--   "Refugees" dataset from [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md).
+-   "Population" dataset from [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md).
+-   The entire dataset has been refined to highlight the countries from which refugees are coming to the `USA`.
+-   Focusing on key variables such as `'year'`, `'coo_name'`, `'coa_name'`, from `'refugees'` data for plotting.
+
+**AIM**
+
+Grasping the intricacies of global refugee flows is essential for tackling humanitarian issues and formulating impactful policies. This study intends to delve into the patterns of refugee migration to the **`USA`**, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as **wars**, **environmental crises**, **Policy changes**, and **economic shifts.**
 
 # Question 02
 
-## How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
+## How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA?
 
-## Layouts
+-   This presentation aims to showcase the evolution of the refugee population migrating to the USA from various countries annually, spanning from 2010 to 2022.
 
-You can use plain text
+-   
 
-::: columns
-::: {.column width="40%"}
--   or bullet points[^1]
-:::
+## Approach
 
-::: {.column width="60%"}
-or in two columns
-:::
-:::
-
-[^1]: And add footnotes
-
--   like
-
--   this
-
-## Code
+**Code**
 
 ```{r world_data, message=FALSE, include=FALSE}
 library(maps)
