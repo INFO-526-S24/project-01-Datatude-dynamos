@@ -193,7 +193,7 @@
     "href": "presentation.html#analysis-refugees-by-year-and-country-of-origin",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis: Refugees by year and country of origin",
-    "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of refugees\nThe maximum number of refugee came has come from Syrian, Afghanistan and South Sudan"
+    "text": "Analysis: Refugees by year and country of origin\n\nTop 10 countries with the highest total number of refugees\nThe maximum number of refugee came has come from Syrian, Afghanistan and South Sudan"
   },
   {
     "objectID": "presentation.html#plot-03",
@@ -207,7 +207,7 @@
     "href": "presentation.html#analysis-refugees-by-year-and-country-of-origin-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis: Refugees by year and country of origin",
-    "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of asylum seekers"
+    "text": "Analysis: Refugees by year and country of origin\n\nTop 10 countries with the highest total number of asylum seekers"
   },
   {
     "objectID": "presentation.html#plot-04",
@@ -228,7 +228,7 @@
     "href": "presentation.html#plot-05",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Plot 05",
-    "text": "Plot 05\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](images/anim_plot1.gif){fig-align='center'}\n:::\n:::"
+    "text": "Plot 05"
   },
   {
     "objectID": "presentation.html#how-does-the-global-refugee-populations-migration-to-the-usa-vary-across-different-countries-and-years-are-there-external-factors-such-as-covid-19-war-climate-change-financial-stability-or-policy-changes-that-influence-the-number-of-refugees-seeking-asylum-in-the-usa",
