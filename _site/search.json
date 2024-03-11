@@ -168,11 +168,25 @@
     "text": "Analysis: Refugee populations over time\n\nExpeditious growth of the refugee population over time"
   },
   {
+    "objectID": "presentation.html#plot-01",
+    "href": "presentation.html#plot-01",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Plot 01",
+    "text": "Plot 01"
+  },
+  {
     "objectID": "presentation.html#analysis-refugee-populations-over-time-1",
     "href": "presentation.html#analysis-refugee-populations-over-time-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis: Refugee populations over time",
     "text": "Analysis: Refugee populations over time\n\nA small number of refugees have returned over a period of time"
+  },
+  {
+    "objectID": "presentation.html#plot-02",
+    "href": "presentation.html#plot-02",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Plot 02",
+    "text": "Plot 02"
   },
   {
     "objectID": "presentation.html#analysis-refugees-by-year-and-country-of-origin",
@@ -182,6 +196,13 @@
     "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of refugees\nThe maximum number of refugee came has come from Syrian, Afghanistan and South Sudan"
   },
   {
+    "objectID": "presentation.html#plot-03",
+    "href": "presentation.html#plot-03",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Plot 03",
+    "text": "Plot 03"
+  },
+  {
     "objectID": "presentation.html#analysis-refugees-by-year-and-country-of-origin-1",
     "href": "presentation.html#analysis-refugees-by-year-and-country-of-origin-1",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
@@ -189,11 +210,25 @@
     "text": "Analysis: Refugees by year and country of origin\n\nTop 20 countries with the highest total number of asylum seekers"
   },
   {
+    "objectID": "presentation.html#plot-04",
+    "href": "presentation.html#plot-04",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Plot 04",
+    "text": "Plot 04"
+  },
+  {
     "objectID": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.",
     "href": "presentation.html#analysis-refugee-populations-over-time-with-us-political-context.",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis: Refugee populations over time with US political context.",
     "text": "Analysis: Refugee populations over time with US political context.\n\nA small number of refugees have returned over a period of time"
+  },
+  {
+    "objectID": "presentation.html#plot-05",
+    "href": "presentation.html#plot-05",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Plot 05",
+    "text": "Plot 05\n::: {.cell layout-align=\"center\"}\n\n:::\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](images/anim_plot1_resized.gif){fig-align='center'}\n:::\n:::"
   },
   {
     "objectID": "presentation.html#how-does-the-global-refugee-populations-migration-to-the-usa-vary-across-different-countries-and-years-are-there-external-factors-such-as-covid-19-war-climate-change-financial-stability-or-policy-changes-that-influence-the-number-of-refugees-seeking-asylum-in-the-usa",
@@ -229,6 +264,13 @@
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "Analysis: Refugee populations over time with US political context.",
     "text": "Analysis: Refugee populations over time with US political context.\n\nRefugee populations from 2011 to 2022"
+  },
+  {
+    "objectID": "presentation.html#map-2011-2022",
+    "href": "presentation.html#map-2011-2022",
+    "title": "Examining Global Refugee Trends and Correlations Over the Years",
+    "section": "Map 2011-2022",
+    "text": "Map 2011-2022"
   },
   {
     "objectID": "presentation.html#challenges-faced",

@@ -5,6 +5,7 @@ author: "Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, A
 title-slide-attributes:
   data-background-image: images/r01.jpg
   data-background-size: stretch
+  data-background-opacity: "0.7"
   data-slide-number: none
 format:
   revealjs: 
@@ -250,25 +251,10 @@ print(plot_top_asylum_countries)
 -   A small number of refugees have returned over a period of time
 
 ## Plot 05
-    ```{r, echo=FALSE, out.width='50%'}
-
-      # Load the magick package
-    library(magick)
-
-    # Read the GIF
-    gif <- image_read("images/anim_plot1.gif")
-
-    # Resize the GIF to a specific width, maintaining aspect ratio
-    # For example, resize to a width of 800 pixels
-    gif_resized <- image_resize(gif, "500x")
-
-    # Save the resized GIF
-    image_write(gif_resized, "images/anim_plot1_resized.gif")
-    ```
-
+  
     ```{r, echo=FALSE}
 
-    knitr::include_graphics("images/anim_plot1_resized.gif")
+    knitr::include_graphics("images/anim_plot1.gif")
     ```
 
 # Question 02 
