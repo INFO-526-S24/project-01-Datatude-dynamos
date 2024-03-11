@@ -242,6 +242,11 @@ print(plot_top_asylum_countries)
 
 -   A small number of refugees have returned over a period of time
 
+    ```{r,echo=FALSE}
+
+    knitr::include_graphics("images/anim_plot1.gif")
+    ```
+
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #install.packages("OpenImageR")
 library(tidyverse)
