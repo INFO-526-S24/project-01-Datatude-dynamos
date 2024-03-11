@@ -95,6 +95,15 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 -   First aggregate our data by year before summarizing the overall number of refugees
 -   Divide these totals into thousands for easier comprehension
 
+## Aim
+
+Our Project's aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. It explores how these patterns have evolved and investigates the factors influencing these trends, including political climates, particularly in the United States, and external factors like wars, climate change, and global health crises.
+
+```{r,echo=FALSE}
+
+knitr::include_graphics("images/refugee.gif")
+```
+
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 total_refugee_trends <- population_data %>%
   group_by(year) %>%
@@ -302,6 +311,12 @@ plot <- ggplot(data = data1, aes(x = year, y = total_refugees, color = Ruling_pa
 plot
 
 ```
+
+## Our Dataset {auto-animate="true"}
+
+Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
+
+-   "Refugees" dataset from [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md).
 
 # Question 02
 
