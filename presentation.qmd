@@ -116,22 +116,19 @@ total_refugee_trends <- population_data %>%
 
 ::: panel-tabset
 ```         
-::: tab Plot
-###Plot- Alpha
+::: tab Plot 1
+![Expeditious growth of the refugee population over time](images/Analysis-1.png){fig-align="center" width="660"})
+Expeditious growth of the refugee population over time.
 
-![Expeditious growth of the refugee population over time](images/Analysis-1.png){fig-align="center" width="660"}
-
-###Plot- Beta
+::: tab Plot 2
 ![A small number of refugees have returned over a period of time](images/Analysis-2.png){fig-align="center" width="660"}
-
-::: tab Insights
-These are the insights obtained from the plot.
+A small number of refugees have returned over a period of time.
 ```
 :::
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
-plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees)) +
+plot_total_refugees <- ggplot(total_refugee_trThe number of characters that hold that highest correlation to a Myers-Briggs type:ends, aes(x = year, y = total_refugees)) +
   geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
   geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "#FF5230", se = FALSE) +  # Trend line for 30-year increase
   labs(title = "Total Refugee Populations Over Time", x = "Year", y = "Number of Refugees (in K)") +
