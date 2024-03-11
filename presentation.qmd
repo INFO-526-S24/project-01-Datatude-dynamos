@@ -3,7 +3,7 @@ title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha "
 title-slide-attributes:
-  data-background-image: images/r04.jpg
+  data-background-image: images/r01.jpg
   data-background-size: stretch
   data-slide-number: none
 format:
@@ -108,6 +108,8 @@ total_refugee_trends <- population_data %>%
 
 -   Expeditious growth of the refugee population over time
 
+## Plot 01
+
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees)) +
@@ -116,8 +118,7 @@ plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refu
   labs(title = "Total Refugee Populations Over Time", x = "Year", y = "Number of Refugees (in K)") +
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
-  scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 10)
+  scale_y_continuous(labels = scales::comma) 
 
 print(plot_total_refugees)
 
@@ -127,6 +128,8 @@ print(plot_total_refugees)
 ## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
+
+## Plot 02
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
@@ -141,8 +144,7 @@ plot2 <- ggplot(returned_refugee_trends, aes(x = year, y = returned_refugees)) +
   labs(title = "Returned Refugee Populations Over Time", x = "Year", y = "Number of Returned Refugees (in K)") +
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(returned_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
-  scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 10)
+  scale_y_continuous(labels = scales::comma) 
 
 print(plot2)
 
@@ -152,6 +154,8 @@ print(plot2)
 
 -   Top 20 countries with the highest total number of refugees
 -   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
+
+## Plot 03
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -190,8 +194,7 @@ plot_top_countries <- ggplot(top_country_total_refugees, aes(x = reorder(coo_nam
   labs(title = "Total Number of Refugees from Top 20 Countries", x = "Country of Origin", y = "Total Number of Refugees") +
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
-  scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 10)
+  scale_y_continuous(labels = scales::comma) 
 print(plot_top_countries)
 # Adding US political context
 ```
@@ -199,6 +202,8 @@ print(plot_top_countries)
 ## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of asylum seekers
+
+## Plot 04
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -233,8 +238,7 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = re
   labs(title = "Total Number of Asylum Seekers from Top 20 Countries", x = "Country of Asylum", y = "Total Number of Asylum Seekers") +
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
-  scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 6 / 12) # Format y-axis labels with commas for readability
+  scale_y_continuous(labels = scales::comma) 
 
 print(plot_top_asylum_countries) 
 #print(plot_top_countries)
@@ -245,6 +249,7 @@ print(plot_top_asylum_countries)
 
 -   A small number of refugees have returned over a period of time
 
+## Plot 05
     ```{r, echo=FALSE, out.width='50%'}
 
       # Load the magick package
@@ -668,7 +673,7 @@ knitr::include_graphics("images/refugee_map_2020.jpg")
 
 -   Refugee populations from 2011 to 2022
 
-
+## Map 2011-2022
 ```{r}
 
 knitr::include_graphics("images/worldmap_plot.gif")
