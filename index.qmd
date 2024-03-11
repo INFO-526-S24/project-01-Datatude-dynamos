@@ -287,8 +287,6 @@ This graph displays the temporal evolution of the refugee population in the Unit
 
 ## Question 2: How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
-
-
 ```{r world_data, message=FALSE, include=FALSE}
 library(maps)
 library(ggplot2)
@@ -512,8 +510,8 @@ generateRefugeePlot <- function(year) {
     coord_fixed(ratio = 1) +
     labs(
       title = paste("Number of Refugees by Country in", year),
-      subtitle = "need to change",
-      caption = "Data source: need to change",
+      subtitle = "Migrated to USA",
+      caption = "Data source: TidyTuesday",
       fill = "need to specify"
     ) +
     theme_void() +
@@ -619,12 +617,10 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 
 ```
 
-
 ```{r,echo=FALSE}
 
-knitr::include_graphics("images/worldmap_plot2.gif")
+knitr::include_graphics("images/worldmap_plot.gif")
 ```
-
 
 ### Discussion
 
