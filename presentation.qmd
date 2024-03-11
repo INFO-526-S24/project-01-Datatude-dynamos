@@ -153,7 +153,7 @@ print(plot2)
 
 ## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
--   Top 20 countries with the highest total number of refugees
+-   Top 10 countries with the highest total number of refugees
 -   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
 
 ## Plot 03
@@ -170,7 +170,7 @@ refugee_country_trends <- population_data %>%
 top_countries <- refugee_country_trends %>%
   group_by(coo_name) %>%
   summarise(total_refugees = sum(total_refugees, na.rm = TRUE)) %>%
-  top_n(20, total_refugees) %>%
+  top_n(10, total_refugees) %>%
   pull(coo_name)
 
 # Filter the data to include only top 10 countries
@@ -192,7 +192,7 @@ top_country_total_refugees <- refugee_country_trends %>%
 # Plot: Total number of refugees from top 10 countries
 plot_top_countries <- ggplot(top_country_total_refugees, aes(x = reorder(coo_name, total_refugees), y = total_refugees)) +
   geom_bar(stat = "identity", fill = "purple") +  # Bar plot showing total refugees for each country
-  labs(title = "Total Number of Refugees from Top 20 Countries", x = "Country of Origin", y = "Total Number of Refugees") +
+  labs(title = "Total Number of Refugees from Top 10 Countries", x = "Country of Origin", y = "Total Number of Refugees") +
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) 
@@ -202,7 +202,7 @@ print(plot_top_countries)
 
 ## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
--   Top 20 countries with the highest total number of asylum seekers
+-   Top 10 countries with the highest total number of asylum seekers
 
 ## Plot 04
 
@@ -219,7 +219,7 @@ asylum_country_trends <- population_data %>%
 top_asylum_countries <- asylum_country_trends %>%
   group_by(coa_name) %>%
   summarise(total_asylum_seekers = sum(total_asylum_seekers, na.rm = TRUE)) %>%
-  top_n(20, total_asylum_seekers) %>%
+  top_n(10, total_asylum_seekers) %>%
   pull(coa_name)
 
 # Filter the data to include only top 20 countries of asylum
@@ -236,7 +236,7 @@ top_country_total_asylum_seekers <- top_asylum_country_data %>%
 # Plot: Total number of asylum seekers from top 20 countries
 plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = reorder(coa_name, total_asylum_seekers), y = total_asylum_seekers)) +
   geom_bar(stat = "identity", fill = "blue") +  # Bar plot showing total asylum seekers for each country
-  labs(title = "Total Number of Asylum Seekers from Top 20 Countries", x = "Country of Asylum", y = "Total Number of Asylum Seekers") +
+  labs(title = "Total Number of Asylum Seekers from Top 10 Countries", x = "Country of Asylum", y = "Total Number of Asylum Seekers") +
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) 
@@ -251,11 +251,13 @@ print(plot_top_asylum_countries)
 -   A small number of refugees have returned over a period of time
 
 ## Plot 05
-  
-    ```{r, echo=FALSE}
 
-    knitr::include_graphics("images/anim_plot1.gif")
-    ```
+```{r}
+
+knitr::include_graphics("images/anim_plot1.gif")
+
+```
+  
 
 # Question 02 
 
