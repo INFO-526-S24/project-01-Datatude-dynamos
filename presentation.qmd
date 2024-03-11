@@ -669,7 +669,6 @@ knitr::include_graphics("images/worldmap_plot.gif")
 -   The refugee crisis in Europe might influence numbers, with potential spillover effects on US Refugee/asylum applications.
 -   Policy changes in the USA regarding immigration during the new administration might also become visible.
 -   Continued conflicts and economic issues in various countries could maintain or increased refugee movements.
--   Climate change effects might begin to show, especially from countries suffering from environmental degradation.
 :::
 
 ## World Health Crisis and Policy Change in Year 2019-2022
@@ -686,7 +685,6 @@ knitr::include_graphics("images/worldmap_plot.gif")
 #### Study
 
 -   The COVID-19 pandemic would likely cause a significant drop in migrations worldwide due to travel restrictions and border closures.
--   Economic downturns resulting from the pandemic might affect later refugee movements.
 -   Post-pandemic recovery may lead to an increase in migrations as countries lift travel bans.
 -   The situation in Afghanistan post-US withdrawal could result in an increase in refugees from that region.
 :::
