@@ -87,10 +87,9 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 
 Our Project's aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. This study intends to delve into the patterns of refugee migration to the **`USA`**, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as **wars**, **environmental crises**, **Policy changes**, and **economic shifts.**
 
-# Question 01 
+# Question 01
 
-## How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.{.smaller}
-
+## How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments. {.smaller}
 
 ## Data Preparation and Pre-processing
 
@@ -103,7 +102,6 @@ total_refugee_trends <- population_data %>%
   group_by(year) %>%
   summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)  
 ```
-
 
 ## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
@@ -270,11 +268,12 @@ print(plot_top_asylum_countries)
 knitr::include_graphics("images/anim_plot1.gif")
 
 ```
-  
 
-# Question 02 
+## Question 02
 
-## How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA? {.smaller}
+#### How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA?
+
+-   This presentation aims to showcase the evolution of the refugee population migrating to the USA from various countries annually, spanning from 2010 to 2022.
 
 ## Approach
 
@@ -284,8 +283,9 @@ knitr::include_graphics("images/anim_plot1.gif")
 
 -   We Split population data into decades. Applied pre-processing function to each decade's data. Defined a function `generateRefugeePlot` to generate a ggplot map plot. Used the pre-processed data to create plots for each year.
 
+**Code**
 
-```{r world_data, message=FALSE, include=FALSE, echo=FALSE}
+```{r world_data, message=FALSE, include=FALSE}
 library(maps)
 library(ggplot2)
 library(tibble)
@@ -308,13 +308,13 @@ world <- subset(world, region != "Antarctica")
 
 ```
 
-```{r warning=FALSE,message=FALSE, echo=FALSE}
+```{r warning=FALSE,message=FALSE}
 population_data <- read_csv("data/population.csv")
 datasets <- population_data[population_data$coa_name == "United States of America",]
 datasets$year = as.integer(datasets$year)
 ```
 
-```{r process_function, message=FALSE, echo=FALSE}
+```{r process_function, message=FALSE, echo=TRUE}
 #| code-fold: true
 #| code-summary: "Glimpse of process Function"
 
@@ -411,7 +411,7 @@ processRefugees <- function (dataset, unique_countries) {
 
 ```
 
-```{r split_forest_data, message=FALSE, include=FALSE , echo=FALSE}
+```{r split_forest_data, message=FALSE, include=FALSE}
 # Dividing data into tibbles based on year and it creates a list of tibbles
 refugee_decades <- split(datasets, f = datasets$year)
 
@@ -451,7 +451,7 @@ filtered_data <- lapply(refugee_decades, function(refugee_ds) {
 
 ```
 
-```{r colourMapping, message=FALSE, include=FALSE, echo=FALSE}
+```{r colourMapping, message=FALSE, include=FALSE}
 color_mapping <- c(
   "<100"           = "#d73027",  # Red
   "100 to 500"     = "#f46d43",  # Red-Orange
@@ -470,7 +470,7 @@ color_mapping <- c(
 
 ```
 
-```{r world_plot_function, message=FALSE, echo=FALSE}
+```{r world_plot_function, message=FALSE, echo=TRUE}
 #| code-fold: true
 #| code-summary: "Function used to generate the plot"
 
@@ -627,94 +627,82 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 
 ```
 
-## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+## Plot-Alpha
 
--   External factors such as geopolitical conflicts, policy changes in the USA, economic instability, and global crises like the COVID-19 pandemic significantly influence refugee migration patterns. Among these, **geopolitical conflicts and policy changes** in the USA often have the most immediate and noticeable impact on the number of refugees seeking asylum.
-
-# War Effect in Year 2010-2016
-
-## Plot 2010-2012
-```{r}
-
-knitr::include_graphics("images/refugee_map_2012.jpg")
-
-```
-
-## Plot 2012-2015
-```{r}
-
-knitr::include_graphics("images/refugee_map_2016.jpg")
-
-```
-
-## Study
-
--   Early in the decade, migrations might be influenced by the aftermath of the global financial crisis of 2008, conflicts such as the war in Afghanistan or Iraq, or ongoing issues in countries like Somalia and china.
--   This period may show increased migrations from the Middle East, particularly Syria, due to the Syrian Civil War beginning in 2011.
--   Other regions might also exhibit changes due to local conflicts or economic instability.
-
-# Economic / Climate Conditions in Year 2016-2019
-
-## Plot 2016-2018
-```{r}
-
-knitr::include_graphics("images/refugee_map_2018.jpg")
-
-```
-
-## Plot 2017-2020
-```{r}
-
-knitr::include_graphics("images/refugee_map_2020.jpg")
-
-```
-
-## Study
-
--   The refugee crisis in Europe might influence numbers, with potential spillover effects on US Refugee/asylum applications.
--   Policy changes in the USA regarding immigration during the new administration might also become visible.
--   Continued conflicts and economic issues in various countries could maintain or increased refugee movements.
--   Climate change effects might begin to show, especially from countries suffering from environmental degradation.
-
-# World Health Crisis and Policy Change in Year 2019-2022
-
-## Plot 2019-2020
-```{r}
-
-knitr::include_graphics("images/refugee_map_2020.jpg")
-
-```
-
-## Plot 2020-2022
-```{r}
-
-knitr::include_graphics("images/refugee_map_2022.jpg")
-
-```
-
-## Study
-
--   The COVID-19 pandemic would likely cause a significant drop in migrations worldwide due to travel restrictions and border closures.
--   Economic downturns resulting from the pandemic might affect later refugee movements.
--   Post-pandemic recovery may lead to an increase in migrations as countries lift travel bans.
--   The situation in Afghanistan post-US withdrawal could result in an increase in refugees from that region.
-
-
-## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
-
--   Refugee populations from 2011 to 2022
-
-## Map 2011-2022
-```{r}
+```{r,echo=FALSE}
 
 knitr::include_graphics("images/worldmap_plot.gif")
 
 ```
 
-## Study
+## War Effect in Year 2010-2016
+
+::: panel-tabset
+#### Plot 2010-2012
+
+![](images/refugee_map_2012.jpg){fig-align="center" width="850" height="600"}
+
+#### Plot 2012-2015
+
+![](images/refugee_map_2016.jpg){fig-align="center" width="850" height="600"}
+
+#### Study
+
+-   Early in the decade, migrations might be influenced by the aftermath of the global financial crisis of 2008, conflicts such as the war in Afghanistan or Iraq, or ongoing issues in countries like Somalia and china.
+-   This period may show increased migrations from the Middle East, particularly Syria, due to the Syrian Civil War beginning in 2011.
+-   Other regions might also exhibit changes due to local conflicts or economic instability.
+:::
+
+## Economic / Climate Conditions in Year 2016-2019
+
+::: panel-tabset
+#### Plot 2016-2018
+
+![](images/refugee_map_2018.jpg){fig-align="center" width="850" height="600"}
+
+#### Plot 2017-2020
+
+![](images/refugee_map_2020.jpg){fig-align="center" width="850" height="600"}
+
+#### Study
+
+-   The refugee crisis in Europe might influence numbers, with potential spillover effects on US Refugee/asylum applications.
+-   Policy changes in the USA regarding immigration during the new administration might also become visible.
+-   Continued conflicts and economic issues in various countries could maintain or increased refugee movements.
+-   Climate change effects might begin to show, especially from countries suffering from environmental degradation.
+:::
+
+## World Health Crisis and Policy Change in Year 2019-2022
+
+::: panel-tabset
+#### Plot 2019-2020
+
+![](images/refugee_map_2020.jpg){fig-align="center" width="850" height="600"}
+
+#### Plot 2020-2022
+
+![](images/refugee_map_2022.jpg){fig-align="center" width="850" height="600"}
+
+#### Study
+
+-   The COVID-19 pandemic would likely cause a significant drop in migrations worldwide due to travel restrictions and border closures.
+-   Economic downturns resulting from the pandemic might affect later refugee movements.
+-   Post-pandemic recovery may lead to an increase in migrations as countries lift travel bans.
+-   The situation in Afghanistan post-US withdrawal could result in an increase in refugees from that region.
+:::
+
+## EUREKAAAAAAAAAA!!!!!!!
+
+::: panel-tabset
+#### 2010-2022
+
+![](images/worldmap_plot.gif){fig-align="center" width="850" height="600"}
+
+#### Study
 
 -   While not typically classified as refugees, many Chinese nationals seek to leave China for economic opportunities
 -   The relationship between China and the USA, including U.S. immigration policy, can influence refugee flows. Policies that allow for a greater number of asylum applications or provide specific provisions for individuals from China can result in higher refugee numbers. Additionally, there may be specific legislative acts or policies targeting the protection of certain groups from China, which could lead to an increase in accepted refugee applications.
+:::
 
 ## Challenges faced
 
@@ -724,7 +712,7 @@ knitr::include_graphics("images/worldmap_plot.gif")
 
 ## Conclusion
 
-By analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses. 
+By analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses.
 
 ## References
 
@@ -735,9 +723,9 @@ Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/re
 ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
 
 ## Any Question?
+
 ```{r}
 
 knitr::include_graphics("images/th01.gif")
 
 ```
-
