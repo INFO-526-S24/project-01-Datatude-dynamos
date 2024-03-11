@@ -114,16 +114,20 @@ total_refugee_trends <- population_data %>%
 
 -   Expeditious growth of the refugee population over time
 
+
 ::: panel-tabset
-        
-::: tab Plot 1
-![Expeditious growth of the refugee population over time](images/Analysis-1.png){fig-align="center" width="660"})
-Expeditious growth of the refugee population over time.
-
-::: tab Plot 2
-![A small number of refugees have returned over a period of time](images/Analysis-2.png){fig-align="center" width="660"}
-A small number of refugees have returned over a period of time.
-
+    ::: tab Plot A
+    ![The number of characters that hold the highest correlation to a respective Myers-Briggs personality type](images/Analysis-1.png){fig-align="center" width="660"}
+    
+    ::: tab Plot B
+    ![The number of characters that hold that highest correlation to a Myers-Briggs type](images/Analysis-2.png){fig-align="center" width="750"}
+    
+    ::: tab Insights
+    :::
+    - The plot highlights the vast differences between Myers-Briggs personality type occurrences in different universes.
+    - To exemplify, "Buffy the Vampire Slayer" has a larger amount of introverted characters than extroverted which contrasts with "Downton Abbey" which appears to contain more extroverted characters than introverted.
+    - This could allow for inferences concerning whether specific genres of media are inherently built with introverted or extroverted characters (i.e. action should presumably comprise of more extroverts).
+    :::
 :::
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
