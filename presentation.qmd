@@ -3,7 +3,7 @@ title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Fall 2023 - Project 1"
 author: "Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha "
 title-slide-attributes:
-  data-background-image: images/pic2.jpg
+  data-background-image: images/r02.jpg
   data-background-size: stretch
   data-background-opacity: "0.7"
   data-slide-number: none
@@ -80,14 +80,17 @@ population_data <- read_csv('data/population.csv')
 Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
 
 -   "Refugees" dataset from [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md).
+-   The entire dataset has been refined to highlight the countries from which refugees are coming to the `USA`.
+-   Focusing on key variables such as `'year'`, `'coo_name'`, `'coa_name'`, from `'refugees'` data for plotting.
+
+## Aim
+
+Our Project's aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. This study intends to delve into the patterns of refugee migration to the **`USA`**, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as **wars**, **environmental crises**, **Policy changes**, and **economic shifts.**
 
 ## Question 01 {.smaller}
 
 **How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.**
 
--   The presentation is created using the Quarto CLI
-
--   `##` sets the start of a new slide
 
 ## Data Preparation and Pre-processing
 
@@ -95,40 +98,16 @@ Our target dataset comes from the `{refugees} R package`, which compiles extensi
 -   First aggregate our data by year before summarizing the overall number of refugees
 -   Divide these totals into thousands for easier comprehension
 
-## Aim
-
-Our Project's aim is to prepare a comprehensive analysis that aims to uncover and present patterns in refugee populations globally over time. It explores how these patterns have evolved and investigates the factors influencing these trends, including political climates, particularly in the United States, and external factors like wars, climate change, and global health crises.
-
-```{r,echo=FALSE}
-
-knitr::include_graphics("images/refugee.gif")
-```
-
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 total_refugee_trends <- population_data %>%
   group_by(year) %>%
   summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)  
 ```
 
+
 ## Analysis 01: Refugee populations over time {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
-
-
-::: panel-tabset
-    ::: tab Plot A
-    ![The number of characters that hold the highest correlation to a respective Myers-Briggs personality type](images/Analysis-1.png){fig-align="center" width="660"}
-    
-    ::: tab Plot B
-    ![The number of characters that hold that highest correlation to a Myers-Briggs type](images/Analysis-2.png){fig-align="center" width="750"}
-    
-    ::: tab Insights
-    :::
-    - The plot highlights the vast differences between Myers-Briggs personality type occurrences in different universes.
-    - To exemplify, "Buffy the Vampire Slayer" has a larger amount of introverted characters than extroverted which contrasts with "Downton Abbey" which appears to contain more extroverted characters than introverted.
-    - This could allow for inferences concerning whether specific genres of media are inherently built with introverted or extroverted characters (i.e. action should presumably comprise of more extroverts).
-    :::
-:::
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
@@ -139,7 +118,7 @@ plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refu
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 4 / 8)
+  theme(aspect.ratio = 6 / 8)
 
 print(plot_total_refugees)
 
@@ -164,7 +143,7 @@ plot2 <- ggplot(returned_refugee_trends, aes(x = year, y = returned_refugees)) +
   theme_minimal() +
   scale_x_continuous(breaks = seq(from = min(returned_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 4 / 8)
+  theme(aspect.ratio = 6 / 8)
 
 print(plot2)
 
@@ -173,7 +152,7 @@ print(plot2)
 ## Analysis 03: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 20 countries with the highest total number of refugees
--   The heigest number of refugee came has come from "Syrian", "Afghanistan" and "South Sudan"
+-   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -213,7 +192,7 @@ plot_top_countries <- ggplot(top_country_total_refugees, aes(x = reorder(coo_nam
   theme_minimal() +
   coord_flip() +  # Flip coordinates to make it easier to read country names
   scale_y_continuous(labels = scales::comma) +
-  theme(aspect.ratio = 4 / 8)
+  theme(aspect.ratio = 6 / 9)
 print(plot_top_countries)
 # Adding US political context
 ```
@@ -267,92 +246,73 @@ print(plot_top_asylum_countries)
 
 -   A small number of refugees have returned over a period of time
 
-    ```{r,echo=FALSE}
+    ```{r, echo=FALSE, out.width='50%'}
 
-    knitr::include_graphics("images/anim_plot1.gif")
+      # Load the magick package
+    library(magick)
+
+    # Read the GIF
+    gif <- image_read("images/anim_plot1.gif")
+
+    # Resize the GIF to a specific width, maintaining aspect ratio
+    # For example, resize to a width of 800 pixels
+    gif_resized <- image_resize(gif, "500x")
+
+    # Save the resized GIF
+    image_write(gif_resized, "images/anim_plot1_resized.gif")
     ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-#install.packages("OpenImageR")
-library(tidyverse)
-library(dplyr)
-library(gganimate)
-library(gifski)
-#install.packages("OpenImageR")
-library(OpenImageR)
-#install.packages("magick")
-library(magick)
-population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv', 
-                              show_col_types = FALSE)
+    ```{r, echo=FALSE}
 
-party <- function(year){
-  if (year >= 2008 && year <= 2012){
-    return("Democratic Party")
-  }else if (year > 2012 && year < 2016){
-    return("Democratic Party")
-  }else if (year >= 2016 && year < 2020){
-    return("Republican Party")
-  }else if (year >= 2020 && year <= 2022){
-    return("Democratic Party")
-  }else{
-    return(NA)
-  }
-}
+    knitr::include_graphics("images/anim_plot1_resized.gif")
+    ```
 
-population$Ruling_party <- sapply(population$year, party)
-
-data1 <- population |>
-  filter(coa_name == "United States of America") |>
-  group_by(year, Ruling_party) |>
-  summarise(total_refugees = sum(refugees, na.rm = TRUE))
-
-# Creating the line plot
-
-plot <- ggplot(data = data1, aes(x = year, y = total_refugees, color = Ruling_party)) +
-  
-  geom_line(aes(x = year, y = total_refugees, group = 2, colour = Ruling_party)) +
-  
-  scale_color_manual(name = "Party",
-                     values = c("Democratic Party" = "Blue", "Republican Party" = "Red"))+
-  
-  scale_x_continuous(breaks = seq(2010, 2022, by = 2)) +
-  
-  labs(
-    title = "Refugees population over time in United States",
-    x = "Year",
-    y = "Total Refugees"
-  ) +
-  
-  theme_minimal() 
-plot
-
-```
-
-## Our Dataset {auto-animate="true"}
-
-Our target dataset comes from the `Populations Dataset from {refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
-
--   "Population" dataset from [tidytuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md).
--   The entire dataset has been refined to highlight the countries from which refugees are coming to the `USA`.
--   Focusing on key variables such as `'year'`, `'coo_name'`, `'coa_name'`, from `'refugees'` data for plotting.
-
-**AIM**
-
-Grasping the intricacies of global refugee flows is essential for tackling humanitarian issues and formulating impactful policies. This study intends to delve into the patterns of refugee migration to the **`USA`**, tracing movements from various countries over time. Through analyzing refugee data on an annual basis and adjusting for population figures, our goal is to identify trends and correlate them with major global occurrences such as **wars**, **environmental crises**, **Policy changes**, and **economic shifts.**
-
-# Question 02
+# Question 02  {.smaller}
 
 ## How does the global refugee population's migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA?
 
--   This presentation aims to showcase the evolution of the refugee population migrating to the USA from various countries annually, spanning from 2010 to 2022.
+## Data Preparation and Pre-processing
 
--   
+-   The processRefugees function refines the dataset by selecting key columns, appending missing countries with NA for uniformity, standardizing country names for consistency, categorizing refugee numbers for analytically clarity, and converting these categories to factors for effective visualization in R.
 
-## Approach
 
-**Code**
+    ```{r}
 
-```{r world_data, message=FALSE, include=FALSE}
+    processRefugees <- function (dataset, unique_countries) {
+  filtered_data <- dataset |>
+    select(coo_name, year, refugees) |>
+    bind_rows(
+      anti_join(unique_countries, dataset, by = c("region" = "coo_name")) |>
+        mutate(year = as.integer(dataset[1, "year"]), refugees = NA)
+    ) |>
+    mutate(
+      coo_name = case_when(
+        coo_name == "United States of America" ~ "USA",
+        coo_name == "United Kingdom of Great Britain and Northern Ireland" ~ "UK",
+        coo_name == "Iran (Islamic Rep. of)" ~ "Iran",
+        # Additional country name standardizations...
+        TRUE ~ coo_name
+      )
+    ) |>
+    mutate(
+      refugees_m = case_when(
+        refugees < 100 ~ "<100",
+        refugees >= 100 & refugees < 500 ~ "100 to 500",
+        # Additional refugee count categorizations...
+        is.na(refugees) ~ "NA"
+      )
+    ) %>%
+    mutate(
+      refugees_m = factor(refugees_m, levels = c("<100", "100 to 500", "500 to 1000", "1k to 2k", "2k to 3k", "3k to 4k", "4k to 5k", "5k to 7k", "7k to 10k", "10k to 20k", "20k to 50k", "50k to 100k", "100k+", "NA"))
+    )
+
+  return(filtered_data)
+}
+    ```
+
+
+
+```{r world_data, message=FALSE, include=FALSE, echo=FALSE}
 library(maps)
 library(ggplot2)
 library(tibble)
@@ -375,13 +335,13 @@ world <- subset(world, region != "Antarctica")
 
 ```
 
-```{r warning=FALSE,message=FALSE}
+```{r warning=FALSE,message=FALSE, echo=FALSE}
 population_data <- read_csv("data/population.csv")
 datasets <- population_data[population_data$coa_name == "United States of America",]
 datasets$year = as.integer(datasets$year)
 ```
 
-```{r process_function, message=FALSE, echo=TRUE}
+```{r process_function, message=FALSE, echo=FALSE}
 #| code-fold: true
 #| code-summary: "Glimpse of process Function"
 
@@ -478,7 +438,7 @@ processRefugees <- function (dataset, unique_countries) {
 
 ```
 
-```{r split_forest_data, message=FALSE, include=FALSE}
+```{r split_forest_data, message=FALSE, include=FALSE , echo=FALSE}
 # Dividing data into tibbles based on year and it creates a list of tibbles
 refugee_decades <- split(datasets, f = datasets$year)
 
@@ -518,7 +478,7 @@ filtered_data <- lapply(refugee_decades, function(refugee_ds) {
 
 ```
 
-```{r colourMapping, message=FALSE, include=FALSE}
+```{r colourMapping, message=FALSE, include=FALSE, echo=FALSE}
 color_mapping <- c(
   "<100"           = "#d73027",  # Red
   "100 to 500"     = "#f46d43",  # Red-Orange
@@ -537,7 +497,7 @@ color_mapping <- c(
 
 ```
 
-```{r world_plot_function, message=FALSE, echo=TRUE}
+```{r world_plot_function, message=FALSE, echo=FALSE}
 #| code-fold: true
 #| code-summary: "Function used to generate the plot"
 
@@ -694,70 +654,50 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 
 ```
 
-```{r,echo=FALSE}
+## Analysis 06: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+
+-   External factors such as geopolitical conflicts, policy changes in the USA, economic instability, and global crises like the COVID-19 pandemic significantly influence refugee migration patterns. Among these, **geopolitical conflicts and policy changes** in the USA often have the most immediate and noticeable impact on the number of refugees seeking asylum.
+
+
+```{r}
+
+knitr::include_graphics("images/refugee_map_2020.jpg")
+
+```
+
+## Analysis 06: Refugee populations over time with US political context. {.smaller auto-animate="true"}
+
+-   Refugee populations from 2011 to 2022
+
+
+```{r}
 
 knitr::include_graphics("images/worldmap_plot.gif")
 
 ```
 
-## Plots
+#Challenges faced
 
+-   Data only available from 2010 not before that
+-   Animation and frame rate selection.
+-   Error in data type and rendering method selection of gif during animation.
+
+## Conclusion
+
+By analyzing annual refugee data alongside global events, our study reveals how geopolitical conflicts, natural disasters, and economic changes drive global displacement patterns. This comprehensive examination underscores the urgency of addressing the root causes of forced migration and the importance of informed humanitarian responses. Data-driven insights are crucial for shaping policies that effectively tackle the increasing challenges of displacement worldwide.
+
+## References
+
+Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
+
+Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
+
+ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
+
+## Any Question?
 ```{r}
 
-```
-
-## Plot and text
-
-::: columns
-::: {.column width="50%"}
--   Some text
-
--   goes here
-:::
-
-::: {.column width="50%"}
-```{r, warning=FALSE, fig.width=5.5}
-
-```
-:::
-:::
-
-# A new section...
-
-## Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
+knitr::include_graphics("images/th01.gif")
 
 ```
 
-## Images
-
-![Image credit: Danielle Navarro, Percolate.](images/watercolour_sys02_img34_teacup-ocean.png){fig-align="center" width="500"}
-
-## Math Expressions {.smaller}
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. \$\\alpha+\\beta\$ renders $\alpha + \beta$. You can use the display style with double dollar signs:
-
-```         
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-$$
-
-Limitations:
-
-1.  The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-2.  There should not be spaces after the opening `$` or before the closing `$`.
-
-# Wrap up
-
-## Feeling adventurous?
-
--   You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.
-
--   But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.
