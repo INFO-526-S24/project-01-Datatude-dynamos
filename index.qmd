@@ -104,7 +104,7 @@ total_refugee_trends <- population_data %>%
 
 ### Analysis 01: Refugee populations over time.
 
-```{r, message=FALSE, warning=FALSE, echo=True}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, 
                               aes(x = year, 
