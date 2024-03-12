@@ -129,8 +129,6 @@ plot_total_refugees <- ggplot(total_refugee_trends,
                                   by = 1)) +  
   scale_y_continuous(labels = scales::comma)  
 
-print(plot_total_refugees)
-
 
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
 returned_refugee_trends <- population_data %>%
