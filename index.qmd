@@ -104,7 +104,7 @@ total_refugee_trends <- population_data %>%
 
 ### Analysis 01: Refugee populations over time.
 
-```{r, message=FALSE, warning=TRUE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, 
                               aes(x = year, 
@@ -183,7 +183,7 @@ print(plot2)
 
 ### Analysis 02: Refugees by year and country of origin
 
-```{r, message=FALSE, warning=FALSE, echo=TRUE}
+```{r, message=FALSE, warning=FALSE}
 
 # Aggregate total number of refugees by year and country of origin
 refugee_country_trends <- population_data %>%
@@ -286,7 +286,6 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers,
 ```
 
 This figure displays the aggregate number of refugees originating from the top 20 nations. The bar chart depicts various countries, with each bar uniformly shaded in purple. The y-axis represents the arrangement of countries, while the x-axis represents the overall number of refugees. The bars are arranged in a manner that emphasizes the nations with the greatest number of refugees, facilitating the identification of the countries with the highest refugee populations. This type of representation facilitates a rapid comprehension of the worldwide refugee issue by illustrating the nations that are most impacted.
-
 **A. Total Number of Refugees from Top 10 Countries**
 
 ```{r}
@@ -505,7 +504,7 @@ processRefugees <- function (dataset, unique_countries) {
 }
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=TRUE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Dividing data into tibbles based on year and it creates a list of tibbles
 refugee_decades <- split(datasets, 
                          f = datasets$year)
@@ -693,7 +692,6 @@ While not typically classified as refugees, many Chinese nationals seek to leave
 ### Discussion
 
 The analysis underscores the intricate relationship between global refugee movements and external factors like conflicts, economic conditions, and climate changes. The varying trends across different periods highlight how events like wars, financial crises, and pandemics significantly shape refugee patterns. This insight is crucial for formulating responsive and informed humanitarian policies to address the complexities of global displacement.
-
 ## Challenges faced
 
 -   Data only available from 2010 not before that
