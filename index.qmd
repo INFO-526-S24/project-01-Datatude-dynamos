@@ -104,7 +104,7 @@ total_refugee_trends <- population_data %>%
 
 ### Analysis 01: Refugee populations over time.
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, 
                               aes(x = year, 
@@ -159,10 +159,6 @@ plot2 <- ggplot(returned_refugee_trends,
                                   to = 2024, 
                                   by = 1)) +
   scale_y_continuous(labels = scales::comma) 
-
-
-
-
 ```
 
 The graphic illustrates the changes in overall refugee populations over time using a bar graph that shows annual fluctuations. It also includes a trend line that indicates a quadratic growth pattern.
@@ -420,7 +416,7 @@ datasets$year = as.integer(datasets$year)
 
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r}
 #| code-fold: true
 #| code-summary: "Glimpse of process Function"
 
@@ -619,7 +615,7 @@ plot_2021 <- generateRefugeePlot(2021)
 plot_2022 <- generateRefugeePlot(2022)
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r}
 generateRefugeeMap <- function(refugee_map_plot, file_path) {
   # Customize the plot appearance
   updated_refugee_plot <- refugee_map_plot +
