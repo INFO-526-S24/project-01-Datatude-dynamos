@@ -71,13 +71,13 @@ population_data <- read_csv('data/population.csv')
 
 Using the rich dataset offered by the `{refugees}` R package, this project sets out on an adventurous trip across the complicated landscape of worldwide migration from 2010 to 2022. It offers a comprehensive picture of the numerous factors influencing the lives of refugees, internally displaced people (IDPs), asylum seekers, stateless people, and more, spanning over 64,000 entries from sources like UNHCR, UNRWA, and IDMC. This research tries to unravel the complex web of variables driving forced migration, from socioeconomic turbulence to environmental calamities and geopolitical upheavals, via thorough investigation.
 
-Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships. In addition to tracking the rise and fall of international migration, this project aims to position these movements in the broader context of international politics, environmental issues, and global health concerns. Our objective is to present a comprehensive picture of the factors influencing worldwide migration patterns by integrating data on refugee movements with external socio-political and environmental events.
+Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships.
 
 ## Introduction
 
 This project analyses more than 64,000 data from the {refugees} R package, covering the period from 2010 to 2022, in order to investigate the intricate dynamics of worldwide displacement. The dataset provides a detailed look at the lives of refugees, internally displaced people (IDPs), asylum seekers, and stateless people, among others. It is derived from UNHCR, UNRWA, and IDMC and sheds light on the complex dynamics of forced migration. The goal is to identify the complex interactions that exist between outside variables and their impacts on patterns of global displacement, including geopolitical conflicts, natural disasters, and sociopolitical upheavals.
 
-The impact of US political positions on refugee trends and the general changes in worldwide refugee populations as a result of external factors like wars, climatic shifts, and health crises like the COVID-19 pandemic are central to our research. We want to analyse the complex relationship between major world events and displacement trends using time-series analysis and statistical evaluations. This study aims to map out the ebb and flow of worldwide displacement while also placing these movements within the broader context of world events. This will help to better understand the forces driving migration, the interconnections of world events, and the effects these events have on displaced populations.
+The impact of US political positions on refugee trends and the general changes in worldwide refugee populations as a result of external factors like wars, climatic shifts, and health crises like the COVID-19 pandemic are central to our research. We want to analyse the complex relationship between major world events and displacement trends using time-series analysis and statistical evaluations.
 
 ## Question 1: How have the patterns in refugee populations evolved over time, and how have the stances of American political parties impacted these developments? Analyse the dynamics of refugee migrations towards US political environments.
 
@@ -297,6 +297,7 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers,
 
 
 This figure displays the aggregate number of refugees originating from the top 20 nations. The bar chart depicts various countries, with each bar uniformly shaded in purple. The y-axis represents the arrangement of countries, while the x-axis represents the overall number of refugees. The bars are arranged in a manner that emphasizes the nations with the greatest number of refugees, facilitating the identification of the countries with the highest refugee populations. This type of representation facilitates a rapid comprehension of the worldwide refugee issue by illustrating the nations that are most impacted.
+
 **A. Total Number of Refugees from Top 10 Countries**
 
 
@@ -719,6 +720,7 @@ While not typically classified as refugees, many Chinese nationals seek to leave
 ### Discussion
 
 The analysis underscores the intricate relationship between global refugee movements and external factors like conflicts, economic conditions, and climate changes. The varying trends across different periods highlight how events like wars, financial crises, and pandemics significantly shape refugee patterns. This insight is crucial for formulating responsive and informed humanitarian policies to address the complexities of global displacement.
+
 ## Challenges faced
 
 -   Data only available from 2010 not before that
