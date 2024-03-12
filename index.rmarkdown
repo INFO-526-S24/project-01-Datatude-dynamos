@@ -108,7 +108,7 @@ total_refugee_trends <- population_data %>%
 ### Analysis 01: Refugee populations over time.
 
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=TRUE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, 
                               aes(x = year, 
@@ -193,7 +193,7 @@ print(plot2)
 ### Analysis 02: Refugees by year and country of origin
 
 
-```{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
 
 # Aggregate total number of refugees by year and country of origin
 refugee_country_trends <- population_data %>%
@@ -523,7 +523,7 @@ processRefugees <- function (dataset, unique_countries) {
 }
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
 # Dividing data into tibbles based on year and it creates a list of tibbles
 refugee_decades <- split(datasets, 
                          f = datasets$year)
