@@ -8,7 +8,7 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha">
   <title>Project Title - Examining Global Refugee Trends and Correlations Over the Years</title>
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -431,9 +432,9 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <li>Divide these totals into thousands for easier comprehension</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>total_refugee_trends <span class="ot">&lt;-</span> population_data <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">summarise</span>(<span class="at">total_refugees =</span> <span class="fu">sum</span>(refugees, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="dv">1000</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>total_refugee_trends <span class="ot">&lt;-</span> population_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">summarise</span>(<span class="at">total_refugees =</span> <span class="fu">sum</span>(refugees, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="dv">1000</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="analysis-refugee-populations-over-time" class="slide level2 smaller" data-auto-animate="true">
@@ -441,52 +442,37 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <ul>
 <li>Expeditious growth of the refugee population over time</li>
 </ul>
-</section>
-<section id="plot-01" class="slide level2">
-<h2>Plot 01</h2>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="analysis-refugee-populations-over-time-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Analysis: Refugee populations over time</h2>
 <ul>
 <li>A small number of refugees have returned over a period of time</li>
 </ul>
-</section>
-<section id="plot-02" class="slide level2">
-<h2>Plot 02</h2>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="analysis-refugees-by-year-and-country-of-origin" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Analysis: Refugees by year and country of origin</h2>
 <ul>
 <li>Top 10 countries with the highest total number of refugees</li>
 <li>The maximum number of refugee came has come from <strong>Syrian</strong>, <strong>Afghanistan</strong> and <strong>South Sudan</strong></li>
 </ul>
-</section>
-<section id="plot-03" class="slide level2">
-<h2>Plot 03</h2>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-7-1.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-7-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="analysis-refugees-by-year-and-country-of-origin-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Analysis: Refugees by year and country of origin</h2>
 <ul>
 <li>Top 10 countries with the highest total number of asylum seekers</li>
 </ul>
-</section>
-<section id="plot-04" class="slide level2">
-<h2>Plot 04</h2>
 
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-8-1.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-8-1.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="analysis-refugee-populations-over-time-with-us-political-context." class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Analysis: Refugee populations over time with US political context.</h2>
 <ul>
 <li>A small number of refugees have returned over a period of time</li>
 </ul>
-</section>
-<section id="plot-05" class="slide level2">
-<h2>Plot 05</h2>
 
-<img data-src="images/anim_plot1.gif" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/anim_plot1.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="question-02" class="slide level2">
 <h2>Question 02</h2>
 <h4 id="how-does-the-global-refugee-populations-migration-to-the-usa-vary-across-different-countries-and-years-are-there-external-factors-such-as-covid-19-war-climate-change-financial-stability-or-policy-changes-that-influence-the-number-of-refugees-seeking-asylum-in-the-usa">How does the global refugee population’s migration to the USA vary across different countries and years? Are there external factors, such as COVID-19, war, climate change, financial stability, or policy changes, that influence the number of refugees seeking asylum in the USA?</h4>
@@ -503,176 +489,176 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 </ul>
 <p><strong>Code</strong></p>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>Glimpse of process Function</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># function to pre process the refugee dataset</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># input  : dataset - tibble</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#          unique_countries - tibble</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co"># output : filtered_data - tibble</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>processRefugees <span class="ot">&lt;-</span> <span class="cf">function</span> (dataset, unique_countries) {</span>
-<span id="cb2-6"><a href="#cb2-6"></a>  filtered_data <span class="ot">&lt;-</span> dataset <span class="sc">|&gt;</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="co"># filtering only country name, year and refugees columns</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a>    <span class="fu">select</span>(coo_name, year, refugees) <span class="sc">|&gt;</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="co"># getting all the countires which are not present in population dataset for a specific years</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="co"># bind_rows() is used combine combine rows of two data frames</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>    <span class="fu">bind_rows</span>(</span>
-<span id="cb2-12"><a href="#cb2-12"></a>      <span class="co"># anti_join() is used to return only the rows from the first dataset that isn't having matching rows in the second dataset based on specified key columns</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>      <span class="fu">anti_join</span>(unique_countries, dataset, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"region"</span> <span class="ot">=</span> <span class="st">"coo_name"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a>        <span class="co"># adding year and number of refugees for that specific year as NA</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>        <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(dataset[<span class="dv">1</span>, <span class="st">"year"</span>]), <span class="at">refugees =</span> <span class="cn">NA</span>)</span>
-<span id="cb2-16"><a href="#cb2-16"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>    </span>
-<span id="cb2-18"><a href="#cb2-18"></a>    </span>
-<span id="cb2-19"><a href="#cb2-19"></a>    </span>
-<span id="cb2-20"><a href="#cb2-20"></a>    </span>
-<span id="cb2-21"><a href="#cb2-21"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb2-22"><a href="#cb2-22"></a>      <span class="at">coo_name =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-23"><a href="#cb2-23"></a>        coo_name <span class="sc">==</span> <span class="st">"United States of America"</span> <span class="sc">~</span> <span class="st">"USA"</span>,</span>
-<span id="cb2-24"><a href="#cb2-24"></a>        coo_name <span class="sc">==</span> <span class="st">"United Kingdom of Great Britain and Northern Ireland"</span> <span class="sc">~</span> <span class="st">"UK"</span>,</span>
-<span id="cb2-25"><a href="#cb2-25"></a>        coo_name <span class="sc">==</span> <span class="st">"Iran (Islamic Rep. of)"</span> <span class="sc">~</span> <span class="st">"Iran"</span>,</span>
-<span id="cb2-26"><a href="#cb2-26"></a>        coo_name <span class="sc">==</span> <span class="st">"Palestinian"</span> <span class="sc">~</span> <span class="st">"Palestine"</span>,</span>
-<span id="cb2-27"><a href="#cb2-27"></a>        coo_name <span class="sc">==</span> <span class="st">"Serbia and Kosovo: S/RES/1244 (1999)"</span> <span class="sc">~</span> <span class="st">"Serbia"</span>,</span>
-<span id="cb2-28"><a href="#cb2-28"></a>        coo_name <span class="sc">==</span> <span class="st">"Türkiye"</span> <span class="sc">~</span> <span class="st">"Turkey"</span>,</span>
-<span id="cb2-29"><a href="#cb2-29"></a>        coo_name <span class="sc">==</span> <span class="st">"Congo"</span> <span class="sc">~</span> <span class="st">"Congo"</span>,</span>
-<span id="cb2-30"><a href="#cb2-30"></a>        coo_name <span class="sc">==</span> <span class="st">"Dem. Rep. of the Congo"</span> <span class="sc">~</span> <span class="st">"Democratic Republic of the Congo"</span>,</span>
-<span id="cb2-31"><a href="#cb2-31"></a>        coo_name <span class="sc">==</span> <span class="st">"Cote d'Ivoire"</span> <span class="sc">~</span> <span class="st">"Ivory Coast"</span>,</span>
-<span id="cb2-32"><a href="#cb2-32"></a>        coo_name <span class="sc">==</span> <span class="st">"Central African Rep."</span> <span class="sc">~</span> <span class="st">"Central African Republic"</span>,</span>
-<span id="cb2-33"><a href="#cb2-33"></a>        coo_name <span class="sc">==</span> <span class="st">"United Rep. of Tanzania"</span> <span class="sc">~</span> <span class="st">"Tanzania"</span>,</span>
-<span id="cb2-34"><a href="#cb2-34"></a>        coo_name <span class="sc">==</span> <span class="st">"Russian Federation"</span> <span class="sc">~</span> <span class="st">"Russia"</span>,</span>
-<span id="cb2-35"><a href="#cb2-35"></a>        coo_name <span class="sc">==</span> <span class="st">"Syrian Arab Rep."</span> <span class="sc">~</span> <span class="st">"Syria"</span>,</span>
-<span id="cb2-36"><a href="#cb2-36"></a>        coo_name <span class="sc">==</span> <span class="st">"Bolivia (Plurinational State of)"</span> <span class="sc">~</span> <span class="st">"Bolivia"</span>,</span>
-<span id="cb2-37"><a href="#cb2-37"></a>        coo_name <span class="sc">==</span> <span class="st">"Dominican Rep."</span> <span class="sc">~</span> <span class="st">"Dominican Republic"</span>,</span>
-<span id="cb2-38"><a href="#cb2-38"></a>        coo_name <span class="sc">==</span> <span class="st">"Venezuela (Bolivarian Republic of)"</span> <span class="sc">~</span> <span class="st">"Venezuela"</span>,</span>
-<span id="cb2-39"><a href="#cb2-39"></a>        coo_name <span class="sc">==</span> <span class="st">"Czechia"</span> <span class="sc">~</span> <span class="st">"Czech Republic"</span>,</span>
-<span id="cb2-40"><a href="#cb2-40"></a>        coo_name <span class="sc">==</span> <span class="st">"Rep. of Korea"</span> <span class="sc">~</span> <span class="st">"South Korea"</span>,</span>
-<span id="cb2-41"><a href="#cb2-41"></a>        coo_name <span class="sc">==</span> <span class="st">"Dem. People's Rep. of Korea"</span> <span class="sc">~</span> <span class="st">"North Korea"</span>,</span>
-<span id="cb2-42"><a href="#cb2-42"></a>        coo_name <span class="sc">==</span> <span class="st">"Lao People's Dem. Rep."</span> <span class="sc">~</span> <span class="st">"Laos"</span>,</span>
-<span id="cb2-43"><a href="#cb2-43"></a>        coo_name <span class="sc">==</span> <span class="st">"Viet Nam"</span> <span class="sc">~</span> <span class="st">"Vietnam"</span>,</span>
-<span id="cb2-44"><a href="#cb2-44"></a>        coo_name <span class="sc">==</span> <span class="st">"China, Hong Kong SAR"</span> <span class="sc">~</span> <span class="st">"Hong Kong"</span>,</span>
-<span id="cb2-45"><a href="#cb2-45"></a>        coo_name <span class="sc">==</span> <span class="st">"Netherlands (Kingdom of the)"</span> <span class="sc">~</span> <span class="st">"Netherlands"</span>,</span>
-<span id="cb2-46"><a href="#cb2-46"></a>        coo_name <span class="sc">==</span> <span class="st">"Cabo Verde"</span> <span class="sc">~</span> <span class="st">"Cape Verde"</span>,</span>
-<span id="cb2-47"><a href="#cb2-47"></a>        coo_name <span class="sc">==</span> <span class="st">"China, Macao SAR"</span> <span class="sc">~</span> <span class="st">"Macao"</span>,</span>
-<span id="cb2-48"><a href="#cb2-48"></a>        coo_name <span class="sc">==</span> <span class="st">"Holy See"</span> <span class="sc">~</span> <span class="st">"Vatican City"</span>,</span>
-<span id="cb2-49"><a href="#cb2-49"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> coo_name</span>
-<span id="cb2-50"><a href="#cb2-50"></a>      )</span>
-<span id="cb2-51"><a href="#cb2-51"></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb2-52"><a href="#cb2-52"></a>    <span class="co"># creating a categorical variable refugee_m to group countries based on their number of refugee's </span></span>
-<span id="cb2-53"><a href="#cb2-53"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-54"><a href="#cb2-54"></a>    <span class="at">refugees_m =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-55"><a href="#cb2-55"></a>      refugees <span class="sc">&lt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">"&lt;100"</span>,</span>
-<span id="cb2-56"><a href="#cb2-56"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">500</span> <span class="sc">~</span> <span class="st">"100 to 500"</span>,</span>
-<span id="cb2-57"><a href="#cb2-57"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">500</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"500 to 1000"</span>,</span>
-<span id="cb2-58"><a href="#cb2-58"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">~</span> <span class="st">"1k to 2k"</span>,</span>
-<span id="cb2-59"><a href="#cb2-59"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">3000</span> <span class="sc">~</span> <span class="st">"2k to 3k"</span>,</span>
-<span id="cb2-60"><a href="#cb2-60"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">3000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">4000</span> <span class="sc">~</span> <span class="st">"3k to 4k"</span>,</span>
-<span id="cb2-61"><a href="#cb2-61"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">4000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">5000</span> <span class="sc">~</span> <span class="st">"4k to 5k"</span>,</span>
-<span id="cb2-62"><a href="#cb2-62"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">5000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">7000</span> <span class="sc">~</span> <span class="st">"5k to 7k"</span>,</span>
-<span id="cb2-63"><a href="#cb2-63"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">7000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">~</span> <span class="st">"7k to 10k"</span>,</span>
-<span id="cb2-64"><a href="#cb2-64"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">10000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">20000</span> <span class="sc">~</span> <span class="st">"10k to 20k"</span>,</span>
-<span id="cb2-65"><a href="#cb2-65"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">20000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">50000</span> <span class="sc">~</span> <span class="st">"20k to 50k"</span>,</span>
-<span id="cb2-66"><a href="#cb2-66"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">50000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">100000</span> <span class="sc">~</span> <span class="st">"50k to 100k"</span>,</span>
-<span id="cb2-67"><a href="#cb2-67"></a>      refugees <span class="sc">&gt;=</span> <span class="dv">100000</span> <span class="sc">~</span> <span class="st">"100k+"</span>,</span>
-<span id="cb2-68"><a href="#cb2-68"></a>      <span class="fu">is.na</span>(refugees)  <span class="sc">~</span> <span class="st">"NA"</span></span>
-<span id="cb2-69"><a href="#cb2-69"></a>    )</span>
-<span id="cb2-70"><a href="#cb2-70"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb2-71"><a href="#cb2-71"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb2-72"><a href="#cb2-72"></a>    <span class="at">refugees_m =</span> <span class="fu">factor</span>(refugees_m, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"&lt;100"</span>, </span>
-<span id="cb2-73"><a href="#cb2-73"></a>                                               <span class="st">"100 to 500"</span>, </span>
-<span id="cb2-74"><a href="#cb2-74"></a>                                               <span class="st">"1k to 2k"</span>,</span>
-<span id="cb2-75"><a href="#cb2-75"></a>      <span class="st">"2k to 3k"</span>,</span>
-<span id="cb2-76"><a href="#cb2-76"></a>      <span class="st">"3k to 4k"</span>,</span>
-<span id="cb2-77"><a href="#cb2-77"></a>      <span class="st">"4k to 5k"</span>,</span>
-<span id="cb2-78"><a href="#cb2-78"></a>      <span class="st">"5k to 7k"</span>,</span>
-<span id="cb2-79"><a href="#cb2-79"></a>       <span class="st">"7k to 10k"</span>,</span>
-<span id="cb2-80"><a href="#cb2-80"></a>       <span class="st">"10k to 20k"</span>,</span>
-<span id="cb2-81"><a href="#cb2-81"></a>       <span class="st">"20k to 50k"</span>,</span>
-<span id="cb2-82"><a href="#cb2-82"></a>       <span class="st">"50k to 100k"</span>,</span>
-<span id="cb2-83"><a href="#cb2-83"></a>      <span class="st">"100k+"</span>,</span>
-<span id="cb2-84"><a href="#cb2-84"></a>       <span class="st">"NA"</span>))</span>
-<span id="cb2-85"><a href="#cb2-85"></a>  )</span>
-<span id="cb2-86"><a href="#cb2-86"></a></span>
-<span id="cb2-87"><a href="#cb2-87"></a>  <span class="fu">return</span>(filtered_data)</span>
-<span id="cb2-88"><a href="#cb2-88"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># function to pre process the refugee dataset</span></span>
+<span id="cb2-2"><a></a><span class="co"># input  : dataset - tibble</span></span>
+<span id="cb2-3"><a></a><span class="co">#          unique_countries - tibble</span></span>
+<span id="cb2-4"><a></a><span class="co"># output : filtered_data - tibble</span></span>
+<span id="cb2-5"><a></a>processRefugees <span class="ot">&lt;-</span> <span class="cf">function</span> (dataset, unique_countries) {</span>
+<span id="cb2-6"><a></a>  filtered_data <span class="ot">&lt;-</span> dataset <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a></a>    <span class="co"># filtering only country name, year and refugees columns</span></span>
+<span id="cb2-8"><a></a>    <span class="fu">select</span>(coo_name, year, refugees) <span class="sc">|&gt;</span></span>
+<span id="cb2-9"><a></a>    <span class="co"># getting all the countires which are not present in population dataset for a specific years</span></span>
+<span id="cb2-10"><a></a>    <span class="co"># bind_rows() is used combine combine rows of two data frames</span></span>
+<span id="cb2-11"><a></a>    <span class="fu">bind_rows</span>(</span>
+<span id="cb2-12"><a></a>      <span class="co"># anti_join() is used to return only the rows from the first dataset that isn't having matching rows in the second dataset based on specified key columns</span></span>
+<span id="cb2-13"><a></a>      <span class="fu">anti_join</span>(unique_countries, dataset, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"region"</span> <span class="ot">=</span> <span class="st">"coo_name"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a></a>        <span class="co"># adding year and number of refugees for that specific year as NA</span></span>
+<span id="cb2-15"><a></a>        <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.integer</span>(dataset[<span class="dv">1</span>, <span class="st">"year"</span>]), <span class="at">refugees =</span> <span class="cn">NA</span>)</span>
+<span id="cb2-16"><a></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a></a>    </span>
+<span id="cb2-18"><a></a>    </span>
+<span id="cb2-19"><a></a>    </span>
+<span id="cb2-20"><a></a>    </span>
+<span id="cb2-21"><a></a>    <span class="fu">mutate</span>(</span>
+<span id="cb2-22"><a></a>      <span class="at">coo_name =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-23"><a></a>        coo_name <span class="sc">==</span> <span class="st">"United States of America"</span> <span class="sc">~</span> <span class="st">"USA"</span>,</span>
+<span id="cb2-24"><a></a>        coo_name <span class="sc">==</span> <span class="st">"United Kingdom of Great Britain and Northern Ireland"</span> <span class="sc">~</span> <span class="st">"UK"</span>,</span>
+<span id="cb2-25"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Iran (Islamic Rep. of)"</span> <span class="sc">~</span> <span class="st">"Iran"</span>,</span>
+<span id="cb2-26"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Palestinian"</span> <span class="sc">~</span> <span class="st">"Palestine"</span>,</span>
+<span id="cb2-27"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Serbia and Kosovo: S/RES/1244 (1999)"</span> <span class="sc">~</span> <span class="st">"Serbia"</span>,</span>
+<span id="cb2-28"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Türkiye"</span> <span class="sc">~</span> <span class="st">"Turkey"</span>,</span>
+<span id="cb2-29"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Congo"</span> <span class="sc">~</span> <span class="st">"Congo"</span>,</span>
+<span id="cb2-30"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Dem. Rep. of the Congo"</span> <span class="sc">~</span> <span class="st">"Democratic Republic of the Congo"</span>,</span>
+<span id="cb2-31"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Cote d'Ivoire"</span> <span class="sc">~</span> <span class="st">"Ivory Coast"</span>,</span>
+<span id="cb2-32"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Central African Rep."</span> <span class="sc">~</span> <span class="st">"Central African Republic"</span>,</span>
+<span id="cb2-33"><a></a>        coo_name <span class="sc">==</span> <span class="st">"United Rep. of Tanzania"</span> <span class="sc">~</span> <span class="st">"Tanzania"</span>,</span>
+<span id="cb2-34"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Russian Federation"</span> <span class="sc">~</span> <span class="st">"Russia"</span>,</span>
+<span id="cb2-35"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Syrian Arab Rep."</span> <span class="sc">~</span> <span class="st">"Syria"</span>,</span>
+<span id="cb2-36"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Bolivia (Plurinational State of)"</span> <span class="sc">~</span> <span class="st">"Bolivia"</span>,</span>
+<span id="cb2-37"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Dominican Rep."</span> <span class="sc">~</span> <span class="st">"Dominican Republic"</span>,</span>
+<span id="cb2-38"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Venezuela (Bolivarian Republic of)"</span> <span class="sc">~</span> <span class="st">"Venezuela"</span>,</span>
+<span id="cb2-39"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Czechia"</span> <span class="sc">~</span> <span class="st">"Czech Republic"</span>,</span>
+<span id="cb2-40"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Rep. of Korea"</span> <span class="sc">~</span> <span class="st">"South Korea"</span>,</span>
+<span id="cb2-41"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Dem. People's Rep. of Korea"</span> <span class="sc">~</span> <span class="st">"North Korea"</span>,</span>
+<span id="cb2-42"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Lao People's Dem. Rep."</span> <span class="sc">~</span> <span class="st">"Laos"</span>,</span>
+<span id="cb2-43"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Viet Nam"</span> <span class="sc">~</span> <span class="st">"Vietnam"</span>,</span>
+<span id="cb2-44"><a></a>        coo_name <span class="sc">==</span> <span class="st">"China, Hong Kong SAR"</span> <span class="sc">~</span> <span class="st">"Hong Kong"</span>,</span>
+<span id="cb2-45"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Netherlands (Kingdom of the)"</span> <span class="sc">~</span> <span class="st">"Netherlands"</span>,</span>
+<span id="cb2-46"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Cabo Verde"</span> <span class="sc">~</span> <span class="st">"Cape Verde"</span>,</span>
+<span id="cb2-47"><a></a>        coo_name <span class="sc">==</span> <span class="st">"China, Macao SAR"</span> <span class="sc">~</span> <span class="st">"Macao"</span>,</span>
+<span id="cb2-48"><a></a>        coo_name <span class="sc">==</span> <span class="st">"Holy See"</span> <span class="sc">~</span> <span class="st">"Vatican City"</span>,</span>
+<span id="cb2-49"><a></a>        <span class="cn">TRUE</span> <span class="sc">~</span> coo_name</span>
+<span id="cb2-50"><a></a>      )</span>
+<span id="cb2-51"><a></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb2-52"><a></a>    <span class="co"># creating a categorical variable refugee_m to group countries based on their number of refugee's </span></span>
+<span id="cb2-53"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-54"><a></a>    <span class="at">refugees_m =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-55"><a></a>      refugees <span class="sc">&lt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">"&lt;100"</span>,</span>
+<span id="cb2-56"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">100</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">500</span> <span class="sc">~</span> <span class="st">"100 to 500"</span>,</span>
+<span id="cb2-57"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">500</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">1000</span> <span class="sc">~</span> <span class="st">"500 to 1000"</span>,</span>
+<span id="cb2-58"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">1000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">2000</span> <span class="sc">~</span> <span class="st">"1k to 2k"</span>,</span>
+<span id="cb2-59"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">2000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">3000</span> <span class="sc">~</span> <span class="st">"2k to 3k"</span>,</span>
+<span id="cb2-60"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">3000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">4000</span> <span class="sc">~</span> <span class="st">"3k to 4k"</span>,</span>
+<span id="cb2-61"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">4000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">5000</span> <span class="sc">~</span> <span class="st">"4k to 5k"</span>,</span>
+<span id="cb2-62"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">5000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">7000</span> <span class="sc">~</span> <span class="st">"5k to 7k"</span>,</span>
+<span id="cb2-63"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">7000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">~</span> <span class="st">"7k to 10k"</span>,</span>
+<span id="cb2-64"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">10000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">20000</span> <span class="sc">~</span> <span class="st">"10k to 20k"</span>,</span>
+<span id="cb2-65"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">20000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">50000</span> <span class="sc">~</span> <span class="st">"20k to 50k"</span>,</span>
+<span id="cb2-66"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">50000</span> <span class="sc">&amp;</span> refugees <span class="sc">&lt;</span> <span class="dv">100000</span> <span class="sc">~</span> <span class="st">"50k to 100k"</span>,</span>
+<span id="cb2-67"><a></a>      refugees <span class="sc">&gt;=</span> <span class="dv">100000</span> <span class="sc">~</span> <span class="st">"100k+"</span>,</span>
+<span id="cb2-68"><a></a>      <span class="fu">is.na</span>(refugees)  <span class="sc">~</span> <span class="st">"NA"</span></span>
+<span id="cb2-69"><a></a>    )</span>
+<span id="cb2-70"><a></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb2-71"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-72"><a></a>    <span class="at">refugees_m =</span> <span class="fu">factor</span>(refugees_m, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"&lt;100"</span>, </span>
+<span id="cb2-73"><a></a>                                               <span class="st">"100 to 500"</span>, </span>
+<span id="cb2-74"><a></a>                                               <span class="st">"1k to 2k"</span>,</span>
+<span id="cb2-75"><a></a>      <span class="st">"2k to 3k"</span>,</span>
+<span id="cb2-76"><a></a>      <span class="st">"3k to 4k"</span>,</span>
+<span id="cb2-77"><a></a>      <span class="st">"4k to 5k"</span>,</span>
+<span id="cb2-78"><a></a>      <span class="st">"5k to 7k"</span>,</span>
+<span id="cb2-79"><a></a>       <span class="st">"7k to 10k"</span>,</span>
+<span id="cb2-80"><a></a>       <span class="st">"10k to 20k"</span>,</span>
+<span id="cb2-81"><a></a>       <span class="st">"20k to 50k"</span>,</span>
+<span id="cb2-82"><a></a>       <span class="st">"50k to 100k"</span>,</span>
+<span id="cb2-83"><a></a>      <span class="st">"100k+"</span>,</span>
+<span id="cb2-84"><a></a>       <span class="st">"NA"</span>))</span>
+<span id="cb2-85"><a></a>  )</span>
+<span id="cb2-86"><a></a></span>
+<span id="cb2-87"><a></a>  <span class="fu">return</span>(filtered_data)</span>
+<span id="cb2-88"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell" data-layout-align="center">
-<details>
+<details class="code-fold">
 <summary>Function used to generate the plot</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Function for creating the ggplot map plot</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># Using the filtered_forests$`2000` dataset created earlier as a data source</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># using entity as map_id for first layer</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="co"># using forest_convestion as fill aesthetic and word as map for second layer</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># using highlight_filtered_data$`2000` as another dataset for creating another map layer</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># using entity as map_id,forest_convestion as fill aesthetic and highlight_world as map for third layer</span></span>
-<span id="cb3-7"><a href="#cb3-7"></a></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="co"># input  : year - integer</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co"># output : world_plot - plot object</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co"># Assuming filtered_data is a list of data frames for each year</span></span>
-<span id="cb3-13"><a href="#cb3-13"></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">lapply</span>(filtered_data, <span class="cf">function</span>(df) {</span>
-<span id="cb3-14"><a href="#cb3-14"></a>  df <span class="sc">%&gt;%</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(coo_name))</span>
-<span id="cb3-16"><a href="#cb3-16"></a>})</span>
-<span id="cb3-17"><a href="#cb3-17"></a></span>
-<span id="cb3-18"><a href="#cb3-18"></a></span>
-<span id="cb3-19"><a href="#cb3-19"></a>generateRefugeePlot <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
-<span id="cb3-20"><a href="#cb3-20"></a>  </span>
-<span id="cb3-21"><a href="#cb3-21"></a>  world_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(filtered_data[[<span class="fu">as.character</span>(year)]], <span class="fu">aes</span>(<span class="at">map_id =</span> coo_name)) <span class="sc">+</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a>    <span class="fu">geom_map</span>(</span>
-<span id="cb3-23"><a href="#cb3-23"></a>      <span class="fu">aes</span>(<span class="at">fill =</span> refugees_m),</span>
-<span id="cb3-24"><a href="#cb3-24"></a>      <span class="at">map   =</span> world,</span>
-<span id="cb3-25"><a href="#cb3-25"></a>      <span class="at">color =</span> <span class="st">"#B2BEB5"</span>,</span>
-<span id="cb3-26"><a href="#cb3-26"></a>      <span class="at">linewidth =</span> <span class="fl">0.25</span>,</span>
-<span id="cb3-27"><a href="#cb3-27"></a>      <span class="at">linetype  =</span> <span class="st">"blank"</span></span>
-<span id="cb3-28"><a href="#cb3-28"></a>    ) <span class="sc">+</span></span>
-<span id="cb3-29"><a href="#cb3-29"></a>    <span class="co"># geom_map(</span></span>
-<span id="cb3-30"><a href="#cb3-30"></a>    <span class="co">#   data = highlight_filtered_data[[as.character(year)]],</span></span>
-<span id="cb3-31"><a href="#cb3-31"></a>    <span class="co">#   aes(map_id = coo_name, fill = refugees_m),</span></span>
-<span id="cb3-32"><a href="#cb3-32"></a>    <span class="co">#   map   = highlight_world,</span></span>
-<span id="cb3-33"><a href="#cb3-33"></a>    <span class="co">#   color = "#71797E",</span></span>
-<span id="cb3-34"><a href="#cb3-34"></a>    <span class="co">#   show.legend = F</span></span>
-<span id="cb3-35"><a href="#cb3-35"></a>    <span class="co"># ) +</span></span>
-<span id="cb3-36"><a href="#cb3-36"></a>    <span class="fu">expand_limits</span>(<span class="at">x =</span> world<span class="sc">$</span>long, <span class="at">y =</span> world<span class="sc">$</span>lat) <span class="sc">+</span></span>
-<span id="cb3-37"><a href="#cb3-37"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> color_mapping, <span class="at">na.value =</span> <span class="st">"#F2F3F4"</span>) <span class="sc">+</span></span>
-<span id="cb3-38"><a href="#cb3-38"></a>    <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-39"><a href="#cb3-39"></a>    <span class="fu">labs</span>(</span>
-<span id="cb3-40"><a href="#cb3-40"></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Number of Refugees by Country in"</span>, year),</span>
-<span id="cb3-41"><a href="#cb3-41"></a>      <span class="at">subtitle =</span> <span class="st">"Migrated to USA"</span>,</span>
-<span id="cb3-42"><a href="#cb3-42"></a>      <span class="at">caption =</span> <span class="st">"Data source: TidyTuesday"</span>,</span>
-<span id="cb3-43"><a href="#cb3-43"></a>      <span class="at">fill =</span> <span class="st">"need to specify"</span></span>
-<span id="cb3-44"><a href="#cb3-44"></a>    ) <span class="sc">+</span></span>
-<span id="cb3-45"><a href="#cb3-45"></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
-<span id="cb3-46"><a href="#cb3-46"></a>    <span class="fu">theme</span>(</span>
-<span id="cb3-47"><a href="#cb3-47"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb3-48"><a href="#cb3-48"></a>      <span class="at">legend.direction =</span> <span class="st">"horizontal"</span>,</span>
-<span id="cb3-49"><a href="#cb3-49"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">19</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb3-50"><a href="#cb3-50"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>, <span class="at">color =</span> <span class="st">"azure4"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb3-51"><a href="#cb3-51"></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"azure4"</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>)</span>
-<span id="cb3-52"><a href="#cb3-52"></a>    ) <span class="sc">+</span></span>
-<span id="cb3-53"><a href="#cb3-53"></a>    <span class="fu">guides</span>(</span>
-<span id="cb3-54"><a href="#cb3-54"></a>      <span class="at">fill =</span> <span class="fu">guide_legend</span>(</span>
-<span id="cb3-55"><a href="#cb3-55"></a>        <span class="at">nrow =</span> <span class="dv">1</span>,</span>
-<span id="cb3-56"><a href="#cb3-56"></a>        <span class="at">direction =</span> <span class="st">"horizontal"</span>,</span>
-<span id="cb3-57"><a href="#cb3-57"></a>        <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
-<span id="cb3-58"><a href="#cb3-58"></a>        <span class="at">title.hjust =</span> <span class="fl">0.5</span>,</span>
-<span id="cb3-59"><a href="#cb3-59"></a>        <span class="at">label.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb3-60"><a href="#cb3-60"></a>        <span class="at">label.hjust =</span> <span class="dv">1</span>,</span>
-<span id="cb3-61"><a href="#cb3-61"></a>        <span class="at">label.vjust =</span> <span class="dv">1</span>,</span>
-<span id="cb3-62"><a href="#cb3-62"></a>        <span class="at">label.theme =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="fl">0.25</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb3-63"><a href="#cb3-63"></a>        <span class="at">keywidth =</span> <span class="dv">1</span>,</span>
-<span id="cb3-64"><a href="#cb3-64"></a>        <span class="at">keyheight =</span> <span class="fl">0.5</span></span>
-<span id="cb3-65"><a href="#cb3-65"></a>      )</span>
-<span id="cb3-66"><a href="#cb3-66"></a>    )</span>
-<span id="cb3-67"><a href="#cb3-67"></a>  <span class="fu">return</span>(world_plot)</span>
-<span id="cb3-68"><a href="#cb3-68"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># Function for creating the ggplot map plot</span></span>
+<span id="cb3-2"><a></a><span class="co"># Using the filtered_forests$`2000` dataset created earlier as a data source</span></span>
+<span id="cb3-3"><a></a><span class="co"># using entity as map_id for first layer</span></span>
+<span id="cb3-4"><a></a><span class="co"># using forest_convestion as fill aesthetic and word as map for second layer</span></span>
+<span id="cb3-5"><a></a><span class="co"># using highlight_filtered_data$`2000` as another dataset for creating another map layer</span></span>
+<span id="cb3-6"><a></a><span class="co"># using entity as map_id,forest_convestion as fill aesthetic and highlight_world as map for third layer</span></span>
+<span id="cb3-7"><a></a></span>
+<span id="cb3-8"><a></a><span class="co"># input  : year - integer</span></span>
+<span id="cb3-9"><a></a><span class="co"># output : world_plot - plot object</span></span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a></span>
+<span id="cb3-12"><a></a><span class="co"># Assuming filtered_data is a list of data frames for each year</span></span>
+<span id="cb3-13"><a></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">lapply</span>(filtered_data, <span class="cf">function</span>(df) {</span>
+<span id="cb3-14"><a></a>  df <span class="sc">%&gt;%</span></span>
+<span id="cb3-15"><a></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(coo_name))</span>
+<span id="cb3-16"><a></a>})</span>
+<span id="cb3-17"><a></a></span>
+<span id="cb3-18"><a></a></span>
+<span id="cb3-19"><a></a>generateRefugeePlot <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
+<span id="cb3-20"><a></a>  </span>
+<span id="cb3-21"><a></a>  world_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(filtered_data[[<span class="fu">as.character</span>(year)]], <span class="fu">aes</span>(<span class="at">map_id =</span> coo_name)) <span class="sc">+</span></span>
+<span id="cb3-22"><a></a>    <span class="fu">geom_map</span>(</span>
+<span id="cb3-23"><a></a>      <span class="fu">aes</span>(<span class="at">fill =</span> refugees_m),</span>
+<span id="cb3-24"><a></a>      <span class="at">map   =</span> world,</span>
+<span id="cb3-25"><a></a>      <span class="at">color =</span> <span class="st">"#B2BEB5"</span>,</span>
+<span id="cb3-26"><a></a>      <span class="at">linewidth =</span> <span class="fl">0.25</span>,</span>
+<span id="cb3-27"><a></a>      <span class="at">linetype  =</span> <span class="st">"blank"</span></span>
+<span id="cb3-28"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb3-29"><a></a>    <span class="co"># geom_map(</span></span>
+<span id="cb3-30"><a></a>    <span class="co">#   data = highlight_filtered_data[[as.character(year)]],</span></span>
+<span id="cb3-31"><a></a>    <span class="co">#   aes(map_id = coo_name, fill = refugees_m),</span></span>
+<span id="cb3-32"><a></a>    <span class="co">#   map   = highlight_world,</span></span>
+<span id="cb3-33"><a></a>    <span class="co">#   color = "#71797E",</span></span>
+<span id="cb3-34"><a></a>    <span class="co">#   show.legend = F</span></span>
+<span id="cb3-35"><a></a>    <span class="co"># ) +</span></span>
+<span id="cb3-36"><a></a>    <span class="fu">expand_limits</span>(<span class="at">x =</span> world<span class="sc">$</span>long, <span class="at">y =</span> world<span class="sc">$</span>lat) <span class="sc">+</span></span>
+<span id="cb3-37"><a></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> color_mapping, <span class="at">na.value =</span> <span class="st">"#F2F3F4"</span>) <span class="sc">+</span></span>
+<span id="cb3-38"><a></a>    <span class="fu">coord_fixed</span>(<span class="at">ratio =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-39"><a></a>    <span class="fu">labs</span>(</span>
+<span id="cb3-40"><a></a>      <span class="at">title =</span> <span class="fu">paste</span>(<span class="st">"Number of Refugees by Country in"</span>, year),</span>
+<span id="cb3-41"><a></a>      <span class="at">subtitle =</span> <span class="st">"Migrated to USA"</span>,</span>
+<span id="cb3-42"><a></a>      <span class="at">caption =</span> <span class="st">"Data source: TidyTuesday"</span>,</span>
+<span id="cb3-43"><a></a>      <span class="at">fill =</span> <span class="st">"need to specify"</span></span>
+<span id="cb3-44"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb3-45"><a></a>    <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb3-46"><a></a>    <span class="fu">theme</span>(</span>
+<span id="cb3-47"><a></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb3-48"><a></a>      <span class="at">legend.direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb3-49"><a></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">19</span>, <span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb3-50"><a></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>, <span class="at">color =</span> <span class="st">"azure4"</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb3-51"><a></a>      <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">"azure4"</span>, <span class="at">hjust =</span> <span class="fl">0.95</span>)</span>
+<span id="cb3-52"><a></a>    ) <span class="sc">+</span></span>
+<span id="cb3-53"><a></a>    <span class="fu">guides</span>(</span>
+<span id="cb3-54"><a></a>      <span class="at">fill =</span> <span class="fu">guide_legend</span>(</span>
+<span id="cb3-55"><a></a>        <span class="at">nrow =</span> <span class="dv">1</span>,</span>
+<span id="cb3-56"><a></a>        <span class="at">direction =</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb3-57"><a></a>        <span class="at">title.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb3-58"><a></a>        <span class="at">title.hjust =</span> <span class="fl">0.5</span>,</span>
+<span id="cb3-59"><a></a>        <span class="at">label.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb3-60"><a></a>        <span class="at">label.hjust =</span> <span class="dv">1</span>,</span>
+<span id="cb3-61"><a></a>        <span class="at">label.vjust =</span> <span class="dv">1</span>,</span>
+<span id="cb3-62"><a></a>        <span class="at">label.theme =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="fl">0.25</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb3-63"><a></a>        <span class="at">keywidth =</span> <span class="dv">1</span>,</span>
+<span id="cb3-64"><a></a>        <span class="at">keyheight =</span> <span class="fl">0.5</span></span>
+<span id="cb3-65"><a></a>      )</span>
+<span id="cb3-66"><a></a>    )</span>
+<span id="cb3-67"><a></a>  <span class="fu">return</span>(world_plot)</span>
+<span id="cb3-68"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="plot-alpha" class="slide level2">
 <h2>Plot-Alpha</h2>
 
-<img data-src="images/worldmap_plot.gif" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/worldmap_plot.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="war-effect-in-year-2010-2016" class="slide level2">
 <h2>War Effect in Year 2010-2016</h2>
 <div class="panel-tabset">
@@ -681,14 +667,14 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <div id="tabset-1-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2012.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2012.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-1-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2016.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2016.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
@@ -710,14 +696,14 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <div id="tabset-2-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2018.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2018.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-2-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2020.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2020.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
@@ -726,7 +712,6 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <li>The refugee crisis in Europe might influence numbers, with potential spillover effects on US Refugee/asylum applications.</li>
 <li>Policy changes in the USA regarding immigration during the new administration might also become visible.</li>
 <li>Continued conflicts and economic issues in various countries could maintain or increased refugee movements.</li>
-<li>Climate change effects might begin to show, especially from countries suffering from environmental degradation.</li>
 </ul>
 </div>
 </div>
@@ -740,21 +725,20 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <div id="tabset-3-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2020.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2020.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-3-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/refugee_map_2022.jpg" width="850" height="600"></p>
+<p><img data-src="images/refugee_map_2022.jpg" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
 <div id="tabset-3-3">
 <ul>
 <li>The COVID-19 pandemic would likely cause a significant drop in migrations worldwide due to travel restrictions and border closures.</li>
-<li>Economic downturns resulting from the pandemic might affect later refugee movements.</li>
 <li>Post-pandemic recovery may lead to an increase in migrations as countries lift travel bans.</li>
 <li>The situation in Afghanistan post-US withdrawal could result in an increase in refugees from that region.</li>
 </ul>
@@ -770,7 +754,7 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 <div id="tabset-4-1">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/worldmap_plot.gif" width="850" height="600"></p>
+<p><img data-src="images/worldmap_plot.gif" class="quarto-figure quarto-figure-center" width="850" height="600"></p>
 </figure>
 </div>
 </div>
@@ -797,16 +781,19 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
-<p>Title: Refugees, Source: tidytuesday, Link: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md</a></p>
-<p>Quarto, For documentation and presentation - <a href="https://quarto.org/docs/reference/formats/html.html">Quarto</a></p>
-<p>ggplot, For understanding of different plot - <a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot</a></p>
+<p>[1] Title: Refugees, Source: tidytuesday, Link: <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md" class="uri">https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md</a></p>
+<p>[2] Analyzed some of the global trends of refugee population from UNHCR - “<a href="https://www.unhcr.org/us/global-trends%22">https://www.unhcr.org/us/global-trends”</a></p>
+<p>[3] Quarto, For documentation and presentation - <a href="https://quarto.org/docs/reference/formats/html.html">Quarto</a></p>
+<p>[4] ggplot, For understanding of different plot - <a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot</a></p>
 </section>
 <section id="any-question" class="slide level2">
 <h2>Any Question?</h2>
 
 
-<img data-src="images/th01.gif" class="r-stretch quarto-figure-center"><div class="footer footer-default">
+<img data-src="images/th01.gif" class="quarto-figure quarto-figure-center r-stretch"><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -835,7 +822,6 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1134,10 +1120,9 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1147,8 +1132,17 @@ Datatude Dynamos- Kaarthik Sai, Kamaljeet Singh, Surya Vardhan Dama, Ayesha Khat
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
