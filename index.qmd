@@ -300,8 +300,10 @@ print(plot_top_asylum_countries)
 ```
 ### Analysis 03: Refugee populations over time with US political context
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
-#install.packages("OpenImageR")
+```{r}
+#| message: false
+#| warning: false
+
 library(tidyverse)
 library(dplyr)
 library(gganimate)
