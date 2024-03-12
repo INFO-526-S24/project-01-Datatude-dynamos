@@ -2,7 +2,7 @@
 title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Project 1"
 author: 
-  - name: "Datatude Dynamos -Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha"
+  - name: "Datatude Dynamos"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Analyzing the Effects of External Circumstances on Refugee Movements Between 2010 and 2022"
@@ -104,7 +104,7 @@ total_refugee_trends <- population_data %>%
 
 ### Analysis 01: Refugee populations over time.
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=True}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, 
                               aes(x = year, 
@@ -162,7 +162,7 @@ plot2 <- ggplot(returned_refugee_trends,
                                   by = 1)) +
   scale_y_continuous(labels = scales::comma) 
 
-print(plot2)
+
 
 
 ```
@@ -173,9 +173,19 @@ The graphic illustrates the changes in overall refugee populations over time usi
 
 Plot 01 clearly demonstrates the rapid expansion of the refugee population over time. The utilization of sky-blue bars in conjunction with an orange trend line aptly accentuates the fluctuations in refugee figures from the early 2010s to 2022. The y-axis, which represents the number of refugees in thousands, is displayed with comma separators for enhanced Expeditious growth of the refugee population over time clarity.
 
+```{r}
+print(plot_total_refugees)
+
+```
+
 **B. A small number of refugees have returned over a period of time**
 
 Conversely, Plot 02 demonstrates that a limited number of refugees have repatriated throughout a specific duration. This graph is an effective tool for illustrating the dynamic nature of refugee populations, highlighting the rising trend and the urgent requirement for global attention and action in response to refugee crises.
+
+```{r}
+print(plot2)
+
+```
 
 ### Analysis 02: Refugees by year and country of origin
 
@@ -221,7 +231,7 @@ plot_top_countries <- ggplot(top_country_total_refugees,
                                              total_refugees), 
                                  y = total_refugees)) +
   geom_bar(stat = "identity", fill = "purple") +  
-  labs(title = "Total Number of Refugees from Top 20 Countries",
+  labs(title = "Total Number of Refugees from Top 10 Countries",
        x = "Country of Origin", 
        y = "Total Number of Refugees") +
   theme_minimal(base_size = 14) + 
@@ -232,7 +242,6 @@ plot_top_countries <- ggplot(top_country_total_refugees,
   coord_flip() + 
   scale_y_continuous(labels = scales::comma)  
 
-print(plot_top_countries)
 # Adding US political context
 
 # Aggregate total number of asylum seekers by year and country of asylum
@@ -279,11 +288,22 @@ plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers,
   coord_flip() +  
   scale_y_continuous(labels = scales::comma)  
 
-print(plot_top_asylum_countries)
+
 ```
 
 This figure displays the aggregate number of refugees originating from the top 20 nations. The bar chart depicts various countries, with each bar uniformly shaded in purple. The y-axis represents the arrangement of countries, while the x-axis represents the overall number of refugees. The bars are arranged in a manner that emphasizes the nations with the greatest number of refugees, facilitating the identification of the countries with the highest refugee populations. This type of representation facilitates a rapid comprehension of the worldwide refugee issue by illustrating the nations that are most impacted.
+**A. Total Number of Refugees from Top 10 Countries**
 
+```{r}
+print(plot_top_countries)
+
+```
+**B. Total number of asylum seekers from top 10 countries**
+
+```{r}
+print(plot_top_asylum_countries)
+
+```
 ### Analysis 03: Refugee populations over time with US political context
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
