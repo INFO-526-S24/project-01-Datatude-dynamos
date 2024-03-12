@@ -8,13 +8,8 @@ author:
 description: "Analyzing the Effects of External Circumstances on Refugee Movements Between 2010 and 2022"
 format:
    html:
-    code-tools: true
-    code-overflow: wrap
-    embed-resources: true
-editor: visual
-execute:
-  warning: false
-  echo: false
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 ```{r load_packages, message=FALSE, include=FALSE, echo=FALSE}
