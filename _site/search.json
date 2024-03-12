@@ -88,7 +88,7 @@
     "href": "index.html#references",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "References",
-    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot"
+    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot\n[5] Our Presentation logo - logo"
   },
   {
     "objectID": "about.html",

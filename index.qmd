@@ -292,12 +292,14 @@ This figure displays the aggregate number of refugees originating from the top 2
 print(plot_top_countries)
 
 ```
+
 **B. Total number of asylum seekers from top 10 countries**
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 print(plot_top_asylum_countries)
 
 ```
+
 ### Analysis 03: Refugee populations over time with US political context
 
 ```{r}
@@ -697,8 +699,7 @@ While not typically classified as refugees, many Chinese nationals seek to leave
 
 ### Discussion
 
-The analysis underscores the intricate relationship between global refugee movements and external factors like conflicts, economic conditions, and climate changes. The varying trends across different periods highlight how events like wars, financial crises, and pandemics significantly shape refugee patterns. This insight is crucial for formulating responsive and informed humanitarian policies to address the complexities of global displacement.
-## Challenges faced
+The analysis underscores the intricate relationship between global refugee movements and external factors like conflicts, economic conditions, and climate changes. The varying trends across different periods highlight how events like wars, financial crises, and pandemics significantly shape refugee patterns. This insight is crucial for formulating responsive and informed humanitarian policies to address the complexities of global displacement. \## Challenges faced
 
 -   Data only available from 2010 not before that
 -   Animation and frame rate selection.
@@ -712,8 +713,10 @@ We analyse refugee patterns over time across nations by analyzing `'year'`, `'co
 
 \[1\] Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
 
-\[2\] Analyzed some of the global trends of refugee population from UNHCR - "[https://www.unhcr.org/us/global-trends"](https://www.unhcr.org/us/global-trends")
+\[2\] Analyzed some of the global trends of refugee population from UNHCR - "[https://www.unhcr.org/us/global-trends"](https://www.unhcr.org/us/global-trends%22)
 
 \[3\] Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
 
 \[4\] ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
+
+\[5\] Our Presentation logo - Link: <https://www.vectorstock.com/royalty-free-vector/family-people-and-earth-nature-logo-vector-21169176>

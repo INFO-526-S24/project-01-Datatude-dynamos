@@ -76,6 +76,7 @@ knitr::opts_chunk$set(
 population_data <- read_csv('data/population.csv') 
 ```
 
+
 ## Our Dataset {auto-animate="true"}
 
 Our target dataset comes from the `{refugees} R package`, which compiles extensive information on populations that have been strongly displaced from three main sources: UNHCR, UNRWA, and IDMC.
@@ -98,6 +99,7 @@ Our Project's aim is to prepare a comprehensive analysis that aims to uncover an
 -   First aggregate our data by year before summarizing the overall number of refugees
 -   Divide these totals into thousands for easier comprehension
 
+
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 total_refugee_trends <- population_data %>%
   group_by(year) %>%
@@ -105,9 +107,11 @@ total_refugee_trends <- population_data %>%
                                  na.rm = TRUE) / 1000)  
 ```
 
+
 ## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   Expeditious growth of the refugee population over time
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
@@ -138,9 +142,11 @@ print(plot_total_refugees)
 
 ```
 
+
 ## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
@@ -177,10 +183,12 @@ print(plot2)
 
 ```
 
+
 ## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 10 countries with the highest total number of refugees
 -   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -237,9 +245,11 @@ print(plot_top_countries)
 # Adding US political context
 ```
 
+
 ## Analysis: Refugees by year and country of origin {.smaller auto-animate="true"}
 
 -   Top 10 countries with the highest total number of asylum seekers
+
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -292,15 +302,18 @@ print(plot_top_asylum_countries)
 #print(plot_top_countries)
 ```
 
+
 ## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
+
 
 ```{r}
 
 knitr::include_graphics("images/anim_plot1.gif")
 
 ```
+
 
 ## Question 02
 
@@ -317,6 +330,7 @@ knitr::include_graphics("images/anim_plot1.gif")
 -   We Split population data into decades. Applied pre-processing function to each decade's data. Defined a function `generateRefugeePlot` to generate a ggplot map plot. Used the pre-processed data to create plots for each year.
 
 **Code**
+
 
 ```{r world_data, message=FALSE, include=FALSE}
 library(maps)
@@ -604,13 +618,16 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 ```
 
 
+
 ## Plot-Alpha
+
 
 ```{r,echo=FALSE}
 
 knitr::include_graphics("images/worldmap_plot.gif")
 
 ```
+
 
 ## War Effect in Year 2010-2016
 
@@ -704,8 +721,10 @@ By analyzing annual refugee data alongside global events, our study reveals how 
 
 ## Any Question?
 
+
 ```{r}
 
 knitr::include_graphics("images/th01.gif")
 
 ```
+
