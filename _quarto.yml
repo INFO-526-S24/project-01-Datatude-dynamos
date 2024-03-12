@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: Project Title
+  title: "<img src='/images/earth.jpg' alt='earth Symbol' style='width: 2.6em; height: 2.2em; border-radius: 30%;'> <b>Examining Global Refugee Trends and Correlations Over the Years</b>"
   navbar:
     right:
       - icon: github
