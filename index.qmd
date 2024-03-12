@@ -70,7 +70,7 @@ population_data <- read_csv('data/population.csv')
 
 Using the rich dataset offered by the `{refugees}` R package, this project sets out on an adventurous trip across the complicated landscape of worldwide migration from 2010 to 2022. It offers a comprehensive picture of the numerous factors influencing the lives of refugees, internally displaced people (IDPs), asylum seekers, stateless people, and more, spanning over 64,000 entries from sources like UNHCR, UNRWA, and IDMC. This research tries to unravel the complex web of variables driving forced migration, from socioeconomic turbulence to environmental calamities and geopolitical upheavals, via thorough investigation.
 
-Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships. In addition to tracking the rise and fall of international migration, this project aims to position these movements in the broader context of international politics, environmental issues, and global health concerns. Our objective is to present a comprehensive picture of the factors influencing worldwide migration patterns by integrating data on refugee movements with external socio-political and environmental events. This study is essentially a deep dive into the dynamics of displacement, providing insights into how international events and policies affect vulnerable populations' movements. It serves as evidence of the interdependence of worldwide phenomena and their significant influence on human lives, highlighting the necessity of thoughtful, caring answers to the difficulties associated with forced migration.
+Two key topics form the core of our investigation: how changing political ideologies in the US affect refugee trends, and how changes in external occurrences such as pandemics, conflicts, and climate change affect refugee numbers globally. Using time-series analysis and additional statistical techniques, we examine displacement patterns and correlate them with major political changes and global crises in order to identify underlying trends and causal relationships. In addition to tracking the rise and fall of international migration, this project aims to position these movements in the broader context of international politics, environmental issues, and global health concerns. Our objective is to present a comprehensive picture of the factors influencing worldwide migration patterns by integrating data on refugee movements with external socio-political and environmental events.
 
 ## Introduction
 
@@ -377,6 +377,10 @@ knitr::include_graphics("images/anim_plot1.gif")
 ```
 
 This graph displays the temporal evolution of the refugee population in the United States, with different colors representing the governing political party. The blue lines indicate the years when the Democratic Party held power, while the red lines show the periods of Republican Party leadership. The graph illustrates the refugee population from 2010 to 2022, with the x-axis representing the years and the y-axis indicating the cumulative number of refugees. The analysis examines the fluctuations in the refugee population during various administrations, emphasizing the potential influence of political leadership on refugee admissions. The unambiguous and simplistic style facilitates viewers' comprehension of patterns in U.S. refugee admissions throughout the selected years.
+
+### Discussion
+
+The analysis reveals a nuanced relationship between US political leadership and refugee admissions, with discernible shifts aligning with changes in the ruling party. The fluctuating trends in refugee populations and asylum seeker data underscore the significant impact of political ideologies and policies on global displacement and migration patterns. Moreover, the cyclical nature of refugee returns and the concentration of refugees from specific countries highlight the complex interplay between global crises and US political responses.
 
 ## Question 2: How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
@@ -689,6 +693,9 @@ knitr::include_graphics("images/worldmap_plot.gif")
 
 While not typically classified as refugees, many Chinese nationals seek to leave China for economic opportunities. The relationship between China and the USA, including U.S. immigration policy, can influence refugee flows. Policies that allow for a greater number of asylum applications or provide specific provisions for individuals from China can result in higher refugee numbers. Additionally, there may be specific legislative acts or policies targeting the protection of certain groups from China, which could lead to an increase in accepted refugee applications.
 
+### Discussion
+
+The analysis underscores the intricate relationship between global refugee movements and external factors like conflicts, economic conditions, and climate changes. The varying trends across different periods highlight how events like wars, financial crises, and pandemics significantly shape refugee patterns. This insight is crucial for formulating responsive and informed humanitarian policies to address the complexities of global displacement.
 ## Challenges faced
 
 -   Data only available from 2010 not before that
