@@ -107,8 +107,6 @@ total_refugee_trends <- population_data %>%
 
 -   Expeditious growth of the refugee population over time
 
-## Plot 01
-
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
 plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees)) +
@@ -133,8 +131,6 @@ print(plot_total_refugees)
 ## Analysis: Refugee populations over time {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
-
-## Plot 02
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
@@ -163,8 +159,6 @@ print(plot2)
 
 -   Top 10 countries with the highest total number of refugees
 -   The maximum number of refugee came has come from **Syrian**, **Afghanistan** and **South Sudan**
-
-## Plot 03
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
@@ -215,8 +209,6 @@ print(plot_top_countries)
 
 -   Top 10 countries with the highest total number of asylum seekers
 
-## Plot 04
-
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
 #######################
@@ -263,8 +255,6 @@ print(plot_top_asylum_countries)
 ## Analysis: Refugee populations over time with US political context. {.smaller auto-animate="true"}
 
 -   A small number of refugees have returned over a period of time
-
-## Plot 05
 
 ```{r}
 
@@ -717,11 +707,14 @@ By analyzing annual refugee data alongside global events, our study reveals how 
 
 ## References
 
-Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
 
-Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
+\[1\] Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
 
-ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
+\[2\] Analyzed some of the global trends of refugee population from UNHCR - "[https://www.unhcr.org/us/global-trends"](https://www.unhcr.org/us/global-trends")
+
+\[3\] Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
+
+\[4\] ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
 
 ## Any Question?
 
