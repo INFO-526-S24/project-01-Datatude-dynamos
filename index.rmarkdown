@@ -171,7 +171,7 @@ The graphic illustrates the changes in overall refugee populations over time usi
 Plot 01 clearly demonstrates the rapid expansion of the refugee population over time. The utilization of sky-blue bars in conjunction with an orange trend line aptly accentuates the fluctuations in refugee figures from the early 2010s to 2022. The y-axis, which represents the number of refugees in thousands, is displayed with comma separators for enhanced Expeditious growth of the refugee population over time clarity.
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 print(plot_total_refugees)
 
 ```
@@ -182,7 +182,7 @@ print(plot_total_refugees)
 Conversely, Plot 02 demonstrates that a limited number of refugees have repatriated throughout a specific duration. This graph is an effective tool for illustrating the dynamic nature of refugee populations, highlighting the rising trend and the urgent requirement for global attention and action in response to refugee crises.
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 print(plot2)
 
 ```
@@ -191,8 +191,9 @@ print(plot2)
 ### Analysis 02: Refugees by year and country of origin
 
 
-```{r, message=FALSE, warning=FALSE}
-
+```{r}
+#| message: false
+#| warning: false
 # Aggregate total number of refugees by year and country of origin
 refugee_country_trends <- population_data %>%
   group_by(year, 
@@ -299,7 +300,7 @@ This figure displays the aggregate number of refugees originating from the top 2
 **A. Total Number of Refugees from Top 10 Countries**
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 print(plot_top_countries)
 
 ```
@@ -307,7 +308,7 @@ print(plot_top_countries)
 **B. Total number of asylum seekers from top 10 countries**
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 print(plot_top_asylum_countries)
 
 ```
@@ -381,7 +382,7 @@ plot <- ggplot(data = data1,
 
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
 knitr::include_graphics("images/anim_plot1.gif")
 
@@ -434,6 +435,8 @@ datasets$year = as.integer(datasets$year)
 ```
 
 ```{r}
+#| message: false
+#| warning: false
 #| code-fold: true
 #| code-summary: "Glimpse of process Function"
 
@@ -552,7 +555,9 @@ color_mapping <- c(
 
 ```
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE}
+```{r}
+#| message: false
+#| warning: false
 #| code-fold: true
 #| code-summary: "Function used to generate the plot"
 
