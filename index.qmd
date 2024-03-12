@@ -2,7 +2,7 @@
 title: "Examining Global Refugee Trends and Correlations Over the Years"
 subtitle: "INFO 526 - Project 1"
 author: 
-  - name: "Datatude Dynamos -Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav"
+  - name: "Datatude Dynamos -Kaarthik Sai, Kamaljeet Singh,  Surya Vardhan Dama, Ayesha Khatun, Mrunali Yadav, Rajitha"
     affiliations:
       - name: "School of Information, University of Arizona"
 description: "Analyzing the Effects of External Circumstances on Refugee Movements Between 2010 and 2022"
@@ -28,8 +28,8 @@ pacman::p_load(tidyverse,
                tidytuesdayR,
                dplyr,
                janitor,
-               dlookr,        # Exploratory data analysis
-               here,          # Standardizes paths to data
+               dlookr,        
+               here,          
                formattable,
                ggpubr,
                maps,
@@ -44,7 +44,8 @@ pacman::p_load(tidyverse,
 
 ```{r ggplot_setup, message=FALSE, include=FALSE}
 # setting theme for ggplot2
-ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14, base_family = "sans"))
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14, 
+                                          base_family = "sans"))
 
 # setting width of code output
 options(width = 65)
@@ -85,30 +86,48 @@ Our project's first inquiry explores the complex interplay between international
 
 ### Approach
 
-We have adopted a multimodal analytical approach to this subject, combining a comparative assessment of political epochs in the United States with time-series analysis. For clarity and scalability in our visual representations, we first aggregate the overall number of refugees by year, normalizing the data to thousands. We can create a chronological narrative of refugee migrations by layering important political events and changes in the United States over these trends thanks to this basic data. We produce visual aids, such as bar plots and trend lines, using ggplot2 to clarify the relationship between refugee populations and changes in U.S. politics. Our research is further enhanced by the addition of data from returning refugees, which provides insights into the cyclical nature of displacement and resettlement.
+We have adopted a multimodal analytic approach to this subject, combining a comparative assessment of political epochs in the United States with time-series analysis. For clarity and scalability in our visual representations, we first aggregate the overall number of refugees by year, normalizing the data to thousands. We can create a chronological narrative of refugee migrations by layering important political events and changes in the United States over these trends thanks to this basic data. We produce visual aids, such as bar plots and trend lines, using ggplot2 to clarify the relationship between refugee populations and changes in U.S. politics. Our research is further enhanced by the addition of data from returning refugees, which provides insights into the cyclical nature of displacement and resettlement.
 
-**Data Preparation and Pre-processing** The preparation stage of the data is essential to transforming our data-set into a format that allows for effective analysis. Using the R dplyr package, we first aggregate our data by year before summarizing the overall number of refugees—making sure to divide these totals into thousands for easier comprehension. This procedure is also applied to data pertaining to refugees who have returned, yielding a parallel dataset that illustrates the flow of return movements in addition to original displacements. We also prepare by making the 'year' a numeric variable so that we can use it as an axis in both our static and animated visualization. The careful processing of the data paves the way for an in-depth investigation of the relationship between U.S. political positions and international refugee trends.
+### Data Preparation and Pre-processing
+
+The preparation stage of the data is essential to transforming our data-set into a format that allows for effective analysis. Using the R dplyr package, we first aggregate our data by year before summarizing the overall number of refugees—making sure to divide these totals into thousands for easier comprehension. This procedure is also applied to data pertaining to refugees who have returned, yielding a parallel dataset that illustrates the flow of return movements in addition to original displacements. We also prepare by making the 'year' a numeric variable so that we can use it as an axis in both our static and animated visualization. The careful processing of the data paves the way for an in-depth investigation of the relationship between U.S. political positions and international refugee trends.
 
 ```{r, message=FALSE, warning=FALSE, echo=TRUE}
 
 # Data Preparation - Aggregate total number of refugees by year and convert to thousands (K)
 total_refugee_trends <- population_data %>%
   group_by(year) %>%
-  summarise(total_refugees = sum(refugees, na.rm = TRUE) / 1000)  # Convert to thousands
+  summarise(total_refugees = sum(refugees, 
+                                 na.rm = TRUE) / 1000)  # Convert to thousands
 
 ```
 
-## Refugee populations over time.
+### Analysis 01: Refugee populations over time.
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Plot: Total Refugee populations over time with bar plot and trend line, y-axis in 'K'
-plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refugees)) +
-  geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
-  geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "#FF5230", se = FALSE) +  # Trend line for 30-year increase
-  labs(title = "Total Refugee Populations Over Time", x = "Year", y = "Number of Refugees (in K)") +
-  theme_minimal() +
-  scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
-  scale_y_continuous(labels = scales::comma)  # Format y-axis labels with commas for readability
+plot_total_refugees <- ggplot(total_refugee_trends, 
+                              aes(x = year, 
+                                  y = total_refugees)) +
+  geom_bar(stat = "identity", 
+           fill = "skyblue", 
+           alpha = 0.7) +  
+  geom_smooth(method = "lm", 
+              formula = y ~ poly(x, 2), 
+              color = "#FF5230", 
+              se = FALSE) +  
+  labs(title = "Total Refugee Populations Over Time", 
+       x = "Year", 
+       y = "Number of Refugees (in K)") +
+   theme_minimal(base_size = 14) + 
+  theme(axis.text = element_text(color = "black"),  
+        plot.title = element_text(size = 16, 
+                                  face = "bold"),  
+        axis.title = element_text(size = 14)) +  
+  scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), 
+                                  to = 2024, 
+                                  by = 1)) +  
+  scale_y_continuous(labels = scales::comma)  
 
 print(plot_total_refugees)
 
@@ -116,16 +135,32 @@ print(plot_total_refugees)
 # Data Preparation - Aggregate total number of returned refugees by year and convert to thousands (K)
 returned_refugee_trends <- population_data %>%
   group_by(year) %>%
-  summarise(returned_refugees = sum(returned_refugees, na.rm = TRUE) / 1000)  # Convert to thousands
+  summarise(returned_refugees = sum(returned_refugees, 
+                                    na.rm = TRUE) / 1000) 
 
 # Plot: Returned Refugee populations over time with bar plot and trend line, y-axis in 'K'
-plot2 <- ggplot(returned_refugee_trends, aes(x = year, y = returned_refugees)) +
-  geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
-  geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "#FF5230", se = FALSE) +  # Trend line for 30-year increase
-  labs(title = "Returned Refugee Populations Over Time", x = "Year", y = "Number of Returned Refugees (in K)") +
-  theme_minimal() +
-  scale_x_continuous(breaks = seq(from = min(returned_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
-  scale_y_continuous(labels = scales::comma)  # Format y-axis labels with commas for readability
+plot2 <- ggplot(returned_refugee_trends, 
+                aes(x = year, 
+                    y = returned_refugees)) +
+  geom_bar(stat = "identity", 
+           fill = "skyblue", 
+           alpha = 0.7) +  
+  geom_smooth(method = "lm", 
+              formula = y ~ poly(x, 2), 
+              color = "#FF5230", 
+              se = FALSE) +  
+  labs(title = "Returned Refugee Populations Over Time", 
+       x = "Year", 
+       y = "Number of Returned Refugees (in K)") +
+  theme_minimal(base_size = 14) + 
+  theme(axis.text = element_text(color = "black"),  
+        plot.title = element_text(size = 16, 
+                                  face = "bold"),  
+        axis.title = element_text(size = 14)) +  
+  scale_x_continuous(breaks = seq(from = min(returned_refugee_trends$year), 
+                                  to = 2024, 
+                                  by = 1)) +
+  scale_y_continuous(labels = scales::comma) 
 
 print(plot2)
 
@@ -142,21 +177,25 @@ Plot 01 clearly demonstrates the rapid expansion of the refugee population over 
 
 Conversely, Plot 02 demonstrates that a limited number of refugees have repatriated throughout a specific duration. This graph is an effective tool for illustrating the dynamic nature of refugee populations, highlighting the rising trend and the urgent requirement for global attention and action in response to refugee crises.
 
-## Refugees by year and country of origin.
+### Analysis 02: Refugees by year and country of origin
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
 # Aggregate total number of refugees by year and country of origin
 refugee_country_trends <- population_data %>%
-  group_by(year, coo_name) %>%
-  summarise(total_refugees = sum(refugees, na.rm = TRUE)) %>%
+  group_by(year, 
+           coo_name) %>%
+  summarise(total_refugees = sum(refugees, 
+                                 na.rm = TRUE)) %>%
   ungroup()
 
 # Identify the top 10 countries with the highest total number of refugees
 top_countries <- refugee_country_trends %>%
   group_by(coo_name) %>%
-  summarise(total_refugees = sum(total_refugees, na.rm = TRUE)) %>%
-  top_n(20, total_refugees) %>%
+  summarise(total_refugees = sum(total_refugees, 
+                                 na.rm = TRUE)) %>%
+  top_n(10, 
+        total_refugees) %>%
   pull(coo_name)
 
 # Filter the data to include only top 10 countries
@@ -164,68 +203,88 @@ top_country_data <- refugee_country_trends %>%
   filter(coo_name %in% top_countries)
 
 # Select one of the top countries for demonstration
-selected_country_data <- filter(top_country_data, coo_name == top_countries[1])
+selected_country_data <- filter(top_country_data, 
+                                coo_name == top_countries[1])
 
 # Histogram: Distribution of refugee counts for a selected top country
-# Aggregate the total number of refugees for each of the top 10 countries across all years
 top_country_total_refugees <- refugee_country_trends %>%
   filter(coo_name %in% top_countries) %>%
   group_by(coo_name) %>%
-  summarise(total_refugees = sum(total_refugees, na.rm = TRUE)) %>%
+  summarise(total_refugees = sum(total_refugees, 
+                                 na.rm = TRUE)) %>%
   ungroup() %>%
-  arrange(desc(total_refugees))  # Arrange in descending order of total refugees
+  arrange(desc(total_refugees)) 
 
 # Plot: Total number of refugees from top 10 countries
-plot_top_countries <- ggplot(top_country_total_refugees, aes(x = reorder(coo_name, total_refugees), y = total_refugees)) +
-  geom_bar(stat = "identity", fill = "purple") +  # Bar plot showing total refugees for each country
-  labs(title = "Total Number of Refugees from Top 20 Countries", x = "Country of Origin", y = "Total Number of Refugees") +
-  theme_minimal() +
-  coord_flip() +  # Flip coordinates to make it easier to read country names
-  scale_y_continuous(labels = scales::comma)  # Format y-axis labels with commas for readability
+plot_top_countries <- ggplot(top_country_total_refugees, 
+                             aes(x = reorder(coo_name, 
+                                             total_refugees), 
+                                 y = total_refugees)) +
+  geom_bar(stat = "identity", fill = "purple") +  
+  labs(title = "Total Number of Refugees from Top 20 Countries",
+       x = "Country of Origin", 
+       y = "Total Number of Refugees") +
+  theme_minimal(base_size = 14) + 
+  theme(axis.text = element_text(color = "black"),  
+        plot.title = element_text(size = 16, 
+                                  face = "bold"),  
+        axis.title = element_text(size = 14)) +  
+  coord_flip() + 
+  scale_y_continuous(labels = scales::comma)  
 
 print(plot_top_countries)
 # Adding US political context
 
-
-#######################
 # Aggregate total number of asylum seekers by year and country of asylum
 asylum_country_trends <- population_data %>%
   group_by(year, coa_name) %>%
-  summarise(total_asylum_seekers = sum(asylum_seekers, na.rm = TRUE)) %>%
+  summarise(total_asylum_seekers = sum(asylum_seekers,
+                                       na.rm = TRUE)) %>%
   ungroup()
 
-# Identify the top 20 countries with the highest total number of asylum seekers
+# Identify the top 10 countries with the highest total number of asylum seekers
 top_asylum_countries <- asylum_country_trends %>%
   group_by(coa_name) %>%
-  summarise(total_asylum_seekers = sum(total_asylum_seekers, na.rm = TRUE)) %>%
-  top_n(20, total_asylum_seekers) %>%
+  summarise(total_asylum_seekers = sum(total_asylum_seekers, 
+                                       na.rm = TRUE)) %>%
+  top_n(10, total_asylum_seekers) %>%
   pull(coa_name)
 
-# Filter the data to include only top 20 countries of asylum
+# Filter the data to include only top 10 countries of asylum
 top_asylum_country_data <- asylum_country_trends %>%
   filter(coa_name %in% top_asylum_countries)
 
 # Aggregate the total number of asylum seekers for each of the top 20 countries across all years
 top_country_total_asylum_seekers <- top_asylum_country_data %>%
   group_by(coa_name) %>%
-  summarise(total_asylum_seekers = sum(total_asylum_seekers, na.rm = TRUE)) %>%
+  summarise(total_asylum_seekers = sum(total_asylum_seekers,
+                                       na.rm = TRUE)) %>%
   ungroup() %>%
-  arrange(desc(total_asylum_seekers))  # Arrange in descending order of total asylum seekers
+  arrange(desc(total_asylum_seekers))  
 
-# Plot: Total number of asylum seekers from top 20 countries
-plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, aes(x = reorder(coa_name, total_asylum_seekers), y = total_asylum_seekers)) +
-  geom_bar(stat = "identity", fill = "blue") +  # Bar plot showing total asylum seekers for each country
-  labs(title = "Total Number of Asylum Seekers from Top 20 Countries", x = "Country of Asylum", y = "Total Number of Asylum Seekers") +
-  theme_minimal() +
-  coord_flip() +  # Flip coordinates to make it easier to read country names
-  scale_y_continuous(labels = scales::comma)  # Format y-axis labels with commas for readability
+# Plot: Total number of asylum seekers from top 10 countries
+plot_top_asylum_countries <- ggplot(top_country_total_asylum_seekers, 
+                                    aes(x = reorder(coa_name, 
+                                    total_asylum_seekers), 
+                                    y = total_asylum_seekers)) +
+  geom_bar(stat = "identity", fill = "blue") +  
+  labs(title = "Total Number of Asylum Seekers from Top 10 Countries", 
+       x = "Country of Asylum", 
+       y = "Total Number of Asylum Seekers") +
+   theme_minimal(base_size = 10) + 
+  theme(axis.text = element_text(color = "black"),  
+        plot.title = element_text(size = 16, 
+                                  face = "bold"),  
+        axis.title = element_text(size = 10)) +  
+  coord_flip() +  
+  scale_y_continuous(labels = scales::comma)  
 
 print(plot_top_asylum_countries)
 ```
 
 This figure displays the aggregate number of refugees originating from the top 20 nations. The bar chart depicts various countries, with each bar uniformly shaded in purple. The y-axis represents the arrangement of countries, while the x-axis represents the overall number of refugees. The bars are arranged in a manner that emphasizes the nations with the greatest number of refugees, facilitating the identification of the countries with the highest refugee populations. This type of representation facilitates a rapid comprehension of the worldwide refugee issue by illustrating the nations that are most impacted.
 
-## Refugee populations over time with US political context.
+### Analysis 03: Refugee populations over time with US political context
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #install.packages("OpenImageR")
@@ -233,12 +292,10 @@ library(tidyverse)
 library(dplyr)
 library(gganimate)
 library(gifski)
-#install.packages("OpenImageR")
 library(OpenImageR)
-#install.packages("magick")
 library(magick)
 population <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-08-22/population.csv', 
-                              show_col_types = FALSE)
+show_col_types = FALSE)
 
 party <- function(year){
   if (year >= 2008 && year <= 2012){
@@ -254,23 +311,35 @@ party <- function(year){
   }
 }
 
-population$Ruling_party <- sapply(population$year, party)
+population$Ruling_party <- sapply(population$year, 
+                                  party)
 
 data1 <- population |>
   filter(coa_name == "United States of America") |>
-  group_by(year, Ruling_party) |>
-  summarise(total_refugees = sum(refugees, na.rm = TRUE))
+  group_by(year, 
+           Ruling_party) |>
+  summarise(total_refugees = sum(refugees, 
+                                 na.rm = TRUE))
 
 # Creating the line plot
 
-plot <- ggplot(data = data1, aes(x = year, y = total_refugees, color = Ruling_party)) +
+plot <- ggplot(data = data1, 
+               aes(x = year, 
+                   y = total_refugees, 
+                   color = Ruling_party)) +
   
-  geom_line(aes(x = year, y = total_refugees, group = 2, colour = Ruling_party)) +
+  geom_line(aes(x = year, 
+                y = total_refugees, 
+                group = 2, 
+                colour = Ruling_party)) +
   
   scale_color_manual(name = "Party",
-                     values = c("Democratic Party" = "Blue", "Republican Party" = "Red"))+
+                     values = c("Democratic Party" = "Blue", 
+                                "Republican Party" = "Red"))+
   
-  scale_x_continuous(breaks = seq(2010, 2022, by = 2)) +
+  scale_x_continuous(breaks = seq(2010, 
+                                  2022, 
+                                  by = 2)) +
   
   labs(
     title = "Refugees population over time in United States",
@@ -279,7 +348,13 @@ plot <- ggplot(data = data1, aes(x = year, y = total_refugees, color = Ruling_pa
   ) +
   
   theme_minimal() 
-plot
+#plot
+
+```
+
+```{r}
+
+knitr::include_graphics("images/anim_plot1.gif")
 
 ```
 
@@ -287,7 +362,15 @@ This graph displays the temporal evolution of the refugee population in the Unit
 
 ## Question 2: How the global refugee population fluctuate across the countries? Is their any external factors impact on refugee population like COVID-19 or war or climate change or financial stability?
 
-```{r world_data, message=FALSE, include=FALSE}
+### Introduction
+
+Understanding global refugee patterns is crucial for addressing humanitarian challenges and devising effective policy responses. In this analysis, we aim to explore the dynamics of refugee movements across nations over time, focusing on key variables such as `'year'`, `'coo_name'`, `'coa_name'`, and `'refugees'` data. By examining annual refugee data normalized against population statistics, we seek to uncover trends and link them to significant world events, including conflicts, climate disasters, and economic changes.
+
+### Approach
+
+Our approach involves gathering comprehensive data from various sources and applying time-series techniques to analyze refugee patterns. We utilize datasets from international organizations and government agencies, supplemented by demographic and socio-economic indicators. Through statistical analysis and data visualization using tools like ggplot2, we aim to discern patterns in refugee movements and understand the influence of external factors such as wars, climate disasters, and economic stability
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(maps)
 library(ggplot2)
 library(tibble)
@@ -299,44 +382,38 @@ world <- map_data("world")
 
 # Extracting unique countries from the world dataset and storing them in a tibble
 unique_countries <- world |>
-select(region) |>       # region is the column which is having country names info
-unique() |>             # getting unique country names
+select(region) |>       
+unique() |>             
 as_tibble()
 
 # Removing Antarctica from the world data
-world <- subset(world, region != "Antarctica")
+world <- subset(world, 
+                region != "Antarctica")
 ```
 
-```{r warning=FALSE,message=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 population_data <- read_csv("data/population.csv")
 datasets <- population_data[population_data$coa_name == "United States of America",]
 datasets$year = as.integer(datasets$year)
 
 ```
 
-```{r process_function, message=FALSE, echo=TRUE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #| code-fold: true
 #| code-summary: "Glimpse of process Function"
 
-# function to pre process the refugee dataset
-# input  : dataset - tibble
-#          unique_countries - tibble
-# output : filtered_data - tibble
 processRefugees <- function (dataset, unique_countries) {
   filtered_data <- dataset |>
     # filtering only country name, year and refugees columns
-    select(coo_name, year, refugees) |>
-    # getting all the countires which are not present in population dataset for a specific years
-    # bind_rows() is used combine combine rows of two data frames
+    select(coo_name, year, 
+           refugees) |>
     bind_rows(
-      # anti_join() is used to return only the rows from the first dataset that isn't having matching rows in the second dataset based on specified key columns
       anti_join(unique_countries, dataset, by = c("region" = "coo_name")) |>
         # adding year and number of refugees for that specific year as NA
-        mutate(year = as.integer(dataset[1, "year"]), refugees = NA)
+        mutate(year = as.integer(dataset[1, 
+                                         "year"]), 
+               refugees = NA)
     ) |>
-    
-    
-    
     
     mutate(
       coo_name = case_when(
@@ -389,65 +466,39 @@ processRefugees <- function (dataset, unique_countries) {
     )
   ) %>%
   mutate(
-    refugees_m = factor(refugees_m, levels = c("<100", 
-                                               "100 to 500", 
-                                               "1k to 2k",
-      "2k to 3k",
-      "3k to 4k",
-      "4k to 5k",
-      "5k to 7k",
-       "7k to 10k",
-       "10k to 20k",
-       "20k to 50k",
-       "50k to 100k",
-      "100k+",
-       "NA"))
-  )
+    refugees_m = factor(refugees_m, 
+                        levels = c("<100", 
+                                   "100 to 500", 
+                                   "1k to 2k",
+                                   "2k to 3k",
+                                   "3k to 4k",
+                                   "4k to 5k",
+                                   "5k to 7k",
+                                   "7k to 10k",
+                                   "10k to 20k",
+                                   "20k to 50k",
+                                   "50k to 100k",
+                                   "100k+",
+                                   "NA"))
+                                    )
 
   return(filtered_data)
 }
 ```
 
-```{r split_forest_data, message=FALSE, include=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 # Dividing data into tibbles based on year and it creates a list of tibbles
-refugee_decades <- split(datasets, f = datasets$year)
+refugee_decades <- split(datasets, 
+                         f = datasets$year)
 
-# Implementing the pre processing function on top of the created split tibbles
-# lapply() is used for applying a function on top of any list
-filtered_data <- lapply(refugee_decades, function(refugee_ds) {
-  processRefugees(refugee_ds, unique_countries)
+filtered_data <- lapply(refugee_decades, 
+                        function(refugee_ds) {
+  processRefugees(refugee_ds, 
+                  unique_countries)
 })
 ```
 
-```{r highlightingCountriesWithmajorChange, message=FALSE, include=FALSE}
-# function to filter countries which are having noteworthy forest conversion
-# input  : dataset - tibble
-#          variable - column character
-# output : highlight_data - tibble
-
-# Modified function to filter countries based on high refugee migration
-# Modified function to filter countries based on high refugee migration
-# Modified function to filter countries based on high refugee migration
-
-# 
-# filterCountries <- function (dataset, variable){
-#   highlight_data <- subset(dataset, variable %in% c("Brazil"))
-#   return(highlight_data)
-# }
-# 
-# # filtering countries from world dataset using filter_countries
-# highlight_world <- filterCountries(world, world$region)
-# 
-# # filtering countries from filtered_forests dataset using filter_countries
-# highlight_filtered_data <- lapply(filtered_data, function(forest_ds) {
-#   filterCountries(forest_ds, forest_ds$coo_name)
-# })
-
-
-
-```
-
-```{r colourMapping, message=FALSE, include=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 color_mapping <- c(
   "<100"           = "#d73027",  # Red
   "100 to 500"     = "#f46d43",  # Red-Orange
@@ -466,23 +517,13 @@ color_mapping <- c(
 
 ```
 
-```{r world_plot_function, message=FALSE, echo=TRUE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 #| code-fold: true
 #| code-summary: "Function used to generate the plot"
 
-# Function for creating the ggplot map plot
-# Using the filtered_forests$`2000` dataset created earlier as a data source
-# using entity as map_id for first layer
-# using forest_convestion as fill aesthetic and word as map for second layer
-# using highlight_filtered_data$`2000` as another dataset for creating another map layer
-# using entity as map_id,forest_convestion as fill aesthetic and highlight_world as map for third layer
-
-# input  : year - integer
-# output : world_plot - plot object
-
-
 # Assuming filtered_data is a list of data frames for each year
-filtered_data <- lapply(filtered_data, function(df) {
+filtered_data <- lapply(filtered_data, 
+                        function(df) {
   df %>%
     filter(!is.na(coo_name))
 })
@@ -490,7 +531,8 @@ filtered_data <- lapply(filtered_data, function(df) {
 
 generateRefugeePlot <- function(year) {
   
-  world_plot <- ggplot(filtered_data[[as.character(year)]], aes(map_id = coo_name)) +
+  world_plot <- ggplot(filtered_data[[as.character(year)]], 
+                       aes(map_id = coo_name)) +
     geom_map(
       aes(fill = refugees_m),
       map   = world,
@@ -498,18 +540,14 @@ generateRefugeePlot <- function(year) {
       linewidth = 0.25,
       linetype  = "blank"
     ) +
-    # geom_map(
-    #   data = highlight_filtered_data[[as.character(year)]],
-    #   aes(map_id = coo_name, fill = refugees_m),
-    #   map   = highlight_world,
-    #   color = "#71797E",
-    #   show.legend = F
-    # ) +
-    expand_limits(x = world$long, y = world$lat) +
-    scale_fill_manual(values = color_mapping, na.value = "#F2F3F4") +
+    expand_limits(x = world$long, 
+                  y = world$lat) +
+    scale_fill_manual(values = color_mapping, 
+                      na.value = "#F2F3F4") +
     coord_fixed(ratio = 1) +
     labs(
-      title = paste("Number of Refugees by Country in", year),
+      title = paste("Number of Refugees by Country in", 
+                    year),
       subtitle = "Migrated to USA",
       caption = "Data source: TidyTuesday",
       fill = "need to specify"
@@ -518,9 +556,15 @@ generateRefugeePlot <- function(year) {
     theme(
       legend.position = "bottom",
       legend.direction = "horizontal",
-      plot.title = element_text(size = 19, face = "bold", hjust = 0.5),
-      plot.subtitle = element_text(size = 15, color = "azure4", hjust = 0.5),
-      plot.caption = element_text(size = 12, color = "azure4", hjust = 0.95)
+      plot.title = element_text(size = 19, 
+                                face = "bold", 
+                                hjust = 0.5),
+      plot.subtitle = element_text(size = 15, 
+                                   color = "azure4", 
+                                   hjust = 0.5),
+      plot.caption = element_text(size = 12, 
+                                  color = "azure4", 
+                                  hjust = 0.95)
     ) +
     guides(
       fill = guide_legend(
@@ -531,7 +575,8 @@ generateRefugeePlot <- function(year) {
         label.position = "bottom",
         label.hjust = 1,
         label.vjust = 1,
-        label.theme = element_text(lineheight = 0.25, size = 9),
+        label.theme = element_text(lineheight = 0.25, 
+                                   size = 9),
         keywidth = 1,
         keyheight = 0.5
       )
@@ -541,7 +586,7 @@ generateRefugeePlot <- function(year) {
 
 ```
 
-```{r allDecades_plot, message=FALSE}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 plot_2010 <- generateRefugeePlot(2010)
 plot_2012 <- generateRefugeePlot(2012)
 plot_2014 <- generateRefugeePlot(2014)
@@ -550,12 +595,9 @@ plot_2018 <- generateRefugeePlot(2018)
 plot_2020 <- generateRefugeePlot(2020)
 plot_2021 <- generateRefugeePlot(2021)
 plot_2022 <- generateRefugeePlot(2022)
-
-
-
 ```
 
-```{r}
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 generateRefugeeMap <- function(refugee_map_plot, file_path) {
   # Customize the plot appearance
   updated_refugee_plot <- refugee_map_plot +
@@ -563,21 +605,21 @@ generateRefugeeMap <- function(refugee_map_plot, file_path) {
       plot.title = element_text(size = 24),
       plot.subtitle = element_text(size = 18),
       plot.caption = element_text(size = 15),
-      legend.key.size = unit(1.5, "lines"), # Adjusted for clarity in a map context
-      legend.text = element_text(size = 12), # Slightly smaller text for legibility
-      legend.title = element_text(size = 14, face = "bold")
+      legend.key.size = unit(1.5, 
+                             "lines"), 
+      legend.text = element_text(size = 12), 
+      legend.title = element_text(size = 14, 
+                                  face = "bold")
     ) +
-    # Assuming color mapping is done outside, but can be adjusted or added here
     guides(fill = guide_legend(title = "Refugee Count"))
-  
   # Save the updated plot as an image file
   ggsave(
     plot = updated_refugee_plot,
     filename = file_path,
     height = 8,
-    width = 12, # Adjusted for a typical map aspect ratio
+    width = 12, 
     unit = "in",
-    dpi = 300 # Higher DPI for better image quality
+    dpi = 300 
   )
 }
 
@@ -593,47 +635,58 @@ generateRefugeeMap(plot_2022, "images/refugee_map_2022.jpg")
 
 ```
 
-```{r}
-#library(magick)
+### Analysis 01: War Effect in Year 2010-2016
 
-# List all refugee map images from the specified directory
-#refugee_map_plot <- list.files(path = "/Users/kaarthik/Downloads/images", full.names = TRUE)
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
-# Read all images into a list
-#refugee_map_list <- lapply(refugee_map_plot, image_read)
-
-# Joining all the saved images
-#joined_refugee_maps <- image_join(refugee_map_list)
-
-# Animating the images using image_animate() and setting the resolution
-# Setting fps (frames per second) = 1 for the animation
-#refugee_animation <- image_animate(image_scale(joined_refugee_maps, "6000x4000"), fps = 1)
-
-# Saving the animated gif
-#image_write(image = refugee_animation, path = "images/world_refugee_animation.gif")
-
-# Display the animation
-#refugee_animation
-
+knitr::include_graphics("images/refugee_map_2016.jpg")
 ```
 
-```{r,echo=FALSE}
+Early in the decade, migrations might be influenced by the aftermath of the global financial crisis of 2008, conflicts such as the war in Afghanistan or Iraq, or ongoing issues in countries like Somalia and china. This period may show increased migrations from the Middle East, particularly Syria, due to the Syrian Civil War beginning in 2011. Other regions might also exhibit changes due to local conflicts or economic instability.
+
+### Analysis 02: Economic / Climate Conditions in Year 2016-2019
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+knitr::include_graphics("images/refugee_map_2020.jpg")
+```
+
+The refugee crisis in Europe might influence numbers, with potential spillover effects on US Refugee/asylum applications. Policy changes in the USA regarding immigration during the new administration might also become visible. Continued conflicts and economic issues in various countries could maintain or increased refugee movements.
+
+### Analysis 03: World Health Crisis and Policy Change in Year 2019-2022
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
+
+knitr::include_graphics("images/refugee_map_2022.jpg")
+```
+
+The COVID-19 pandemic would likely cause a significant drop in migrations worldwide due to travel restrictions and border closures. Post-pandemic recovery may lead to an increase in migrations as countries lift travel bans. The situation in Afghanistan post-US withdrawal could result in an increase in refugees from that region.
+
+### Plot-Alpha
+
+```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
 knitr::include_graphics("images/worldmap_plot.gif")
 ```
 
-### Discussion
+While not typically classified as refugees, many Chinese nationals seek to leave China for economic opportunities. The relationship between China and the USA, including U.S. immigration policy, can influence refugee flows. Policies that allow for a greater number of asylum applications or provide specific provisions for individuals from China can result in higher refugee numbers. Additionally, there may be specific legislative acts or policies targeting the protection of certain groups from China, which could lead to an increase in accepted refugee applications.
+
+## Challenges faced
+
+-   Data only available from 2010 not before that
+-   Animation and frame rate selection.
+-   Error in data type and rendering method selection of gif during animation.
+
+## Conclusion
 
 We analyse refugee patterns over time across nations by analyzing `'year'`, `'coo_name'`, `'coa_name'`, and `'refugees'` data. To acquire a clearer understanding of the repercussions, we will gather annual refugee data by nation and normalize it against population statistics. Time-series techniques will be used in the study to find trends and link them to important world events including wars, climate disasters, and changes in the economy. Our goal is to quantify the influence of these events on displacement by examining refugee trends around them. The context provided by external data, such as conflict histories, records of climate events, economic indicators, and epidemic timelines, will help to create a complete picture of the variables influencing global refugee movements. This analysis of the **`{refugees}`** dataset highlights the significant influence of outside factors on patterns of worldwide displacement throughout the last ten years. We have learned how major changes in refugee and displacement patterns have been fueled by geopolitical conflicts, natural disasters, and global crises through thorough investigation. The results emphasize not only how urgent it is to deal with the underlying causes of displacement but also how important it is to have strong, well-informed responses to the intricate problems associated with forced migration. These kinds of data-driven analysis are essential for developing humanitarian actions and policies that effectively address the world's growing displacement crisis.
 
-```{r}
-
-```
-
 ## References
 
-Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
+\[1\] Title: Refugees, Source: tidytuesday, Link: <https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md>
 
-Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
+\[2\] Analyzed some of the global trends of refugee population from UNHCR - "[https://www.unhcr.org/us/global-trends"](https://www.unhcr.org/us/global-trends")
 
-ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)
+\[3\] Quarto, For documentation and presentation - [Quarto](https://quarto.org/docs/reference/formats/html.html)
+
+\[4\] ggplot, For understanding of different plot - [ggplot](https://ggplot2.tidyverse.org/reference/index.html)

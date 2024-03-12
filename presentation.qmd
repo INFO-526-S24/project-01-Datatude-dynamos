@@ -115,11 +115,14 @@ plot_total_refugees <- ggplot(total_refugee_trends, aes(x = year, y = total_refu
   geom_bar(stat = "identity", fill = "skyblue", alpha = 0.7) +  # Bar plot for yearly trends
   geom_smooth(method = "lm", formula = y ~ poly(x, 2), color = "#FF5230", se = FALSE) +  # Trend line for 30-year increase
   labs(title = "Total Refugee Populations Over Time", x = "Year", y = "Number of Refugees (in K)") +
-   theme_minimal(base_size = 14) +  # Increase base font size
-  theme(axis.text = element_text(color = "black"),  # Ensure axis text is black for better contrast
-        plot.title = element_text(size = 16, face = "bold"),  # Make title larger and bold
-        axis.title = element_text(size = 14)) +  # Increase axis title size
-  scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), to = 2024, by = 1)) +  # Ensure all years from 2000 to 2024 are included
+  theme_minimal(base_size = 14) + 
+  theme(axis.text = element_text(color = "black"),  
+        plot.title = element_text(size = 16, 
+                                  face = "bold"),  
+        axis.title = element_text(size = 14)) +  
+  scale_x_continuous(breaks = seq(from = min(total_refugee_trends$year), 
+                                  to = 2024, 
+                                  by = 1)) +  
   scale_y_continuous(labels = scales::comma) 
 
 print(plot_total_refugees)
