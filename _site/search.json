@@ -88,14 +88,14 @@
     "href": "index.html#references",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "References",
-    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot\n[5] Our Presentation logo - logo"
+    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot\n[5] Our Presentation logo - Link: https://www.vectorstock.com/royalty-free-vector/family-people-and-earth-nature-logo-vector-21169176"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This project was developed by [Team Name] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+    "text": "This project was developed by [Datatude Dynamos] For INFO 526 - Data Analysis and Visualization at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nAyesha Khatun: 1st year, Phd Student, Information Science (Research Area: Natural Language Processing), School of Information\nSurya Vardhan Dama: 1st year, MS Student, Data Science, School of Information\nRajitha Reddy Tiruthani: 1st year, MS Student, Data Science, School of Information\nMrunali Yadav: 1st year, MS Student, Information Science, School of Information\nKamaljeet Singh: 2nd year PhD student, Statistics & Data Science GIDP\nKaarthik Sai: 1st year, MS Student, Data Science, School of Information"
   },
   {
     "objectID": "data/README 2.html",
@@ -249,7 +249,7 @@
     "href": "presentation.html#references",
     "title": "Examining Global Refugee Trends and Correlations Over the Years",
     "section": "References",
-    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot"
+    "text": "References\n[1] Title: Refugees, Source: tidytuesday, Link: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-08-22/readme.md\n[2] Analyzed some of the global trends of refugee population from UNHCR - “https://www.unhcr.org/us/global-trends”\n[3] Quarto, For documentation and presentation - Quarto\n[4] ggplot, For understanding of different plot - ggplot\n[5] Our Presentation logo - Link: https://www.vectorstock.com/royalty-free-vector/family-people-and-earth-nature-logo-vector-21169176"
   },
   {
     "objectID": "presentation.html#any-question",
